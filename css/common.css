@@ -13,7 +13,7 @@ body {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers the content horizontally */
+  align-items: center; 
 }
 
 h1, h2, h3 {
@@ -49,8 +49,8 @@ img {
 
 .content-container {
   display: flex;
-  flex-wrap: wrap; /* Allow content to wrap if necessary */
-  justify-content: space-between; /* Push promo to the right */
+  flex-wrap: wrap; 
+  justify-content: space-between; 
   align-items: flex-start;
-  gap: 20px; /* Add space between items */
+  gap: 20px; 
 }

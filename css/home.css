@@ -1,6 +1,6 @@
 /* Promo Section */
 .promo-section {
-  flex: 1; /* Takes up less space than the carousel */
+  flex: 1; 
   padding: 20px;
 }
 
@@ -32,15 +32,15 @@
 
 /* Ensure the carousel takes up space on the left */
 .carousel {
-  flex: 3; /* Adjust this based on how much space you want it to take */
+  flex: 3; 
   display: flex;
   justify-content: center;
 }
 
 /* Highlight Section */
 .highlight-section {
-  width: 100%; /* Take full width of the page */
-  margin-top: 40px; /* Provide spacing from the carousel */
+  width: 100%; 
+  margin-top: 40px; 
   display: flex;
   justify-content: space-between;
 }
