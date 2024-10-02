@@ -1,0 +1,56 @@
+/* Reset and global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.5;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the content horizontally */
+}
+
+h1, h2, h3 {
+  font-family: 'Audiowide', cursive;
+}
+
+/* Anchor tag default styling */
+a {
+  color: #2888D9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #cc00ff;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Utility classes */
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Layout Container */
+.main-layout {
+  display: flex;
+  align-items: flex-start;
+}
+
+.content-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow content to wrap if necessary */
+  justify-content: space-between; /* Push promo to the right */
+  align-items: flex-start;
+  gap: 20px; /* Add space between items */
+}

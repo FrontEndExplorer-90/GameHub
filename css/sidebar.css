@@ -1,0 +1,39 @@
+/* Sidebar styles */
+.sidebar {
+  width: 250px;
+  margin-right: 20px;
+  padding: 20px;
+  background-color: #111;
+  color: #fff;
+}
+
+.sidebar h2 {
+  font-size: 1.2rem;
+  font-family: 'Audiowide', sans-serif;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 8px;
+}
+
+.sidebar ul li a {
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.sidebar ul li a:hover {
+  color: #00f6ff;
+}
