@@ -2,6 +2,8 @@
 .promo-section {
   flex: 1; 
   padding: 20px;
+  height: auto;
+  width: 40%;
 }
 
 .promo-section h1, .highlight-text h1 {

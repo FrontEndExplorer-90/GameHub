@@ -1,42 +1,60 @@
-/* Footer styles */
+/* General Footer Styles */
 footer {
   background-color: #111;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 30px 50px;
   color: #fff;
 }
 
-.footer-content ul {
+/* Footer Links */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #333; /* Line above social icons */
+}
+
+.footer-links ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 40px;
 }
 
-.footer-content a {
+.footer-links a {
   color: #00f6ff;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
 }
 
-.footer-content a:hover {
+.footer-links a:hover {
   color: #cc00ff;
 }
 
+/* Newsletter Signup */
 .newsletter-signup {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #222;
-  padding: 20px;
+  padding: 20px 30px;
   border-radius: 10px;
+  text-align: center;
+}
+
+.newsletter-signup h4 {
+  margin-bottom: 10px;
+  font-family: 'Audiowide', sans-serif;
+  color: #fff;
+}
+
+.newsletter-signup p {
+  color: #ccc;
+  margin-bottom: 10px;
 }
 
 .newsletter-signup input[type="email"] {
   padding: 10px;
   width: 300px;
   margin-bottom: 10px;
-  border: none;
   border-radius: 5px;
+  border: none;
 }
 
 .newsletter-signup button {
@@ -50,4 +68,27 @@ footer {
 
 .newsletter-signup button:hover {
   background-color: #cc00ff;
+}
+
+/* Social Icons and Copyright */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.social-icons a {
+  margin-right: 20px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}
+
+.copyright {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  color: #aaa;
 }
