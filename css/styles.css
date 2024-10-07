@@ -644,8 +644,8 @@ h1, h2, h3, .big-text {
 }
 
 .game-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     justify-content: center;
 }
@@ -680,10 +680,11 @@ h1, h2, h3, .big-text {
     background-color: black;
     color: white;
     border: 3px solid #3A0BC2;
-    padding: 10px 20px;
+    padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
     font-family: 'Audiowide', cursive;
+    text-decoration: none;
 }
 
 .add-to-cart-btn:hover {
