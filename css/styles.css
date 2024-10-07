@@ -646,16 +646,16 @@ h1, h2, h3, .big-text {
 .game-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    justify-content: center;
+    gap: 10px;
 }
 
 .game-item {
     width: 200px;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     background-color:none;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .game-item img {
@@ -678,12 +678,11 @@ h1, h2, h3, .big-text {
 
 .add-to-cart-btn {
     background-color: black;
-    color: white;
-    border: 3px solid #3A0BC2;
+    color: #2B88D9;
+    border: none;
     padding: 8px 12px;
-    border-radius: 5px;
     cursor: pointer;
-    font-family: 'Audiowide', cursive;
+    font-family: 'Roboto', sans-serif;
     text-decoration: none;
 }
 
