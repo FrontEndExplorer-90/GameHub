@@ -3,163 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Game Hub - Explore the universe of games">
-    <title>Game Hub - Home</title>
-    <!-- Link to the CSS files -->
-    <link rel="stylesheet" href="css/common.css">  <!-- Global styles -->
-    <link rel="stylesheet" href="css/header.css">  <!-- Header styles -->
-    <link rel="stylesheet" href="css/footer.css">  <!-- Footer styles -->
-    <link rel="stylesheet" href="css/sidebar.css"> <!-- Sidebar styles -->
-    <link rel="stylesheet" href="css/carousel.css"> <!-- Carousel styles -->
-    <link rel="stylesheet" href="css/home.css">    <!-- Home page-specific styles -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Audiowide&display=swap" rel="stylesheet">
+    <meta name="description" content="Game Hub - The universe of games">
+    <title>Game Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="header-container">
-            <!-- Logo -->
+    <!-- Wrapper for all content -->
+    <div class="wrapper">
+        <!-- Header Section -->
+        <header class="header">
             <div class="logo">
-                <img src="../GameHub/images/GameHub_Logo.png" alt="Game Hub Logo">
+                <img src="images/GameHub_Logo.png" alt="Game Hub Logo">
             </div>
-      
-            <!-- Navigation Links -->
-            <nav class="nav-links">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Games</a></li>
-                    <li><a href="#">Community</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
+            <nav class="nav">
+                <a href="#">Home</a>
+                <a href="#">Games</a>
+                <a href="#">Community</a>
+                <a href="#">About</a>
             </nav>
-      
-            <!-- Search Bar with Menu Icon -->
-            <div class="search-bar">
-                <button type="button" class="menu-button">
-                    <img src="../GameHub/images/icons8-menu-50.png" alt="Menu Icon">
-                </button>
-                <input type="text" placeholder="Search for Games">
-                <button type="submit">
-                    <img src="../GameHub/images/icons8-search-48.png" alt="Search Icon">
-                </button>
-            </div>
-      
-            <!-- Icons: Settings, User, Cart -->
             <div class="header-icons">
-                <a href="#" aria-label="Settings">
-                    <img src="../GameHub/images/icons8-settings-50.png" alt="Settings Icon">
-                </a>
-                <a href="#" aria-label="User Profile">
-                    <img src="../GameHub/images/icons8-male-user-24.png" alt="User Icon">
-                </a>
-                <a href="#" aria-label="Cart">
-                    <img src="../GameHub/images/icons8-cart-32.png" alt="Cart Icon">
-                </a>
+                <input type="text" placeholder="Search for Games" class="search-bar">
+                <div class="icons">
+                    <img src="images/icons8-settings-50.png" alt="Settings">
+                    <img src="images/icons8-male-user-24.png" alt="User">
+                    <img src="images/icons8-cart-32.png" alt="Cart">
+                </div>
             </div>
-        </div>
-    </header>      
-        
-    <!-- Main Content Section -->
-    <main>
-        <div class="main-layout">
+        </header>
 
-            <!-- Sidebar -->
+        <!-- Content Container -->
+        <div class="content-container">
+            <!-- Sidebar Section -->
             <aside class="sidebar">
-                <div class="sidebar-section">
-                    <h2>Recommendations</h2>
-                    <ul>
-                        <li><a href="#">By Community</a></li>
-                        <li><a href="#">By Experts</a></li>
-                    </ul>
-                </div>
-                <div class="sidebar-section">
-                    <h2>Browse Categories</h2>
-                    <ul>
-                        <li><a href="#">For Beginners</a></li>
-                        <li><a href="#">Upcoming</a></li>
-                        <li><a href="#">New Releases</a></li>
-                        <li><a href="#">Top Sellers</a></li>
-                    </ul>
-                </div>
-                <div class="sidebar-section">
-                    <h2>Browse By Genre</h2>
-                    <ul>
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Adventure</a></li>
-                        <li><a href="#">Free to Play</a></li>
-                        <li><a href="#">Sports</a></li>
-                    </ul>
-                </div>
-                <div class="sidebar-section">
-                    <h2>Membership</h2>
-                    <ul>
-                        <li><a href="#">Become a member</a></li>
-                        <li><a href="#">Early Access</a></li>
-                        <li><a href="#">Sell Your Used Games</a></li>
-                        <li><a href="#">Buy Used Games</a></li>
-                    </ul>
-                </div>
+                <h3>Recommendations</h3>
+                <ul>
+                    <li><a href="#">By Community</a></li>
+                    <li><a href="#">By Experts</a></li>
+                </ul>
+                <h3>Browse Categories</h3>
+                <ul>
+                    <li><a href="#">For Beginners</a></li>
+                    <li><a href="#">Upcoming</a></li>
+                    <li><a href="#">New Releases</a></li>
+                    <li><a href="#">Top Sellers</a></li>
+                </ul>
+                <h3>Browse By Genre</h3>
+                <ul>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Adventure</a></li>
+                    <li><a href="#">Free to Play</a></li>
+                    <li><a href="#">Sports</a></li>
+                </ul>
+                <h3>Membership</h3>
+                <ul>
+                    <li><a href="#">Become a member</a></li>
+                    <li><a href="#">Early Access</a></li>
+                    <li><a href="#">Sell Your Used Games</a></li>
+                    <li><a href="#">Buy Used Games</a></li>
+                </ul>
             </aside>
-          
-            <!-- Content section: Carousel and Promo -->
-            <div class="content-container">
-                <!-- Carousel Section -->
-                <section class="carousel">
+
+            <!-- Main Content Section -->
+            <main class="main-content">
+                <div class="top-section">
+
+                    <!-- Carousel Section (Left Side) -->
                     <div class="carousel-container">
-                        <div class="carousel-item">
-                            <img src="../GameHub/images/GameHub_covers10.jpg" alt="Forge Legend">
+                        <!-- Radio buttons for each slide -->
+                        <input type="radio" name="carousel" id="slide1" checked>
+                        <input type="radio" name="carousel" id="slide2">
+                        <input type="radio" name="carousel" id="slide3">
+                      
+                        <!-- Carousel slides (game covers) -->
+                        <div class="carousel-slides">
+                            <div class="carousel-slide">
+                                <img src="images/GameHub_covers10.jpg" alt="Game 1 - Forge Legend">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/GameHub_covers3.jpg" alt="Game 2 - Black">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/GameHub_covers6.jpg" alt="Game 3 - Space War">
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <img src="../GameHub/images/GameHub_covers3.jpg" alt="Black">
+                    </div>                    
+
+                    <!-- Right-side Text Section (Explore the Universe of Games) -->
+                    <div class="explore-section">
+                        <h1>Explore the universe of games</h1>
+                        <p>Your one-stop shop for digital games at competitive prices</p>
+                        <a href="#" class="shop-btn">SHOP HERE</a>
+                    </div>
+                </div>
+
+                <!-- "Today's Most Wanted" Section (Spans Full Width) -->
+                <section class="featured">
+                    <div class="most-wanted">
+                        <div class="game-cover">
+                            <a href="#">
+                                <img src="images/GameHub_covers9.jpg" alt="Cyberpunk">
+                            </a>
                         </div>
-                        <div class="carousel-item">
-                            <img src="../GameHub/images/GameHub_covers6.jpg" alt="Space War">
+                        <div class="most-wanted-text">
+                            <h2>Today's Most Wanted</h2>
+                            <p>Try it now!</p>
+                            <a href="#" class="shop-btn">SHOP HERE</a>
                         </div>
                     </div>
                 </section>
-        
-                <!-- Promo Section -->
-                <section class="promo-section">
-                    <h1>Explore the universe of games</h1>
-                    <p>Your one-stop shop for digital games at competitive prices</p>
-                    <a href="#" class="promo-button">Shop Here</a>
-                </section>
-            </div>
+            </main>
+        </div> <!-- End of content container -->
 
-            <!-- Highlight Section -->
-            <section class="highlight-section">
-                <div class="highlight-promo">
-                    <img src="../GameHub/images/GameHub_covers9.jpg" alt="Today's Most Wanted">
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer-container">
+                <!-- Left: Social Media Icons -->
+                <div class="footer-socials">
+                    <a href="#"><img src="images/icons8-facebook-30.png" alt="Facebook"></a>
+                    <a href="#"><img src="images/icons8-instagram-24.png" alt="Instagram"></a>
+                    <a href="#"><img src="images/icons8-twitter-24.png" alt="Twitter"></a>
+                    <a href="#"><img src="images/icons8-tiktok-32.png" alt="TikTok"></a>
                 </div>
-                <div class="highlight-text">
-                    <h1>Today's Most Wanted</h1>
-                    <p>Try it Now!</p>
-                    <a href="#" class="highlight-button">Shop Here</a>
+
+                <!-- Center: Footer Links -->
+                <div class="footer-links">
+                    <a href="#">Jobs</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Support</a>
+                    <a href="#">Newsletter</a>
                 </div>
-            </section>
-        </div>
-    </main>
-  
-    <!-- Footer Section -->
-    <footer>
-        <ul>
-            <li><a href="#">Jobs</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Support</a></li>
-            <li><a href="#">Newsletter</a></li>
-        </ul>
-  
-        <!-- Newsletter Signup -->
-        <div class="newsletter-signup">
-            <h4>Game Hub Newsletter</h4>
-            <p>Sign up to our newsletter to receive the latest gaming trends</p>
-            <form>
+
+                <!-- Right: Game Hub Logo -->
+                <div class="footer-logo">
+                    <img src="images/GameHub_Logo.png" alt="Game Hub Logo">
+                </div>
+            </div>
+        </footer>
+
+        <input type="checkbox" id="popup-checkbox" class="popup-checkbox">
+
+        <!--Trigger for the popup -->
+        <div class="popup-trigger"></div>
+
+        <!-- Newsletter Popup -->
+        <div class="newsletter-popup">
+            <div class="popup-content">
+                <h2>Game Hub Newsletter</h2>
+                <p>Sign up to our newsletter to receive the latest gaming trends</p>
                 <input type="email" placeholder="Your email address...">
-                <button type="submit">Sign Up</button>
-            </form>
+                <button class="sign-up-btn">Sign Up</button>
+            </div>
+            <label for="popup-checkbox" class="close-button">x</label>
         </div>
-    </footer>
+    </div> <!-- End of wrapper div -->
 </body>
 </html>
