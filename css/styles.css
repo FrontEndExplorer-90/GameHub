@@ -636,3 +636,56 @@ h1, h2, h3, .big-text {
     max-width: 800px; /* Same width as the game details for alignment */
     text-align: left; /* Align text to the left */
 }
+
+/* Game Overview Section */
+.game-overview {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.game-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.game-item {
+    width: 200px;
+    text-align: center;
+    padding: 15px;
+    background-color:none;
+    border-radius: 10px;
+}
+
+.game-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.game-item h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.game-item p {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.add-to-cart-btn {
+    background-color: black;
+    color: white;
+    border: 3px solid #3A0BC2;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Audiowide', cursive;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #554AD2;
+}
