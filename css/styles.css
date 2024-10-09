@@ -867,13 +867,27 @@ h1, h2, h3, .big-text {
 /* Cart Page Styling */
 .main-content {
     text-align: center;
-    margin: 40px 0;
+    margin: 40px 20px;
+}
+
+/* Cart Header Styling */
+.cart-header h1 {
+    margin-bottom: 20px; 
+}
+
+.cart-header p {
+    margin-top: 10px; 
 }
 
 .empty-cart h2 {
     font-family: 'Audiowide', cursive;
     font-size: 36px;
-    margin-top: 40px;
+    margin-top: 150px;
+    margin-bottom: 10px;
+}
+
+.currency {
+    margin-left: 5px; 
 }
 
 .cart-items {
@@ -892,7 +906,7 @@ h1, h2, h3, .big-text {
 .cart-item img {
     width: 80px;
     height: auto;
-    margin-right: 20px;
+    margin-right: 5px;
 }
 
 .cart-total {
