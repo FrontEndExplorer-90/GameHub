@@ -646,19 +646,26 @@ h1, h2, h3, .big-text {
     margin-bottom: 40px;
 }
 
-.game-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+.game-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Optional: center items on the page */
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 20px;
 }
 
 .game-item {
     width: 200px;
     text-align: center;
-    padding: 0px;
+    padding: 15px;
     background-color:none;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
 }
 
 .game-item img {
