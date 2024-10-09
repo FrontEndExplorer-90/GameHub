@@ -932,3 +932,110 @@ h1, h2, h3, .big-text {
 .checkout-btn:hover {
     background-color: #006bb3;
 }
+
+/* Checkout Page Layout */
+.checkout-page {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.cart-section {
+    flex: 2;
+}
+
+.cart-items {
+    margin-top: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+}
+
+.cart-item img {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-control button {
+    background-color: #008cff;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.payment-section {
+    margin-top: 30px;
+}
+
+.payment-method {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.payment-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #444;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-payment-btn {
+    background-color: transparent;
+    color: #008cff;
+    border: 1px solid #008cff;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* Summary Section */
+.summary-section {
+    flex: 1;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.summary-totals {
+    margin-top: 20px;
+}
+
+.summary-totals .total,
+.summary-totals .shipping,
+.summary-totals .final-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.checkout-btn {
+    width: 100%;
+    background-color: #008cff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.checkout-btn:hover {
+    background-color: #006bb3;
+}
