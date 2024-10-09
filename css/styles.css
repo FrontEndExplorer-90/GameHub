@@ -1,4 +1,4 @@
-/* Reset */
+/* Index and main styles */
 * {
     margin: 0;
     padding: 0;
@@ -526,7 +526,9 @@ h1, h2, h3, .big-text {
     }
 }
 
-/* Product Section Layout */
+
+/* Game product page */
+
 .product-section {
     display: flex;
     align-items: flex-start;
@@ -637,7 +639,8 @@ h1, h2, h3, .big-text {
     text-align: left; /* Align text to the left */
 }
 
-/* Game Overview Section */
+
+/* Product all page */
 .game-overview {
     text-align: center;
     margin-bottom: 40px;
@@ -652,7 +655,7 @@ h1, h2, h3, .big-text {
 .game-item {
     width: 200px;
     text-align: center;
-    padding: 10px;
+    padding: 0px;
     background-color:none;
     border-radius: 10px;
     margin-bottom: 10px;
