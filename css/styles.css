@@ -788,3 +788,78 @@ h1, h2, h3, .big-text {
     font-family: 'Roboto', sans-serif;
     margin-bottom: 20px;
 }
+
+/* Support Center Page */
+.support-center {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: left;
+}
+
+.support-center h1 {
+    font-family: 'Audiowide', cursive;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.support-center p {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+}
+
+.accordion {
+    margin-top: 30px;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #444;
+    margin-bottom: 15px;
+}
+
+.accordion-header {
+    font-family: 'Audiowide', cursive;
+    font-size: 24px;
+    display: block;
+    cursor: pointer;
+    padding: 10px 0;
+    color: #2B88D9;
+    position: relative;
+}
+
+.accordion-header:hover {
+    color: #554AD2;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+.accordion-content ul {
+    padding-left: 20px;
+}
+
+.accordion-content ul li {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.accordion-content ul li a {
+    color: #2B88D9;
+    text-decoration: none;
+}
+
+.accordion-content ul li a:hover {
+    color: #554AD2;
+}
+
+.accordion input[type="checkbox"] {
+    display: none;
+}
+
+.accordion input[type="checkbox"]:checked ~ .accordion-content {
+    max-height: 300px; /* Adjust depending on the content size */
+}
