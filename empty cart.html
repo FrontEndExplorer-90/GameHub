@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/empty cart.css">
-
 </head>
 <body>
     <div class="wrapper">
@@ -36,17 +35,19 @@
         </header>
 
         <!-- Main Content Section -->
-        <main class="main-content">
-            <div class="cart-header">
-            <h1>Cart</h1>
-            <p>Please check your cart before proceeding to payment</p>
-            </div>
-
-            <!-- Empty Cart Message -->
-            <div class="empty-cart">
+        <div class="centered-content">
+            <main class="main-content empty-cart-page">
+                <h1>Cart</h1>
+                <p>Please check your cart before proceeding to payment</p>
                 <h2>Your Cart Is Empty!</h2>
-            </div>
-        </main>
+
+                <!-- Total and Checkout Button -->
+                <div class="cart-total">
+                    <span>Total </span><span class="currency">kr</span><span>0</span>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </main>
+        </div>
 
         <!-- Footer Section (Same as other pages) -->
         <footer class="footer">
