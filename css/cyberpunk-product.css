@@ -1,0 +1,102 @@
+.product-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Game Image */
+.product-cyberpunk .product-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+    border: 3px solid #a912c7;
+}
+
+/* Game Info Section */
+.product-info {
+    max-width: 600px;
+}
+
+.product-info h1 {
+    font-family: 'Audiowide', cursive;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.product-info h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Audiowide', cursive;
+    font-size: 24px;
+}
+
+/* Add to Cart Button and Price */
+.product-purchase {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.add-to-cart-btn {
+    background-color: black;
+    color: white;
+    border: 3px solid #3A0BC2;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Audiowide', cursive;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #554AD2;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Game Details Section */
+.game-details {
+    margin-top: 15px;
+    max-width: 800px; /* Ensure content width is consistent */
+}
+
+/* Header for sections like Game Features and Storyline */
+.game-details h2 {
+    font-family: 'Audiowide', cursive;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+/* List style for Game Features */
+.game-details ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.game-details ul li {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 25px;
+    line-height: 1.6; /* Ensures good spacing for readability */
+}
+
+/* Paragraph style for Storyline and other text */
+.game-details p {
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px; /* Increase the font size for better readability */
+    line-height: 1.6; /* Improve the space between lines */
+    color: #ccc; /* Softer color for better contrast */
+    max-width: 800px; /* Same width as the game details for alignment */
+    text-align: left; /* Align text to the left */
+}

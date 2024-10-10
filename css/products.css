@@ -1,0 +1,59 @@
+/* Product all page */
+.game-overview {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.game-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Optional: center items on the page */
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.game-item {
+    width: 200px;
+    text-align: center;
+    padding: 15px;
+    background-color:none;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
+}
+
+.game-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.game-item h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.game-item p {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.add-to-cart-btn {
+    background-color: black;
+    color: #2B88D9;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #554AD2;
+}
