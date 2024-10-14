@@ -60,6 +60,26 @@ h1, h2, h3, .big-text {
     color: #008cff; 
 }
 
+/* Back Arrow Button Styles */
+.back-arrow {
+    display: inline-block;
+    position: absolute;
+    left: 40px; /* Adjusted for better positioning */
+    top: 100px; /* Adjust based on your layout */
+    padding: 5px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.back-arrow img {
+    width: 20px; /* Slightly larger for visibility */
+    height: 20px;
+}
+
+.back-arrow:hover {
+    transform: scale(1.1); /* Slight zoom on hover to make it feel interactive */
+}
+
 /* Header styles */
 .header {
     display: flex;

@@ -1,0 +1,41 @@
+/* Purchase Page Styling */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 150px); /* Height accounting for the footer */
+    text-align: center;
+    padding: 20px;
+    margin-top: -150px; /* Moves the content upwards */
+}
+
+.main-content h1 {
+    font-family: 'Audiowide', cursive;
+    font-size: 48px;
+    margin-bottom: 40px;
+    line-height: 1.5; /* Adjusts spacing between the lines */
+    color: #fff;
+}
+
+.main-content p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #ccc;
+    line-height: 1.6; /* Adjusts line spacing for better readability */
+}
+
+/* Return to Home Button */
+.shop-btn {
+    padding: 10px 20px;
+    color: #2B88D9; /* Blue text */
+    border: none;
+    font-size: 20px;
+    text-decoration: none; /* Removes the underline */
+    cursor: pointer;
+}
+
+.shop-btn:hover {
+    color: #fff; /* Hover state for better visibility */
+}
