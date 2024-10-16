@@ -23,7 +23,7 @@
     font-size: 20px;
     margin-bottom: 40px;
     color: #ccc;
-    line-height: 1.6; /* Adjusts line spacing for better readability */
+    line-height: 2.5; /* Adjusts line spacing for better readability */
 }
 
 /* Return to Home Button */
@@ -34,6 +34,7 @@
     font-size: 20px;
     text-decoration: none; /* Removes the underline */
     cursor: pointer;
+    margin-top: 30px;
 }
 
 .shop-btn:hover {
