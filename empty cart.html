@@ -18,7 +18,7 @@
             </div>
 
             <!-- Back Button -->
-            <a href="index.html" class="back-button">
+            <a href="products.html" class="back-button">
                 <img src="images/icons8-back-arrow-50.png" alt="Back"> 
             </a>
             <nav class="nav">
@@ -28,7 +28,10 @@
                 <a href="about.html">About</a>
             </nav>
             <div class="header-icons">
-                <input type="text" placeholder="Search for Games" class="search-bar">
+                <form action="#" class="search-form">
+                    <label for="search-bar" class="visually-hidden">Search for Games</label>
+                    <input type="text" id="search-bar" name="search" placeholder="Search for Games" class="search-bar">
+                </form>   
                 <div class="icons">
                     <img src="images/icons8-settings-50.png" alt="Settings">
                     <img src="images/icons8-male-user-24.png" alt="User">
@@ -40,11 +43,11 @@
         </header>
 
         <!-- Main Content Section -->
-        <div class="centered-content">
-            <main class="main-content empty-cart-page">
-                <h1>Cart</h1>
-                <p>Please check your cart before proceeding to payment</p>
-                <h2>Your Cart Is Empty!</h2>
+        <main class="main-content empty-cart-page">
+            <h1>Cart</h1>
+            <p>Please check your cart before proceeding to payment</p>
+            <h2>Your Cart Is Empty!</h2>
+        </main> <!-- End of main content -->
 
         <!-- Footer Section (Same as other pages) -->
         <footer class="footer">
@@ -66,6 +69,6 @@
                 </div>
             </div>
         </footer>
-    </div>
+    </div> <!-- End of wrapper -->
 </body>
 </html>

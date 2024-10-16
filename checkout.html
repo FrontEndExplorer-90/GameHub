@@ -30,7 +30,10 @@
                 <a href="about.html">About</a>
             </nav>
             <div class="header-icons">
-                <input type="text" placeholder="Search for Games" class="search-bar">
+                <form action="#" class="search-form">
+                    <label for="search-bar" class="visually-hidden">Search for Games</label>
+                    <input type="text" id="search-bar" name="search" placeholder="Search for Games" class="search-bar">
+                </form>   
                 <div class="icons">
                     <img src="images/icons8-settings-50.png" alt="Settings">
                     <img src="images/icons8-male-user-24.png" alt="User">
@@ -77,17 +80,21 @@
                     <h3>Payment</h3>
                     <button class="add-payment-btn"><span>+</span> Add payment card</button>
 
-                    <div class="payment-method">
-                        <label class="payment-card">
-                            <input type="radio" name="payment" value="visa">
-                            <span class="visa-card">Visa Debit Card **** **** **** 2982</span>
-                        </label>
-
-                        <label class="payment-card">
-                            <input type="radio" name="payment" value="master">
-                            <span class="master-card">Master Card **** **** **** 6379</span>
-                        </label>
-                    </div>
+                    <fieldset>
+                        <legend>Select Payment Method</legend>
+                
+                        <div class="payment-method">
+                            <label class="payment-card">
+                                <input type="radio" name="payment" value="visa">
+                                <span class="visa-card">Visa Debit Card **** **** **** 2982</span>
+                            </label>
+                
+                            <label class="payment-card">
+                                <input type="radio" name="payment" value="master">
+                                <span class="master-card">Master Card **** **** **** 6379</span>
+                            </label>
+                        </div>
+                    </fieldset>
                 </div>
             </div>
 

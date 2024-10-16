@@ -21,9 +21,9 @@
 .main-content p {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 50px; /* Increased margin to add more space after the text */
     color: #ccc;
-    line-height: 2.5; /* Adjusts line spacing for better readability */
+    line-height: 1.8; /* Adjusts line spacing for better readability */
 }
 
 /* Return to Home Button */
@@ -34,9 +34,10 @@
     font-size: 20px;
     text-decoration: none; /* Removes the underline */
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: 40px; /* Ensures space between text and button */
 }
 
 .shop-btn:hover {
     color: #fff; /* Hover state for better visibility */
 }
+

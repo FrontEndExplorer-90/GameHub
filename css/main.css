@@ -18,6 +18,18 @@ body {
     flex-direction: column; 
 }
 
+/* Style for the links (social media links) */
+a {
+    color: #00aaff; /* Replace with a higher contrast color */
+    text-decoration: none;
+}
+
+/* Hover state to make it clear when hovering */
+a:hover {
+    color: #0088cc; /* Change the hover color if needed */
+    text-decoration: underline;
+}
+
 /* Common centering utility class */
 .centered-content {
     display: flex;
@@ -103,7 +115,7 @@ h1, h2, h3, .big-text {
     display: flex;
     align-items: center; 
 }
-
+/* search bar styling*/
 .search-bar {
     padding: 5px 10px;
     border-radius: 20px;
@@ -121,6 +133,53 @@ h1, h2, h3, .big-text {
 .header-icons .icons img {
     width: 20px;
     margin-left: 10px;
+}
+
+/* Search Form Styling */
+.search-form {
+    display: flex;
+    align-items: center; /* Align input and button vertically */
+}
+
+/* Search Input (Search Bar) */
+.search-bar {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    width: 200px;
+    background-color: #fff;
+    color: #000;
+}
+
+.search-bar::placeholder {
+    color: #888;
+}
+
+/* Search Button */
+.search-button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #008cff;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px; /* Matches input's rounded corners */
+    margin-left: 10px; /* Space between input and button */
+    display: none;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.search-button:hover {
+    background-color: #005fb8;
 }
 
 /* Sidebar styles */

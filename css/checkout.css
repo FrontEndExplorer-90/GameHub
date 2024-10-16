@@ -86,6 +86,7 @@
     padding: 8px;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .payment-card {
@@ -96,6 +97,32 @@
     border-radius: 5px;
     color: #fff;
 }
+
+/* Fieldset Styling for Payment Section */
+fieldset {
+    border: 1px solid #333;  /* Dark border */
+    padding: 15px;           /* Add padding inside the fieldset */
+    border-radius: 10px;     /* Rounded corners */
+    margin-bottom: 20px;     /* Space below the fieldset */
+}
+
+legend {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    font-size: 18px;
+    padding: 0 10px;         /* Space between legend text and border */
+}
+
+/* Payment Method Styling Inside Fieldset */
+.payment-method label {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #222;
+    border-radius: 5px;
+    color: #fff;
+}
+
 
 /* Right Section (Summary) */
 .summary-section {

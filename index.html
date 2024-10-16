@@ -25,7 +25,10 @@
                 <a href="about.html">About</a>
             </nav>
             <div class="header-icons">
-                <input type="text" placeholder="Search for Games" class="search-bar">
+                <form action="#" class="search-form">
+                    <label for="search-bar" class="visually-hidden">Search for Games</label>
+                    <input type="text" id="search-bar" name="search" placeholder="Search for Games" class="search-bar">
+                </form>                
                 <div class="icons">
                     <img src="images/icons8-settings-50.png" alt="Settings">
                     <img src="images/icons8-male-user-24.png" alt="User">
@@ -75,9 +78,9 @@
                     <!-- Carousel Section (Left Side) -->
                     <div class="carousel-container">
                         <!-- Radio buttons for each slide -->
-                        <input type="radio" name="carousel" id="slide1" checked>
-                        <input type="radio" name="carousel" id="slide2">
-                        <input type="radio" name="carousel" id="slide3">
+                        <input type="radio" name="carousel" id="slide1" aria-label="Go to slide 1" checked>
+                        <input type="radio" name="carousel" id="slide2" aria-label="Go to slide 2">
+                        <input type="radio" name="carousel" id="slide3" aria-label="Go to slide 3">
                       
                         <!-- Carousel slides (game covers) -->
                         <div class="carousel-slides">
@@ -99,24 +102,24 @@
                     <div class="explore-section">
                         <h1>Explore the universe of games</h1>
                         <p>Your one-stop shop for digital games at competitive prices</p>
-                        <a href="products.html" class="shop-btn">SHOP HERE</a>
+                        <a href="products.html" class="shop-btn">EXPLORE HERE</a>
                     </div>
                 </div>
 
                 <!-- "Today's Most Wanted" Section (Spans Full Width) -->
                 <section class="featured">
                     <div class="most-wanted">
-                        <div class="game-cover">
-                            <a href="cyberpunk-product.html">
+                        <a href="cyberpunk-product.html" class="game-cover-link">
+                            <div class="game-cover">
                                 <img src="images/GameHub_covers9.jpg" alt="Cyberpunk">
-                            </a>
-                        </div>
-                        <div class="most-wanted-text">
-                            <h2>Today's Most Wanted</h2>
-                            <p>Try it now!</p>
-                            <a href="cyberpunk-product.html" class="shop-btn">SHOP HERE</a>
-                        </div>
-                    </div>
+                            </div>
+                            <div class="most-wanted-text">
+                                <h2>Today's Most Wanted</h2>
+                                <h3>Try it now!</h3>
+                                <span class="shop-btn">SHOP HERE</span>
+                            </div>
+                        </a>
+                    </div>                    
                 </section>
             </main>
         </div> <!-- End of content container -->
@@ -157,10 +160,11 @@
             <div class="popup-content">
                 <h2>Game Hub Newsletter</h2>
                 <p>Sign up to our newsletter to receive the latest gaming trends</p>
-                <input type="email" placeholder="Your email address...">
-                <button class="sign-up-btn">Sign Up</button>
+                <label for="newsletter-email" class="visually-hidden">Email Address</label>
+                <input type="email" id="newsletter-email" placeholder="Your email address...">
+                <button class="sign-up-btn" aria-label="Sign up for the newsletter">Sign Up</button>
             </div>
-            <label for="popup-checkbox" class="close-button">x</label>
+            <label for="popup-checkbox" class="close-button" aria-label="Close Newsletter Popup">×</label>
         </div>
     </div> <!-- End of wrapper div -->
 </body>

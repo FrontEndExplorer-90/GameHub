@@ -167,7 +167,7 @@
     display: flex;
     justify-content: center; 
     align-items: flex-start; 
-    gap: 20px;
+    gap: 40px;
     max-width: 900px; 
     margin: 0 auto; 
 }
@@ -177,9 +177,10 @@
     width: 250px;
     height: 350px;
     overflow: hidden;
-    margin: 0 auto;
+    margin: 0 40px 0 0;
 }
 
+/* Keep the image size and style intact */
 .most-wanted .game-cover img {
     width: 100%;
     height: 100%;
@@ -188,15 +189,16 @@
     border: 3px solid #a912c7; 
 }
 
-/* Text and Button on the right side of the game cover */
+/* Style for the text in the most-wanted section */
 .most-wanted-text {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    margin-left: 40px;
 }
 
-/* "Today's Most Wanted" Section */
+/* Title styling */
 .most-wanted-text h2 {
     font-family: 'Audiowide', cursive;
     font-size: 36px; 
@@ -206,7 +208,8 @@
     margin-bottom: 30px; 
 }
 
-.most-wanted-text p {
+/* Text description styling */
+.most-wanted-text h3 {
     font-family: 'Audiowide', cursive;
     font-size: 50px; 
     background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2); 
@@ -215,22 +218,30 @@
     margin-bottom: 40px; 
 }
 
-.most-wanted-text a.shop-btn {
+/* Combined clickable area styling */
+.game-cover-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* SHOP HERE button styling */
+.most-wanted-text span.shop-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
     background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2); 
     -webkit-background-clip: text; 
     color: transparent;
-    padding: 10px 20px;
-    border-radius: 5px;
     font-family: 'Audiowide', cursive;
     font-size: 20px;
-    border: none;
-    text-decoration: none;
-    display: inline-block; 
-    margin-top: 30px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.most-wanted-text a.shop-btn:hover {
-    background-color: none;
+.most-wanted-text span.shop-btn:hover {
+    color: #fff;
 }
 
 .popup-checkbox {

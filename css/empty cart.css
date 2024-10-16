@@ -2,24 +2,25 @@
 .empty-cart-page {
     display: flex;
     flex-direction: column;
+    justify-content: center;  /* Centers content vertically */
     align-items: center;
     text-align: center;
     min-height: calc(100vh - 150px); /* Full height minus some space for footer */
-    padding-top: 50px; /* Moves the content up from the center */
+    padding-top: 20px; /* Adjust this if needed */
 }
 
 /* Cart Header Styling */
 .empty-cart-page h1 {
-    font-family: 'Audiowide', cursive;                                                                                                            
+    font-family: 'Audiowide', cursive;
     font-size: 48px;
-    margin-bottom: 15px; /* Reduced spacing between "Cart" and the description */
+    margin-bottom: 30px; /* Adds some space between "Cart" and the description */
 }
 
 /* Description under Cart */
 .empty-cart-page p {
     font-family: 'Roboto', sans-serif;
-    margin-top: 5px; /* Reduced spacing between "Cart" and description */
-    margin-bottom: 20px; /* Increased spacing below the description */
+    margin-top: 10px;
+    margin-bottom: 30px; /* Increased spacing below the description */
     font-size: 18px;
     color: #fff;
 }
@@ -28,14 +29,15 @@
 .empty-cart-page h2 {
     font-family: 'Audiowide', cursive;
     font-size: 36px;
-    margin-top: 10px; /* Added some space above the message */
-    margin-bottom: 50px; /* Ensures spacing before the footer */
+    margin-top: 40px; /* Adds space between description and "Your Cart is Empty" */
     color: #fff;
 }
 
 /* Footer Styling */
 .footer {
-    position: relative;
-    bottom: 0;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    margin-top: auto; /* Ensures footer is pushed to the bottom */
     width: 100%;
 }
