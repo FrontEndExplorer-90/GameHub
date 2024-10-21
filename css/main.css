@@ -1,4 +1,4 @@
-/* Index and main styles */
+/* Global styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,26 +7,25 @@
 
 /* Global body styles */
 html, body {
-    height: 100%; 
+    height: 100%;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #000; 
-    color: #fff; 
-    display: flex; 
-    flex-direction: column; 
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Style for the links (social media links) */
+/* Style for the links */
 a {
-    color: #00aaff; /* Replace with a higher contrast color */
+    color: #00aaff;
     text-decoration: none;
 }
 
-/* Hover state to make it clear when hovering */
 a:hover {
-    color: #0088cc; /* Change the hover color if needed */
+    color: #0088cc;
     text-decoration: underline;
 }
 
@@ -35,12 +34,12 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full height to vertically center content */
+    height: 100vh;
 }
 
 /* Wrapper for content and footer */
 .wrapper {
-    flex: 1; 
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -48,7 +47,7 @@ a:hover {
 
 /* Main Content Section */
 .main-content {
-    margin-left: 270px; /* Matches sidebar width */
+    margin-left: 270px;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -59,37 +58,37 @@ h1, h2, h3, .big-text {
     font-family: 'Audiowide', cursive;
 }
 
-/* Navigation Links (Roboto, no underline) */
+/* Navigation Links */
 .nav a {
-    font-family: 'Roboto', sans-serif;  
+    font-family: 'Roboto', sans-serif;
     margin-right: 20px;
     font-size: 18px;
     color: #fff;
-    text-decoration: none;  
+    text-decoration: none;
 }
 
 .nav a:hover {
-    color: #008cff; 
+    color: #008cff;
 }
 
 /* Back Arrow Button Styles */
 .back-arrow {
     display: inline-block;
     position: absolute;
-    left: 40px; /* Adjusted for better positioning */
-    top: 100px; /* Adjust based on your layout */
+    left: 40px;
+    top: 100px;
     padding: 5px;
     border-radius: 5px;
     transition: transform 0.3s ease;
 }
 
 .back-arrow img {
-    width: 20px; /* Slightly larger for visibility */
+    width: 20px;
     height: 20px;
 }
 
 .back-arrow:hover {
-    transform: scale(1.1); /* Slight zoom on hover to make it feel interactive */
+    transform: scale(1.1);
 }
 
 /* Header styles */
@@ -98,7 +97,7 @@ h1, h2, h3, .big-text {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: none; 
+    background-color: none;
 }
 
 .logo {
@@ -108,20 +107,21 @@ h1, h2, h3, .big-text {
 
 .logo img {
     height: 60px;
-    margin-right: 10px; 
+    margin-right: 10px;
 }
 
 .header-icons {
     display: flex;
-    align-items: center; 
+    align-items: center;
 }
-/* search bar styling*/
+
+/* Search bar styling */
 .search-bar {
     padding: 5px 10px;
     border-radius: 20px;
     border: none;
     width: 200px;
-    margin-right: 20px; 
+    margin-right: 20px;
     background-color: #fff;
     color: #000;
 }
@@ -138,32 +138,17 @@ h1, h2, h3, .big-text {
 /* Search Form Styling */
 .search-form {
     display: flex;
-    align-items: center; /* Align input and button vertically */
+    align-items: center;
 }
 
-/* Search Input (Search Bar) */
-.search-bar {
-    padding: 10px;
-    border-radius: 20px;
-    border: none;
-    width: 200px;
-    background-color: #fff;
-    color: #000;
-}
-
-.search-bar::placeholder {
-    color: #888;
-}
-
-/* Search Button */
 .search-button {
     padding: 10px 15px;
     border: none;
     background-color: #008cff;
     color: white;
     cursor: pointer;
-    border-radius: 20px; /* Matches input's rounded corners */
-    margin-left: 10px; /* Space between input and button */
+    border-radius: 20px;
+    margin-left: 10px;
     display: none;
 }
 
@@ -186,18 +171,17 @@ h1, h2, h3, .big-text {
 .sidebar {
     width: 250px;
     padding: 20px;
-    background-color: none; 
+    background-color: none;
     position: fixed;
-    top: 70px; 
+    top: 70px;
     bottom: 0;
 }
 
 .sidebar h3 {
     margin-top: 20px;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
-/* Sidebar Links (Roboto, no underline) */
 .sidebar ul {
     list-style: none;
     margin-bottom: 20px;
@@ -208,24 +192,24 @@ h1, h2, h3, .big-text {
 }
 
 .sidebar ul li a {
-    font-family: 'Roboto', sans-serif;  
-    text-decoration: none;  
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
     color: #fff;
 }
 
 .sidebar ul li a:hover {
-    color: #008cff;  
+    color: #008cff;
 }
 
 /* Footer Styling */
 .footer {
-    background-color: #000; 
+    background-color: #000;
     padding: 20px 40px;
     color: #fff;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-    flex-shrink: 0; 
+    flex-shrink: 0;
 }
 
 .footer-container {
@@ -239,38 +223,101 @@ h1, h2, h3, .big-text {
 /* Social Media Icons */
 .footer-socials {
     display: flex;
-    gap: 15px; 
+    gap: 15px;
 }
 
 .footer-socials a img {
-    width: 24px; 
+    width: 24px;
     height: 24px;
     transition: transform 0.3s ease;
 }
 
 .footer-socials a img:hover {
-    transform: scale(1.2); 
+    transform: scale(1.2);
 }
 
-/* Footer Links (Center) */
+/* Footer Links */
 .footer-links {
     display: flex;
-    gap: 20px; 
+    gap: 20px;
 }
 
 .footer-links a {
-    color: #2B88D9; 
-    text-decoration: none; 
-    font-family: 'Roboto', sans-serif; 
+    color: #2B88D9;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
     transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: #008cff; 
+    color: #008cff;
 }
 
-/* Footer Logo (Right) */
+/* Footer Logo */
 .footer-logo img {
-    width: 100px; 
-    height: auto; 
+    width: 100px;
+    height: auto;
+}
+
+/* Default Styles (for desktop) */
+.hamburger,
+.mobile-nav {
+    display: none; /* Hide mobile elements on larger screens */
+}
+
+.hamburger {
+    display: none; /* Hide by default, we will show this only for mobile screens */
+    font-size: 30px; /* Adjust size */
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10; /* Make sure it's on top of other elements */
+}
+
+/* Hide the checkbox */
+.menu-toggle {
+    display: none; /* Hides the checkbox that controls the hamburger menu */
+}
+
+.desktop-nav {
+    display: flex; /* Show desktop nav on larger screens */
+}
+
+/* Mobile Styles (for screens below 768px) */
+@media screen and (max-width: 768px) {
+    .desktop-nav {
+        display: none; /* Hide desktop nav on mobile */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger on mobile */
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        border-radius: 2px;
+        transition: 0.3s;
+    }
+
+    .mobile-nav {
+        position: fixed;
+        left: -100%; /* Off-screen */
+        top: 0;
+        height: 100vh;
+        width: 250px;
+        background-color: #000;
+        padding-top: 60px;
+        transition: left 0.3s ease-in-out;
+        z-index: 500;
+    }
+
+    .menu-toggle:checked + .hamburger + .mobile-nav {
+        left: 0; /* Slide in mobile menu when hamburger is checked */
+    }
 }

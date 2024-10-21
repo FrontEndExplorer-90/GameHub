@@ -1,0 +1,108 @@
+/* Hamburger Menu Styling */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Mobile nav starts hidden (off-screen) */
+.mobile-nav {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #000;
+    padding-top: 60px;
+    transition: left 0.3s ease-in-out;
+    z-index: 500;
+}
+
+/* Checkbox to toggle visibility */
+.menu-toggle {
+    display: none;
+}
+
+/* Show sidebar when checkbox is checked */
+.menu-toggle:checked + .hamburger + .mobile-nav {
+    left: 0; /* Slide in from the left */
+}
+
+/* Mobile nav links */
+.mobile-nav a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.mobile-nav a:hover {
+    background-color: #444;
+}
+
+/* Hide mobile nav on larger screens */
+@media screen and (min-width: 769px) {
+    .hamburger,
+    .mobile-nav {
+        display: none; /* Hide on desktop */
+    }
+    
+    .nav {
+        display: flex; /* Ensure the desktop nav is visible */
+    }
+}
+
+/* Show hamburger menu and hide desktop nav and sidebar on smaller screens */
+@media screen and (max-width: 768px) {
+    /* Show the hamburger */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Hide the desktop nav */
+    .nav {
+        display: none;
+    }
+
+    /* Hide the sidebar on mobile screens */
+    .sidebar {
+        display: none;
+    }
+
+    /* Hide the checkbox to prevent it from being visible */
+    #menu-toggle {
+        display: none;
+    }
+
+    /* Show the mobile menu when checkbox is checked */
+    #menu-toggle:checked + .hamburger + .mobile-nav {
+        left: 0; /* Mobile nav slides in */
+    }
+
+    .mobile-nav a {
+        padding: 15px 20px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .mobile-nav a:hover {
+        background-color: #444;
+    }
+
+    /* Make sure the main content is adjusted */
+    .main-content {
+        margin-left: 0; /* Reset any margins from desktop sidebar */
+        padding: 20px;
+    }
+}
