@@ -1,9 +1,27 @@
+/* Hide mobile nav initially */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100%;
+    background-color: #000;
+    z-index: 1000;
+    transition: left 0.3s ease-in-out;
+    padding-top: 60px;
+}
+
+/* Show mobile nav when menu toggle is checked */
+#menu-toggle:checked ~ .mobile-nav {
+    left: 0;
+}
+
 /* Hamburger Menu Styling */
 .hamburger {
-    display: none;
+    display: flex;
     flex-direction: column;
-    cursor: pointer;
     gap: 5px;
+    cursor: pointer;
 }
 
 .hamburger span {
@@ -14,135 +32,164 @@
     transition: 0.3s;
 }
 
-/* Mobile nav starts hidden (off-screen) */
-.mobile-nav {
-    position: fixed;
-    left: -100%;
-    top: 0;
-    height: 100vh;
-    width: 250px;
-    background-color: #000;
-    padding-top: 60px;
-    transition: left 0.3s ease-in-out;
-    z-index: 500;
-}
-
-/* Show sidebar when checkbox is checked */
-.menu-toggle:checked + .hamburger + .mobile-nav {
-    left: 0; /* Slide in from the left */
-}
-
-/* Mobile nav links */
+/* Mobile Navigation Links */
 .mobile-nav a {
     display: block;
-    padding: 15px 20px;
-    color: #fff;
+    padding: 10px 20px;
+    color: white;
     text-decoration: none;
-    font-size: 18px;
 }
 
 .mobile-nav a:hover {
     background-color: #444;
 }
 
-/* Hide mobile nav on larger screens */
-@media screen and (min-width: 769px) {
-    .hamburger,
-    .mobile-nav {
-        display: none; /* Hide on desktop */
-    }
-    
-    .nav {
-        display: flex; /* Ensure the desktop nav is visible */
-    }
-}
-
-/* Show hamburger menu and hide desktop nav and sidebar on smaller screens */
+/* Media Queries for Mobile */
 @media screen and (max-width: 768px) {
-    /* Show the hamburger */
-    .hamburger {
+    /* Adjust header layout for mobile */
+    .header {
         display: flex;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 1000; /* Make sure it's above other elements */
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 0;
+        position: relative;
+        z-index: 1000;
     }
 
-    /* Hide the desktop nav */
+    /* Reduce logo size */
+    .logo img {
+        max-width: 150px;
+    }
+
+    /* Hamburger Menu Styling for Mobile */
+    .hamburger {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        z-index: 1001;
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        border-radius: 2px;
+        transition: 0.3s;
+        margin-bottom: 4px;
+    }
+
+    /* Mobile nav full width */
+    .mobile-nav {
+        width: 100%; /* Full width on mobile */
+    }
+
+    /* Search bar styling */
+    .search-bar {
+        width: 90%;
+        padding: 8px;
+        margin-top: 15px;
+        box-sizing: border-box;
+    }
+
+    /* Hide regular nav on mobile */
     .nav {
         display: none;
     }
 
-    /* Hide the sidebar on mobile screens */
+    /* Header icons spacing */
+    .header-icons {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .header-icons img {
+        margin: 5px;
+    }
+
+    /* Sidebar hidden on mobile */
     .sidebar {
         display: none;
     }
 
-    /* Hide the checkbox to prevent it from being visible */
-    #menu-toggle {
-        display: none;
-    }
-
-    /* Show the mobile menu when checkbox is checked */
-    #menu-toggle:checked + .hamburger + .mobile-nav {
-        left: 0; /* Mobile nav slides in */
-    }
-
-    .mobile-nav a {
-        padding: 15px 20px;
-        color: #fff;
-        text-decoration: none;
-        font-size: 18px;
-    }
-
-    .mobile-nav a:hover {
-        background-color: #444;
-    }
-
-    /* Ensure mobile content does not overlap */
+    /* Main content should take full width */
     .main-content {
-        margin-left: 0;
-        padding: 20px;
+        width: 100%;
+        padding: 10px;
     }
 
-    /* Adjust the logo for better spacing */
-    .logo img {
-        max-width: 150px; /* Ensure the logo scales down on mobile */
-        height: auto;
+    .content-container {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
     }
 
-    /* Fix overlapping content issues */
-    .main-content h1,
-    .main-content h2 {
-        font-size: 24px; /* Scale down heading sizes for mobile */
-        text-align: center; /* Center headings on mobile */
-        margin-bottom: 20px;
+    /* Align explore section properly */
+    .explore-section {
+        text-align: center;
+        margin: 20px auto;
+        width: 90%;
     }
 
-    .main-content .explore-text {
-        font-size: 18px;
-        line-height: 1.5;
+    .most-wanted {
         text-align: center;
     }
 
-    .featured {
+    /* Footer adjustments */
+    .footer {
+        text-align: center;
+        padding: 15px 10px;
+    }
+
+    .footer-container {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    /* Adjust featured game section */
-    .featured img {
+    .footer-socials,
+    .footer-links,
+    .footer-logo {
+        margin-bottom: 20px;
+    }
+
+    /* Adjust typography and button sizes */
+    .explore-section h1 {
+        font-size: 18px;
+        line-height: 1.2;
+    }
+
+    .explore-section p {
+        font-size: 14px;
+    }
+
+    .shop-btn {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .carousel-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    /* Make carousel images responsive */
+    .carousel-slide img {
         max-width: 100%;
         height: auto;
     }
+}
 
-    /* Adjust buttons for mobile */
-    .shop-btn {
-        font-size: 16px;
-        padding: 10px 20px;
-        margin: 10px auto;
-        display: block;
-        width: 80%; /* Set a consistent button width */
+/* Hide mobile nav and hamburger on desktop */
+@media screen and (min-width: 769px) {
+    .mobile-nav,
+    .hamburger {
+        display: none;
     }
 }
