@@ -27,11 +27,6 @@
     z-index: 500;
 }
 
-/* Checkbox to toggle visibility */
-.menu-toggle {
-    display: none;
-}
-
 /* Show sidebar when checkbox is checked */
 .menu-toggle:checked + .hamburger + .mobile-nav {
     left: 0; /* Slide in from the left */
@@ -67,6 +62,10 @@
     /* Show the hamburger */
     .hamburger {
         display: flex;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1000; /* Make sure it's above other elements */
     }
 
     /* Hide the desktop nav */
@@ -100,9 +99,50 @@
         background-color: #444;
     }
 
-    /* Make sure the main content is adjusted */
+    /* Ensure mobile content does not overlap */
     .main-content {
-        margin-left: 0; /* Reset any margins from desktop sidebar */
+        margin-left: 0;
         padding: 20px;
+    }
+
+    /* Adjust the logo for better spacing */
+    .logo img {
+        max-width: 150px; /* Ensure the logo scales down on mobile */
+        height: auto;
+    }
+
+    /* Fix overlapping content issues */
+    .main-content h1,
+    .main-content h2 {
+        font-size: 24px; /* Scale down heading sizes for mobile */
+        text-align: center; /* Center headings on mobile */
+        margin-bottom: 20px;
+    }
+
+    .main-content .explore-text {
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    .featured {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Adjust featured game section */
+    .featured img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Adjust buttons for mobile */
+    .shop-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+        margin: 10px auto;
+        display: block;
+        width: 80%; /* Set a consistent button width */
     }
 }
