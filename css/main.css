@@ -296,10 +296,15 @@ h1, h2, h3, .big-text {
         box-sizing: border-box;
     }
 
+    .main-content, .content-container, .wrapper {
+        min-height: calc(100vh - 120px); 
+        box-sizing: border-box;
+    }
+
     /* Reset margin for main content on mobile */
     .main-content {
-        margin-left: 0; /* Remove desktop left margin */
-        padding: 0 15px; /* Optional padding for mobile sides */
+        margin-left: 0; 
+        padding: 0 15px; 
         display: flex;
         flex-direction: column;
         align-items: left;
@@ -322,7 +327,7 @@ h1, h2, h3, .big-text {
         flex-direction: column;
         align-items: center;
         width: 100%;
-        max-width: 100%; /* Removes any constraints */
+        max-width: 100%; 
         margin: 0 auto;
         padding: 0;
     }
@@ -362,6 +367,8 @@ h1, h2, h3, .big-text {
     /* Hide Sidebar */
     .sidebar {
         display: none;
+        visibility: hidden;
+        position: absolute;
     }
 
     /* Top Section */
@@ -370,11 +377,9 @@ h1, h2, h3, .big-text {
         flex-direction: column;
         align-items:center;
         width: 100%;
-        max-width: 100%; /* Full width on mobile */
+        max-width: 100%; 
         margin: 0 auto;
-        padding: 0;
         text-align: center;
-        box-sizing: border-box;
     }
 
     /* Featured Section */
@@ -383,7 +388,7 @@ h1, h2, h3, .big-text {
         flex-direction: column;
         align-items: center;
         width: 100%;
-        max-width: 100%; /* Full width on mobile */
+        max-width: 100%; 
         margin: 20px;
         padding: 0;
         text-align: center;
@@ -392,16 +397,15 @@ h1, h2, h3, .big-text {
 
     /* Carousel Container */
     .carousel-container {
-        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 20px;
-        overflow: hidden;
-        position: relative;
-        box-sizing: border-box;
+        width: 100%; /* Full width of the viewport */
+        padding-bottom: 20px; /* Space below carousel */
+        overflow: visible;
+        border: 2px solid green; /* Green border for visibility */
     }
-
+    
     /* Carousel Slide Container and Images */
     .carousel-slide {
         display: flex;
@@ -412,19 +416,21 @@ h1, h2, h3, .big-text {
 
     .carousel-slide img {
         width: 100%;
-        max-width: 200px; /* Adjust to fit mobile view */
+        max-width: 200px; 
         height: auto;
         border-radius: 15px;
     }
 
     .carousel-navigation {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 10px;
-        z-index: 10;
+        display: flex; /* Ensure horizontal layout */
+        justify-content: center; /* Center dots horizontally */
+        align-items: center;
+        gap: 10px; /* Space between dots */
+        width: 100px; /* Set a small fixed width to make dots clearly visible */
+        background-color: rgba(255, 0, 0, 0.3); /* Light red background for visibility */
+        padding: 10px; /* Extra space around dots */
+        border: 2px solid blue; /* Visible blue border to locate the element */
+        position: static; /* Remove positioning to prevent stacking issues */
     }
     
     /* Styling for each dot */
@@ -451,6 +457,11 @@ h1, h2, h3, .big-text {
         right: -50px;
     }
     
+    #slide1:checked ~ .carousel-navigation label[for="slide1"],
+    #slide2:checked ~ .carousel-navigation label[for="slide2"],
+    #slide3:checked ~ .carousel-navigation label[for="slide3"] {
+        background-color: #007bff;
+    }
 
     /* Explore Section */
     .explore-section {
