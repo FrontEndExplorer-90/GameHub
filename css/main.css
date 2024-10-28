@@ -286,17 +286,45 @@ h1, h2, h3, .big-text {
 
 /* Mobile Responsiveness - max-width 600px */
 @media screen and (max-width: 600px) {
-    
-    /* Main Content Container */
+
+    /* Prevent overflow */
+    body, .wrapper, .content-container{
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Reset margin for main content on mobile */
+    .main-content {
+        margin-left: 0; /* Remove desktop left margin */
+        padding: 0 15px; /* Optional padding for mobile sides */
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Wrapper adjustments */
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    /* Content Container */
     .content-container {
         display: flex;
         flex-direction: column;
-        align-items: center; 
-        padding: 10px;
+        align-items: center;
         width: 100%;
-        box-sizing: border-box;
-        overflow-x: hidden;
-        margin-bottom: 40px;
+        max-width: 100%; /* Removes any constraints */
+        margin: 0 auto;
+        padding: 0;
     }
 
     /* Header */
@@ -305,7 +333,8 @@ h1, h2, h3, .big-text {
         flex-direction: column;
         align-items: center;
         padding: 15px 0;
-        position: relative;
+        width: 100%;
+        text-align: center;
     }
 
     .logo img {
@@ -316,7 +345,6 @@ h1, h2, h3, .big-text {
         width: 90%;
         padding: 10px;
         margin-top: 10px;
-        box-sizing: border-box;
     }
 
     .header-icons {
@@ -331,21 +359,38 @@ h1, h2, h3, .big-text {
         margin: 0 10px;
     }
 
+    /* Hide Sidebar */
     .sidebar {
         display: none;
     }
 
+    /* Top Section */
     .top-section {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        align-items:center;
         width: 100%;
-        padding: 0 10px;
+        max-width: 100%; /* Full width on mobile */
         margin: 0 auto;
+        padding: 0;
+        text-align: center;
+        box-sizing: border-box;
     }
 
-    /* Carousel for Mobile */
+    /* Featured Section */
+    .featured {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 100%; /* Full width on mobile */
+        margin: 20px;
+        padding: 0;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    /* Carousel Container */
     .carousel-container {
         width: 100%;
         display: flex;
@@ -353,72 +398,65 @@ h1, h2, h3, .big-text {
         align-items: center;
         margin-bottom: 20px;
         overflow: hidden;
-        box-sizing: border-box;
         position: relative;
+        box-sizing: border-box;
     }
-    
-    /* Hide radio buttons */
-    .carousel-container input[type="radio"] {
-        display: none;
-    }
-    
-    /* Carousel slides container */
-    .carousel-slides {
-        width: 100%;
-        display: flex;
-    }
-    
-    /* Individual slide - hidden by default */
+
+    /* Carousel Slide Container and Images */
     .carousel-slide {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
-        border-radius: 15px;
     }
-    
+
     .carousel-slide img {
         width: 100%;
+        max-width: 200px; /* Adjust to fit mobile view */
         height: auto;
         border-radius: 15px;
     }
-    
-    /* Show the corresponding slide when the radio button is checked */
-    #slide1:checked ~ .carousel-slides #slide1-content,
-    #slide2:checked ~ .carousel-slides #slide2-content,
-    #slide3:checked ~ .carousel-slides #slide3-content {
-        display: block;
-    }
-    
-    /* Dots styling */
-    .carousel-dots {
-        display: flex;
-        justify-content: center;
+
+    .carousel-navigation {
         position: absolute;
         bottom: 10px;
-        gap: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 10;
     }
     
-    .carousel-dots label {
-        width: 10px;
-        height: 10px;
-        background-color: white;
+    /* Styling for each dot */
+    .carousel-navigation label {
+        width: 12px;
+        height: 12px;
+        background-color: rgba(104, 36, 177, 0.534);
         border-radius: 50%;
         cursor: pointer;
-        transition: background-color 0.3s;
+        transition: background-color 0.3s ease;
     }
     
-    /* Active dot color */
-    #slide1:checked ~ .carousel-dots label[for="slide1"],
-    #slide2:checked ~ .carousel-dots label[for="slide2"],
-    #slide3:checked ~ .carousel-dots label[for="slide3"] {
-        background-color: #007bff;
+    .carousel-navigation label:hover {
+        background-color: rgba(104, 36, 117, 0.534);
+    }
+    
+    .carousel-prev {
+        position: absolute;
+        left: -50px;
+    }
+    
+    .carousel-next {
+        position: absolute;
+        right: -50px;
+    }
+    
 
-    }
-    
     /* Explore Section */
     .explore-section {
         text-align: center;
-        margin-bottom: 20px; 
-        width: 90%; 
+        width: 100%;
+        max-width: 280px;
         margin: 0 auto;
         padding: 10px 0;
     }
@@ -426,93 +464,63 @@ h1, h2, h3, .big-text {
     .explore-section h1 {
         font-size: 22px !important;
         margin-bottom: 5px;
-        width: 100%;
     }
 
     .explore-section p {
         font-size: 14px !important;
         margin-bottom: 10px;
-        width: 100%; 
     }
 
+    /* Button styling */
     .shop-btn {
-        font-size: 14px !important;
+        font-size: 14px;
         padding: 6px 12px;
         margin-top: 10px;
         background-color: #000;
         color: #fff;
         border-radius: 8px;
+        text-decoration: none;
     }
 
-    .main-content {
+    /* Most Wanted Container */
+    .most-wanted {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-    
-    /* Featured Section */
-    .featured {
         width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 20px; /* Adds space above "Today's Most Wanted" */
-    }
-    
-    /* Most Wanted container */
-    .most-wanted {
-        position: relative;
-        width: 100%;
-        max-width: 300px; /* Limit size on desktop */
         margin: 0 auto;
     }
-    
-    /* Game cover styling for better scaling */
+
+    /* Game cover styling */
     .game-cover img {
         width: 100%;
+        max-width: 180px;
         height: auto;
         border-radius: 10px;
         object-fit: cover;
     }
-    
-    /* Overlay text styling */
+
+    /* Text styling under the image */
     .most-wanted-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #fff;
         text-align: center;
+        margin-top: 10px;
+        color: #fff;
         padding: 10px;
-        box-sizing: border-box;
-        width: 80%;
-        background: rgba(0, 0, 0, 0.6); /* Darker background for better readability */
-        border-radius: 8px;
+        width: 100%;
+        max-width: 280px;
     }
-    
-    /* Font sizes for mobile */
+
     .most-wanted-text h2 {
-        font-size: 16px;
-        margin: 0;
-    }
-    
-    .most-wanted-text h3 {
-        font-size: 12px;
+        font-size: 18px;
         margin: 5px 0;
     }
-    
-    .shop-btn {
-        font-size: 12px;
-        padding: 6px 10px;
-        background-color: #007bff;
-        color: #fff;
-        border-radius: 5px;
-        text-decoration: none;
-        margin-top: 10px;
+
+    .most-wanted-text h3 {
+        font-size: 16px;
+        margin: 5px 0;
     }
-    
-    /* Footer responsive adjustments */
+
+    /* Footer adjustments */
     .footer {
         text-align: center;
         padding: 20px;
