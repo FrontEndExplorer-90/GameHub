@@ -335,98 +335,185 @@ h1, h2, h3, .big-text {
         display: none;
     }
 
+    .top-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+
     /* Carousel for Mobile */
     .carousel-container {
-            width: 100%; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+        overflow: hidden;
+        box-sizing: border-box;
+        position: relative;
     }
-
+    
+    /* Hide radio buttons */
+    .carousel-container input[type="radio"] {
+        display: none;
+    }
+    
+    /* Carousel slides container */
     .carousel-slides {
-        margin: 0 auto;
-        width: 90%; 
+        width: 100%;
+        display: flex;
     }
-
+    
+    /* Individual slide - hidden by default */
+    .carousel-slide {
+        display: block;
+        width: 100%;
+        border-radius: 15px;
+    }
+    
     .carousel-slide img {
         width: 100%;
         height: auto;
         border-radius: 15px;
     }
-
+    
+    /* Show the corresponding slide when the radio button is checked */
+    #slide1:checked ~ .carousel-slides #slide1-content,
+    #slide2:checked ~ .carousel-slides #slide2-content,
+    #slide3:checked ~ .carousel-slides #slide3-content {
+        display: block;
+    }
+    
+    /* Dots styling */
     .carousel-dots {
-        margin-top: 10px; 
         display: flex;
         justify-content: center;
+        position: absolute;
+        bottom: 10px;
+        gap: 5px;
     }
-
-    .carousel-dots span {
+    
+    .carousel-dots label {
         width: 10px;
         height: 10px;
         background-color: white;
         border-radius: 50%;
-        margin: 0 5px;
-        display: inline-block;
+        cursor: pointer;
+        transition: background-color 0.3s;
     }
+    
+    /* Active dot color */
+    #slide1:checked ~ .carousel-dots label[for="slide1"],
+    #slide2:checked ~ .carousel-dots label[for="slide2"],
+    #slide3:checked ~ .carousel-dots label[for="slide3"] {
+        background-color: #007bff;
 
+    }
+    
     /* Explore Section */
     .explore-section {
         text-align: center;
         margin-bottom: 20px; 
-        width: 100%; 
+        width: 90%; 
+        margin: 0 auto;
+        padding: 10px 0;
     }
 
     .explore-section h1 {
-        font-size: 20px;
-        margin-bottom: 10px;
-        width: 90%;
+        font-size: 22px !important;
+        margin-bottom: 5px;
+        width: 100%;
     }
 
     .explore-section p {
-        font-size: 14px;
+        font-size: 14px !important;
         margin-bottom: 10px;
-        width: 90%; 
+        width: 100%; 
     }
 
     .shop-btn {
-        font-size: 14px;
-        padding: 8px 16px;
+        font-size: 14px !important;
+        padding: 6px 12px;
         margin-top: 10px;
         background-color: #000;
         color: #fff;
         border-radius: 8px;
     }
 
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
     /* Featured Section */
     .featured {
-        text-align: center;
-        margin: 20px;
         width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px; /* Adds space above "Today's Most Wanted" */
     }
-
-    .most-wanted-text {
-        margin-top: 15px;
-        text-align: center;
-        width: 100%; 
+    
+    /* Most Wanted container */
+    .most-wanted {
+        position: relative;
+        width: 100%;
+        max-width: 300px; /* Limit size on desktop */
+        margin: 0 auto;
     }
-
-    .most-wanted-text h2, .most-wanted-text h3 {
-        margin-bottom: 10px;
-        font-size: 18px;
-        width: 90%; 
-        margin: 0 auto; 
-    }
-
-    .most-wanted img {
-        width: 80%; 
-        max-height: 300px;
-        margin: 0 auto; 
+    
+    /* Game cover styling for better scaling */
+    .game-cover img {
+        width: 100%;
+        height: auto;
         border-radius: 10px;
+        object-fit: cover;
     }
-
-     /* Footer responsive adjustments */
-     .footer {
+    
+    /* Overlay text styling */
+    .most-wanted-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box;
+        width: 80%;
+        background: rgba(0, 0, 0, 0.6); /* Darker background for better readability */
+        border-radius: 8px;
+    }
+    
+    /* Font sizes for mobile */
+    .most-wanted-text h2 {
+        font-size: 16px;
+        margin: 0;
+    }
+    
+    .most-wanted-text h3 {
+        font-size: 12px;
+        margin: 5px 0;
+    }
+    
+    .shop-btn {
+        font-size: 12px;
+        padding: 6px 10px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 10px;
+    }
+    
+    /* Footer responsive adjustments */
+    .footer {
         text-align: center;
         padding: 20px;
         margin-top: 40px;
