@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Game Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/settings.css">
+</head>
+
+<body>
+    <div class="settings-wrapper">
+        <header class="settings-header">
+            <h1>Account Settings</h1>
+            <p>Manage your Game Hub account settings, privacy, and preferences.</p>
+        </header>
+
+        <section class="settings-section">
+            <!-- Account Information Section -->
+            <div class="settings-card">
+                <h2>Account Information</h2>
+                <p>Manage your account details and login credentials.</p>
+                <label for="username">Username:</label>
+                <input type="text" id="username" value="CurrentUsername" disabled>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" value="user@example.com" disabled>
+
+                <button class="edit-btn">Edit Profile</button>
+                <button class="password-btn">Change Password</button>
+            </div>
+
+            <!-- Notification Settings Section -->
+            <div class="settings-card">
+                <h2>Notifications</h2>
+                <p>Control which notifications you want to receive.</p>
+                <label>
+                    <input type="checkbox" checked> Game Recommendations
+                </label>
+                <label>
+                    <input type="checkbox" checked> Friend Requests
+                </label>
+                <label>
+                    <input type="checkbox"> Sales & Promotions
+                </label>
+                <label>
+                    <input type="checkbox"> Updates & News
+                </label>
+            </div>
+
+            <!-- Display Preferences Section -->
+            <div class="settings-card">
+                <h2>Display Preferences</h2>
+                <p>Customize your interface and theme preferences.</p>
+                <label for="theme">Theme:</label>
+                <select id="theme">
+                    <option value="dark">Dark</option>
+                    <option value="light">Light</option>
+                </select>
+                
+                <label for="language">Language:</label>
+                <select id="language">
+                    <option value="en">English</option>
+                    <option value="es">Norwegian</option>
+                    <option value="de">German</option>
+                </select>
+            </div>
+
+            <!-- Privacy Settings Section -->
+            <div class="settings-card">
+                <h2>Privacy & Security</h2>
+                <p>Manage your data and control privacy options.</p>
+                <label>
+                    <input type="checkbox"> Show my profile publicly
+                </label>
+                <label>
+                    <input type="checkbox" checked> Allow friend requests
+                </label>
+                <label>
+                    <input type="checkbox" checked> Receive messages from non-friends
+                </label>
+                <button class="delete-account-btn">Delete Account</button>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
