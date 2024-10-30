@@ -5,7 +5,6 @@
     margin-bottom: 40px;
 }
 
-/* Game Image */
 .product-cyberpunk .product-image img {
     width: 300px;
     height: auto;
@@ -13,7 +12,6 @@
     border: 3px solid #a912c7;
 }
 
-/* Game Info Section */
 .product-info {
     max-width: 600px;
 }
@@ -37,7 +35,6 @@
     font-size: 24px;
 }
 
-/* Add to Cart Button and Price */
 .product-purchase {
     margin-top: 20px;
     display: flex;
@@ -65,20 +62,17 @@
     color: #fff;
 }
 
-/* Game Details Section */
 .game-details {
     margin-top: 15px;
-    max-width: 800px; /* Ensure content width is consistent */
+    max-width: 800px; 
 }
 
-/* Header for sections like Game Features and Storyline */
 .game-details h2 {
     font-family: 'Audiowide', cursive;
     font-size: 24px;
     margin-bottom: 25px;
 }
 
-/* List style for Game Features */
 .game-details ul {
     list-style-type: disc;
     padding-left: 20px;
@@ -87,76 +81,75 @@
 .game-details ul li {
     font-family: 'Roboto', sans-serif;
     margin-bottom: 25px;
-    line-height: 1.6; /* Ensures good spacing for readability */
+    line-height: 1.6; 
 }
 
-/* Paragraph style for Storyline and other text */
 .game-details p {
     margin-top: 20px;
     font-family: 'Roboto', sans-serif;
-    font-size: 18px; /* Increase the font size for better readability */
-    line-height: 1.6; /* Improve the space between lines */
-    color: #ccc; /* Softer color for better contrast */
-    max-width: 800px; /* Same width as the game details for alignment */
-    text-align: left; /* Align text to the left */
+    font-size: 18px; 
+    line-height: 1.6; 
+    color: #ccc; 
+    max-width: 800px; 
+    text-align: left; 
 }
 
 @media screen and (max-width: 600px) {
     .main-content {
         width: 100%;
-        max-width: 380px; /* Limit the width to fit within mobile screens */
-        margin: 0 auto; /* Center horizontally */
-        padding: 0 10px; /* Add slight padding to prevent overflow */
-        box-sizing: border-box; /* Ensure padding is included in width */
+        max-width: 380px; 
+        margin: 0 auto; 
+        padding: 0 10px; 
+        box-sizing: border-box;
     }
 
     .main-content .top-section {
-        width: 100%; /* Take full width of .main-content */
-        max-width: 100%; /* Make sure it doesn't exceed viewport width */
+        width: 100%; 
+        max-width: 100%; 
         flex-direction: column;
-        align-items: center; /* Center contents horizontally */
+        align-items: center; 
         gap: 10px;
         margin: 0;
         padding: 0;
     }
 
     .product-section {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center align the content */
+        flex-direction: column; 
+        align-items: center; 
     }
 
-    /* Center image and adjust size */
+    
     .product-cyberpunk .product-image img {
-        width: 90%; /* Make image responsive on mobile */
-        max-width: 300px; /* Limit max width */
-        margin-bottom: 20px; /* Add space below the image */
+        width: 90%; 
+        max-width: 300px; 
+        margin-bottom: 20px; 
     }
 
-    /* Center align text content */
+    
     .product-info {
         text-align: center;
         width: 100%;
-        max-width: 380px; /* Adjust max-width to fit smaller screens */
+        max-width: 380px; 
     }
 
     .product-info h1 {
-        font-size: 28px; /* Adjust heading size for mobile */
+        font-size: 28px; 
     }
 
     .product-info p {
-        font-size: 14px; /* Adjust font size for mobile readability */
+        font-size: 14px; 
     }
-    
+
     .product-purchase {
         display: flex;
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center-align the content */
-        gap: 10px; /* Space between button and price */
+        flex-direction: column; 
+        align-items: center; 
+        gap: 10px;
     }
 
     .add-to-cart-btn {
-        width: 100%; /* Make button full-width */
-        max-width: 300px; /* Set a max width */
+        width: 100%; 
+        max-width: 300px; 
         text-align: center;
     }
 
@@ -166,7 +159,6 @@
         color: #fff;
     }
 
-    /* Footer adjustments */
     .footer-links, .footer-logo, .footer-socials {
         margin: 10px 0;
         text-align: center;

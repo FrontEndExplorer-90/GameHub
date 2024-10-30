@@ -1,66 +1,63 @@
-/* Purchase Page Styling */
 .main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 150px); /* Height accounting for the footer */
+    min-height: calc(100vh - 150px); 
     text-align: center;
     padding: 20px;
-    margin-top: -150px; /* Moves the content upwards */
+    margin-top: -150px; 
 }
 
 .main-content h1 {
     font-family: 'Audiowide', cursive;
     font-size: 48px;
     margin-bottom: 40px;
-    line-height: 1.5; /* Adjusts spacing between the lines */
+    line-height: 1.5; 
     color: #fff;
 }
 
 .main-content p {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
-    margin-bottom: 50px; /* Increased margin to add more space after the text */
+    margin-bottom: 50px; 
     color: #ccc;
-    line-height: 1.8; /* Adjusts line spacing for better readability */
+    line-height: 1.8; 
 }
 
-/* Return to Home Button */
 .shop-btn {
     padding: 10px 20px;
-    color: #2B88D9; /* Blue text */
+    color: #2B88D9; 
     border: none;
     font-size: 20px;
-    text-decoration: none; /* Removes the underline */
+    text-decoration: none; 
     cursor: pointer;
-    margin-top: 40px; /* Ensures space between text and button */
+    margin-top: 40px; 
 }
 
 .shop-btn:hover {
-    color: #fff; /* Hover state for better visibility */
+    color: #fff; 
 }
 
 @media screen and (max-width: 600px) {
     .main-content {
         width: 100%;
-        max-width: 380px; /* Limit the width to fit within mobile screens */
-        margin: 0 auto; /* Center horizontally */
-        padding: 0 10px; /* Add slight padding to prevent overflow */
-        box-sizing: border-box; /* Ensure padding is included in width */
+        max-width: 380px; 
+        margin: 0 auto; 
+        padding: 0 10px; 
+        box-sizing: border-box; 
     }
 
     .main-content .top-section {
-        width: 100%; /* Take full width of .main-content */
-        max-width: 100%; /* Make sure it doesn't exceed viewport width */
+        width: 100%; 
+        max-width: 100%; 
         flex-direction: column;
-        align-items: center; /* Center contents horizontally */
+        align-items: center; 
         gap: 10px;
         margin: 0;
         padding: 0;
     }
 
-    /* Footer adjustments */
     .footer-links, .footer-logo, .footer-socials {
         margin: 10px 0;
         text-align: center;

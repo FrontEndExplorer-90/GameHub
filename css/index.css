@@ -1,4 +1,3 @@
-/* Main Content Section */
 .main-content {
     padding: 20px;
     display: flex;
@@ -7,7 +6,6 @@
     flex: 1; 
 }
 
-/* Top Section: Carousel on the left, Explore text on the right */
 .top-section {
     display: flex;
     justify-content: center;
@@ -16,7 +14,6 @@
     width: 100%;
 }
 
-/* Carousel Container */ 
 .carousel-container {
     width: 50%;
     max-width: 350px; 
@@ -25,13 +22,11 @@
     padding-bottom: 40px; 
 }
 
-/* Carousel Slides */
 .carousel-slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
 
-/* Each individual slide */
 .carousel-slide {
     min-width: 100%; 
     transition: transform 0.5s ease-in-out;
@@ -44,7 +39,6 @@
     border: 3px solid #00f; 
 }
 
-/* Navigation styling (arrows or dots) */
 .carousel-navigation {
     position: absolute;
     bottom: 10px;
@@ -55,7 +49,6 @@
     z-index: 10;
 }
 
-/* Styling for each dot */
 .carousel-navigation label {
     width: 12px;
     height: 12px;
@@ -79,7 +72,6 @@
     right: -50px;
 }
 
-/* Slide transitions based on radio button selection */
 #slide1:checked ~ .carousel-slides {
     transform: translateX(0);
 }
@@ -92,8 +84,6 @@
     transform: translateX(-200%);
 }
 
-
-/* Explore Section (Right Side) */
 .explore-section {
     display: flex;
     flex-direction: column;
@@ -119,7 +109,6 @@
     color: #2B88D9;
 }
 
-/* "Shop Here" button */
 .explore-section a.shop-btn, .featured a.shop-btn {
     display: inline-block; 
     padding: 10px 20px; 
@@ -140,7 +129,6 @@
     background-color: none; 
 }
 
-/* "Today's Most Wanted" Section */
 .featured {
     margin-top: 40px; 
     text-align: center; 
@@ -156,7 +144,6 @@
     margin-bottom: 20px;
 }
 
-/* Most Wanted layout */
 .most-wanted {
     display: flex;
     justify-content: center; 
@@ -166,7 +153,6 @@
     margin: 0 auto; 
 }
 
-/* Game cover for most-wanted section */
 .most-wanted .game-cover {
     width: 250px;
     height: 350px;
@@ -174,7 +160,6 @@
     margin: 0 40px 0 0;
 }
 
-/* Keep the image size and style intact */
 .most-wanted .game-cover img {
     width: 100%;
     height: 100%;
@@ -183,7 +168,6 @@
     border: 3px solid #a912c7; 
 }
 
-/* Style for the text in the most-wanted section */
 .most-wanted-text {
     display: flex;
     flex-direction: column;
@@ -192,7 +176,6 @@
     margin-left: 40px;
 }
 
-/* Title styling */
 .most-wanted-text h2 {
     font-family: 'Audiowide', cursive;
     font-size: 36px; 
@@ -202,7 +185,7 @@
     margin-bottom: 30px; 
 }
 
-/* Text description styling */
+
 .most-wanted-text h3 {
     font-family: 'Audiowide', cursive;
     font-size: 50px; 
@@ -212,7 +195,6 @@
     margin-bottom: 40px; 
 }
 
-/* Combined clickable area styling */
 .game-cover-link {
     text-decoration: none;
     color: inherit;
@@ -220,7 +202,6 @@
     align-items: flex-start;
 }
 
-/* SHOP HERE button styling */
 .most-wanted-text span.shop-btn {
     display: inline-block;
     padding: 10px 20px;
@@ -242,7 +223,6 @@
     display: none;
 }
 
-/* Invisible trigger area at bottom-right */
 .popup-trigger {
     position: fixed;
     bottom: 0;
@@ -253,7 +233,6 @@
     z-index: 1000;
 }
 
-/* Popup Container */
 .newsletter-popup {
     position: fixed;
     bottom: 150px;
@@ -264,30 +243,27 @@
     border-radius: 10px 10px 10px 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
     z-index: 1001;
-    transform: translateY(100%); /* Hidden by default */
+    transform: translateY(100%); 
     transition: transform 0.5s ease-in-out;
-    visibility: hidden; /* Initially hidden */
+    visibility: hidden; 
 }
 
 .popup-trigger:hover + .popup-checkbox:checked ~ .newsletter-popup,
 .popup-trigger:hover ~ .newsletter-popup {
-    transform: translateY(0); /* Slide popup into view */
+    transform: translateY(0); 
     visibility: visible;
 }
 
-/* Show popup when hovering over the trigger area */
 .newsletter-popup:hover {
-    transform: translateY(0); /* Slide popup into view */
+    transform: translateY(0); 
     visibility: visible;
 }
 
-/* Keep popup visible until closed */
 .popup-checkbox:checked ~ .newsletter-popup {
-    transform: translateY(100%); /* Hide when checkbox is checked */
+    transform: translateY(100%); 
     visibility: hidden;
 }
 
-/* Popup content styling */
 .popup-content h2 {
     font-size: 22px;
     color: #3A0BC2;
@@ -319,7 +295,6 @@
     text-align: center;
 }
 
-/* Close button */
 .close-button {
     position: absolute;
     top: 15px;
@@ -331,7 +306,6 @@
     border-radius: 50%;
 }
 
-/* Close button hover effect */
 .close-button:hover {
     background-color: #bbb;
 }
@@ -339,17 +313,17 @@
 @media screen and (max-width: 600px) {
     .main-content {
         width: 100%;
-        max-width: 380px; /* Limit the width to fit within mobile screens */
-        margin: 0 auto; /* Center horizontally */
-        padding: 0 10px; /* Add slight padding to prevent overflow */
-        box-sizing: border-box; /* Ensure padding is included in width */
+        max-width: 380px; 
+        margin: 0 auto; 
+        padding: 0 10px; 
+        box-sizing: border-box; 
     }
 
     .main-content .top-section {
-        width: 100%; /* Take full width of .main-content */
-        max-width: 100%; /* Make sure it doesn't exceed viewport width */
+        width: 100%; 
+        max-width: 100%; 
         flex-direction: column;
-        align-items: center; /* Center contents horizontally */
+        align-items: center; 
         gap: 10px;
         margin: 0;
         padding: 0;
@@ -358,19 +332,19 @@
     .main-content .carousel-container,
     .main-content .explore-section {
         width: 100%;
-        max-width: 330px; /* Limit the size to prevent overflow */
+        max-width: 330px; 
         margin: 0 auto;
     }
 
-    /* Scale down font sizes */
+    
     .main-content .explore-section h1 {
-        font-size: 1.8em; /* Adjust for mobile */
+        font-size: 1.8em; 
         text-align: left;
         padding-left: 5px;
     }
 
     .main-content .explore-section p {
-        font-size: 1.1em; /* Adjust for mobile */
+        font-size: 1.1em; 
         text-align: left;
         padding-left: 5px;
     }
@@ -381,7 +355,7 @@
         margin-left: auto;
         margin-right: auto;
         text-align: center;
-        width: fit-content; /* Ensure button width fits the text */
+        width: fit-content; 
     }
 
     .main-content .explore-section h1,
@@ -390,8 +364,6 @@
         text-align: center;
     }
 
-
-    /* Most Wanted Section */
     .main-content .featured .most-wanted {
         flex-direction: column;
         align-items: center;
@@ -403,49 +375,45 @@
 
     .main-content .featured .most-wanted .game-cover {
         width: 100%;
-        max-width: 300px; /* Restrict image size for mobile */
+        max-width: 300px; 
         height: auto;
         margin: 0 auto 15px auto;
     }
 
-    /* Scale down "Most Wanted" text */
     .main-content .featured .most-wanted-text h2 {
-        font-size: 1.5em; /* Adjust for mobile */
+        font-size: 1.5em; 
         text-align: center;
         margin: 0 auto;
-        width: fit-content; /* Ensure the content doesn't stretch too wide */
+        width: fit-content; 
     }
 
     .main-content .featured .most-wanted-text h3 {
-        font-size: 1.2em; /* Adjust for mobile */
+        font-size: 1.2em; 
         text-align: center;
         margin: 0 auto;
-        width: fit-content; /* Ensure the content doesn't stretch too wide */
+        width: fit-content; 
     }
 
     .main-content .featured .most-wanted-text .shop-btn {
         display: inline-block;
         font-size: 1em;
-        margin: 10px auto 0 auto; /* Center the button horizontally */
+        margin: 10px auto 0 auto; 
         text-align: center;
-        width: fit-content; /* Fit button width to the text */
+        width: fit-content; 
     }
 
-    /* Make popup responsive */
     @media screen and (max-width: 600px) {
-        /* Adjust the popup container for mobile */
         .newsletter-popup {
-            width: 90%;  /* Make popup smaller for mobile */
-            max-width: 400px; /* Set a maximum width */
-            right: 5%; /* Adjust positioning */
+            width: 90%; 
+            max-width: 400px; 
+            right: 5%; 
             bottom: 10%;
             padding: 15px;
-            transform: translateY(0); /* Make it visible */
-            visibility: visible; /* Ensure visibility */
-            z-index: 1001; /* Bring popup to front */
+            transform: translateY(0); 
+            visibility: visible; 
+            z-index: 1001; 
         }
     
-        /* Style for popup content */
         .popup-content h2 {
             font-size: 1.4em;
             text-align: center;
@@ -456,17 +424,15 @@
             text-align: center;
         }
     
-        /* Center the sign-up button in the popup */
         .popup-content .sign-up-btn {
             display: block;
             margin: 10px auto 0 auto;
             padding: 10px 20px;
-            width: 100%; /* Full width for better accessibility */
+            width: 100%; 
             font-size: 1em;
             text-align: center;
         }
     
-        /* Style for the close button */
         .close-button {
             position: absolute;
             top: 10px;
@@ -479,7 +445,6 @@
         }
     }    
 
-    /* Footer adjustments */
     .footer-links, .footer-logo, .footer-socials {
         margin: 10px 0;
         text-align: center;

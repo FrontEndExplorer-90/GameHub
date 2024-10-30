@@ -1,14 +1,12 @@
-/* Checkout Page Layout */
 .checkout-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    gap: 40px; /* Space between cart/payment and summary */
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px; 
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px;
 }
 
-/* Page Title */
 .page-title {
     text-align: center;
     margin-top: 30px;
@@ -21,14 +19,12 @@
     font-size: 48px;
 }
 
-/* Left Section */
 .left-section {
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-/* Cart Section */
 .cart-section {
     background-color: none;
     padding: 20px;
@@ -66,7 +62,6 @@
     font-weight: normal;
 }
 
-/* Payment Section */
 .payment-section {
     background-color: none;
     padding: 20px;
@@ -98,22 +93,20 @@
     color: #fff;
 }
 
-/* Fieldset Styling for Payment Section */
 fieldset {
-    border: 1px solid #333;  /* Dark border */
-    padding: 15px;           /* Add padding inside the fieldset */
-    border-radius: 10px;     /* Rounded corners */
-    margin-bottom: 20px;     /* Space below the fieldset */
+    border: 1px solid #333;  
+    padding: 15px;           
+    border-radius: 10px;     
+    margin-bottom: 20px;     
 }
 
 legend {
     font-family: 'Roboto', sans-serif;
     color: #fff;
     font-size: 18px;
-    padding: 0 10px;         /* Space between legend text and border */
+    padding: 0 10px;         
 }
 
-/* Payment Method Styling Inside Fieldset */
 .payment-method label {
     display: block;
     margin: 10px 0;
@@ -123,8 +116,6 @@ legend {
     color: #fff;
 }
 
-
-/* Right Section (Summary) */
 .summary-section {
     background-color: none;
     padding: 20px;
@@ -178,17 +169,17 @@ legend {
 @media screen and (max-width: 600px) {
     .main-content {
         width: 100%;
-        max-width: 380px; /* Limit the width to fit within mobile screens */
-        margin: 0 auto; /* Center horizontally */
-        padding: 0 10px; /* Add slight padding to prevent overflow */
-        box-sizing: border-box; /* Ensure padding is included in width */
+        max-width: 380px; 
+        margin: 0 auto; 
+        padding: 0 10px; 
+        box-sizing: border-box; 
     }
 
     .main-content .top-section {
-        width: 100%; /* Take full width of .main-content */
-        max-width: 100%; /* Make sure it doesn't exceed viewport width */
+        width: 100%; 
+        max-width: 100%; 
         flex-direction: column;
-        align-items: center; /* Center contents horizontally */
+        align-items: center; 
         gap: 10px;
         margin: 0;
         padding: 0;
@@ -197,28 +188,26 @@ legend {
     .checkout-grid {
         display: flex;
         flex-direction: column;
-        gap: 20px; /* Space between sections */
+        gap: 20px; 
     }
 
-    /* Order sections on mobile */
     .cart-section {
-        order: 1; /* Cart comes first */
+        order: 1; 
     }
 
     .summary-section {
-        order: 2; /* Summary comes second */
+        order: 2; 
     }
 
     .payment-section {
-        order: 3; /* Payment comes last */
+        order: 3; 
     }
 
-    /* Make each section take full width on mobile */
+    
     .cart-section, .summary-section, .payment-section {
         width: 100%;
     }
 
-    /* Footer adjustments */
     .footer-links, .footer-logo, .footer-socials {
         margin: 10px 0;
         text-align: center;

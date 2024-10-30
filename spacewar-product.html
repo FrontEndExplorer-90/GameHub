@@ -29,44 +29,62 @@
                 </form>
                 <div class="header-icons">
                     <img src="images/icons8-settings-50.png" alt="Settings">
-                    <img src="images/icons8-male-user-24.png" alt="User">
+                    <a href="login.html">
+                        <img src="images/icons8-male-user-24.png" alt="User" class="login-icon">
+                    </a>
                     <a href="empty cart.html">
                         <img src="images/icons8-cart-32.png" alt="Cart">
                     </a>
                 </div>
             </div>
-        </header>        
+        </header>      
+        
 
-        <!-- Content Container -->
-        <div class="content-container">
-            <!-- Sidebar -->
+        <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-checkbox">
+
+        <label for="sidebar-toggle" class="sidebar-toggle-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <div class="wrapper">
+            <!-- Sidebar Section -->
             <aside class="sidebar">
-                <h3>Recommendations</h3>
-                <ul>
-                    <li><a href="#">By Community</a></li>
-                    <li><a href="#">By Experts</a></li>
-                </ul>
-                <h3>Browse Categories</h3>
-                <ul>
-                    <li><a href="#">For Beginners</a></li>
-                    <li><a href="#">Upcoming</a></li>
-                    <li><a href="#">New Releases</a></li>
-                    <li><a href="#">Top Sellers</a></li>
-                </ul>
-                <h3>Browse By Genre</h3>
-                <ul>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Adventure</a></li>
-                    <li><a href="#">Free to Play</a></li>
-                    <li><a href="#">Sports</a></li>
-                </ul>
-                <h3>Membership</h3>
-                <ul>
-                    <li><a href="#">Become a member</a></li>
-                    <li><a href="#">Early Access</a></li>
-                    <li><a href="#">Sell Your Used Games</a></li>
-                    <li><a href="#">Buy Used Games</a></li>
-                </ul>
+                <div class="sidebar-section">
+                    <h3>Recommendations</h3>
+                    <ul>
+                        <li><a href="#">By Community</a></li>
+                        <li><a href="#">By Experts</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Browse Categories</h3>
+                    <ul>
+                        <li><a href="#">For Beginners</a></li>
+                        <li><a href="#">Upcoming</a></li>
+                        <li><a href="#">New Releases</a></li>
+                        <li><a href="#">Top Sellers</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Browse By Genre</h3>
+                    <ul>
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Adventure</a></li>
+                        <li><a href="#">Free to Play</a></li>
+                        <li><a href="#">Sports</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Membership</h3>
+                    <ul>
+                        <li><a href="#">Become a member</a></li>
+                        <li><a href="#">Early Access</a></li>
+                        <li><a href="#">Sell Your Used Games</a></li>
+                        <li><a href="#">Buy Used Games</a></li>
+                    </ul>
+                </div>
             </aside>
 
             <!-- Main Product Section -->
