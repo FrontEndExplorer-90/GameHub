@@ -335,3 +335,88 @@
 .close-button:hover {
     background-color: #bbb;
 }
+
+@media screen and (max-width: 600px) {
+    /* Stack carousel and explore-section vertically */
+    .top-section {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px;
+        width: 100%;
+        max-width: 95%;
+        margin: 0 auto !important;
+        padding-left: 10px;
+    }
+
+    .carousel-container,
+    .explore-section {
+        width: 100%;
+        max-width: 330px !important;
+        margin: 0 auto !important;
+    }
+
+    .explore-section h1,
+    .explore-section p,
+    .explore-section .shop-btn {
+        text-align: left !important;
+        padding-left: 5px;
+    }
+
+    /* Most Wanted Section */
+    .most-wanted {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left;
+        padding-left: 10px;
+        width: 100%;
+        max-width: 330px;
+        margin: 0 auto !important;
+    }
+
+    .most-wanted .game-cover {
+        width: 100% !important;
+        max-width: 300px;
+        margin: 0 auto 15px auto;
+    }
+
+    .most-wanted-text h2,
+    .most-wanted-text h3 {
+        text-align: left !important;
+        margin-left: 5px;
+    }
+
+    .most-wanted-text .shop-btn {
+        font-size: 1.2em;
+        margin-left: 5px;
+    }
+
+    /* Make popup responsive */
+    .newsletter-popup {
+        width: 90%;
+        right: 5%;
+        bottom: 20px;
+        padding: 15px;
+    }
+
+    .popup-content h2 {
+        font-size: 1.4em;
+    }
+
+    .popup-content p {
+        font-size: 1em;
+    }
+
+    .popup-content .sign-up-btn {
+        padding: 8px 20px;
+    }
+
+    /* Footer adjustments */
+    .footer-links, .footer-logo, .footer-socials {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .footer-links a {
+        font-size: 0.9em;
+    }
+}
