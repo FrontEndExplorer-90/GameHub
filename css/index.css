@@ -338,54 +338,54 @@
 
 @media screen and (max-width: 600px) {
     /* Stack carousel and explore-section vertically */
-    .top-section {
-        flex-direction: column !important;
-        align-items: flex-start !important;
+    .main-content .top-section {
+        flex-direction: column;
+        align-items: flex-start;
         gap: 10px;
         width: 100%;
         max-width: 95%;
-        margin: 0 auto !important;
+        margin: 0 auto;
         padding-left: 10px;
     }
 
-    .carousel-container,
-    .explore-section {
+    .main-content .carousel-container,
+    .main-content .explore-section {
         width: 100%;
-        max-width: 330px !important;
-        margin: 0 auto !important;
+        max-width: 330px;
+        margin: 0 auto;
     }
 
-    .explore-section h1,
-    .explore-section p,
-    .explore-section .shop-btn {
-        text-align: left !important;
+    .main-content .explore-section h1,
+    .main-content .explore-section p,
+    .main-content .explore-section .shop-btn {
+        text-align: left;
         padding-left: 5px;
     }
 
     /* Most Wanted Section */
-    .most-wanted {
-        flex-direction: column !important;
-        align-items: flex-start !important;
+    .main-content .featured .most-wanted {
+        flex-direction: column;
+        align-items: flex-start;
         text-align: left;
         padding-left: 10px;
         width: 100%;
         max-width: 330px;
-        margin: 0 auto !important;
+        margin: 0 auto;
     }
 
-    .most-wanted .game-cover {
-        width: 100% !important;
+    .main-content .featured .most-wanted .game-cover {
+        width: 100%;
         max-width: 300px;
         margin: 0 auto 15px auto;
     }
 
-    .most-wanted-text h2,
-    .most-wanted-text h3 {
-        text-align: left !important;
+    .main-content .featured .most-wanted-text h2,
+    .main-content .featured .most-wanted-text h3 {
+        text-align: left;
         margin-left: 5px;
     }
 
-    .most-wanted-text .shop-btn {
+    .main-content .featured .most-wanted-text .shop-btn {
         font-size: 1.2em;
         margin-left: 5px;
     }
@@ -420,3 +420,4 @@
         font-size: 0.9em;
     }
 }
+

@@ -240,7 +240,6 @@ h1, h2, h3, .big-text {
 }
 
 /* Mobile Responsiveness */
-/* Mobile Responsiveness */
 @media screen and (max-width: 600px) { 
     /* Prevent horizontal overflow */
     body, .wrapper, .content-container {
@@ -250,7 +249,7 @@ h1, h2, h3, .big-text {
 
     /* Limit maximum width for all elements */
     * {
-        max-width: 100vw; /* Prevents any element from exceeding viewport width */
+        max-width: 100vw; 
         box-sizing: border-box;
     }
 
@@ -308,7 +307,7 @@ h1, h2, h3, .big-text {
 
     /* Adjust large text for mobile */
     .main-text, .hero-section h1, .hero-section h2 {
-        font-size: 1.5em; /* Adjust as needed to fit mobile */
+        font-size: 1.5em; 
         text-align: center;
         width: 100%;
     }
@@ -319,12 +318,4 @@ h1, h2, h3, .big-text {
         max-width: 100%;
         height: auto;
     }
-
-    /* Debugging Overflow (optional, remove if not needed) */
-    /* Temporarily outlines everything to help locate overflow issues */
-    /*
-    * {
-        outline: 1px solid red;
-    }
-    */
 }
