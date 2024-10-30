@@ -1,8 +1,10 @@
 .privacy-policy {
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 0 20px;
-    color: #fff;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    line-height: 1.6;
 }
 
 .privacy-policy h1 {
