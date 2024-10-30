@@ -55,12 +55,15 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-height: 100vh;
 }
 
 /* Main Content */
 .main-content {
     margin-left: 270px;
     padding: 20px;
+    flex: 1;
+    padding-bottom: 20px;
 }
 
 /* Typography */
@@ -150,9 +153,6 @@ h1, h2, h3, .big-text {
     color: #888;
 }
 
-.search-bar::placeholder {
-    color: #888;
-}
 
 /* Sidebar */
 .sidebar {
@@ -195,6 +195,8 @@ h1, h2, h3, .big-text {
     max-width: 1200px;
     width: 100%;
     margin: auto;
+    background-color: none;
+    margin-top: auto;
 }
 
 .footer-socials {
@@ -261,10 +263,18 @@ h1, h2, h3, .big-text {
         align-items: left;
         width: 100%;
         box-sizing: border-box;
+        flex: 1;
+        padding-bottom: 20px;
     }
 
     .wrapper, .content-container {
         align-items: center;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Full height of the viewport */
     }
 
     .header {
@@ -287,7 +297,8 @@ h1, h2, h3, .big-text {
     .footer {
         text-align: center;
         padding: 20px;
-        margin-top: 40px;
+        margin-top: auto;
+        background-color: none;
     }
 
     .footer-container {

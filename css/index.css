@@ -337,78 +337,147 @@
 }
 
 @media screen and (max-width: 600px) {
-    /* Stack carousel and explore-section vertically */
-    .main-content .top-section {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+    .main-content {
         width: 100%;
-        max-width: 95%;
-        margin: 0 auto;
-        padding-left: 10px;
+        max-width: 380px; /* Limit the width to fit within mobile screens */
+        margin: 0 auto; /* Center horizontally */
+        padding: 0 10px; /* Add slight padding to prevent overflow */
+        box-sizing: border-box; /* Ensure padding is included in width */
+    }
+
+    .main-content .top-section {
+        width: 100%; /* Take full width of .main-content */
+        max-width: 100%; /* Make sure it doesn't exceed viewport width */
+        flex-direction: column;
+        align-items: center; /* Center contents horizontally */
+        gap: 10px;
+        margin: 0;
+        padding: 0;
     }
 
     .main-content .carousel-container,
     .main-content .explore-section {
         width: 100%;
-        max-width: 330px;
+        max-width: 330px; /* Limit the size to prevent overflow */
         margin: 0 auto;
+    }
+
+    /* Scale down font sizes */
+    .main-content .explore-section h1 {
+        font-size: 1.8em; /* Adjust for mobile */
+        text-align: left;
+        padding-left: 5px;
+    }
+
+    .main-content .explore-section p {
+        font-size: 1.1em; /* Adjust for mobile */
+        text-align: left;
+        padding-left: 5px;
+    }
+
+    .main-content .explore-section .shop-btn {
+        display: inline-block;
+        font-size: 1em;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        width: fit-content; /* Ensure button width fits the text */
     }
 
     .main-content .explore-section h1,
     .main-content .explore-section p,
     .main-content .explore-section .shop-btn {
-        text-align: left;
-        padding-left: 5px;
+        text-align: center;
     }
+
 
     /* Most Wanted Section */
     .main-content .featured .most-wanted {
         flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-        padding-left: 10px;
-        width: 100%;
-        max-width: 330px;
+        align-items: center;
+        text-align: center;
+        width: fit-content;
         margin: 0 auto;
+        padding: 0;
     }
 
     .main-content .featured .most-wanted .game-cover {
         width: 100%;
-        max-width: 300px;
+        max-width: 300px; /* Restrict image size for mobile */
+        height: auto;
         margin: 0 auto 15px auto;
     }
 
-    .main-content .featured .most-wanted-text h2,
+    /* Scale down "Most Wanted" text */
+    .main-content .featured .most-wanted-text h2 {
+        font-size: 1.5em; /* Adjust for mobile */
+        text-align: center;
+        margin: 0 auto;
+        width: fit-content; /* Ensure the content doesn't stretch too wide */
+    }
+
     .main-content .featured .most-wanted-text h3 {
-        text-align: left;
-        margin-left: 5px;
+        font-size: 1.2em; /* Adjust for mobile */
+        text-align: center;
+        margin: 0 auto;
+        width: fit-content; /* Ensure the content doesn't stretch too wide */
     }
 
     .main-content .featured .most-wanted-text .shop-btn {
-        font-size: 1.2em;
-        margin-left: 5px;
+        display: inline-block;
+        font-size: 1em;
+        margin: 10px auto 0 auto; /* Center the button horizontally */
+        text-align: center;
+        width: fit-content; /* Fit button width to the text */
     }
 
     /* Make popup responsive */
-    .newsletter-popup {
-        width: 90%;
-        right: 5%;
-        bottom: 20px;
-        padding: 15px;
-    }
-
-    .popup-content h2 {
-        font-size: 1.4em;
-    }
-
-    .popup-content p {
-        font-size: 1em;
-    }
-
-    .popup-content .sign-up-btn {
-        padding: 8px 20px;
-    }
+    @media screen and (max-width: 600px) {
+        /* Adjust the popup container for mobile */
+        .newsletter-popup {
+            width: 90%;  /* Make popup smaller for mobile */
+            max-width: 400px; /* Set a maximum width */
+            right: 5%; /* Adjust positioning */
+            bottom: 10%;
+            padding: 15px;
+            transform: translateY(0); /* Make it visible */
+            visibility: visible; /* Ensure visibility */
+            z-index: 1001; /* Bring popup to front */
+        }
+    
+        /* Style for popup content */
+        .popup-content h2 {
+            font-size: 1.4em;
+            text-align: center;
+        }
+    
+        .popup-content p {
+            font-size: 1em;
+            text-align: center;
+        }
+    
+        /* Center the sign-up button in the popup */
+        .popup-content .sign-up-btn {
+            display: block;
+            margin: 10px auto 0 auto;
+            padding: 10px 20px;
+            width: 100%; /* Full width for better accessibility */
+            font-size: 1em;
+            text-align: center;
+        }
+    
+        /* Style for the close button */
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 5px;
+            background-color: #ddd;
+            border-radius: 50%;
+        }
+    }    
 
     /* Footer adjustments */
     .footer-links, .footer-logo, .footer-socials {
@@ -420,4 +489,3 @@
         font-size: 0.9em;
     }
 }
-
