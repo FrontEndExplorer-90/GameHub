@@ -1,0 +1,102 @@
+.support-center {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: left;
+}
+
+.support-center h1 {
+    font-family: 'Audiowide', cursive;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.support-center p {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+}
+
+.accordion {
+    margin-top: 30px;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #444;
+    margin-bottom: 15px;
+}
+
+.accordion-header {
+    font-family: 'Audiowide', cursive;
+    font-size: 24px;
+    display: block;
+    cursor: pointer;
+    padding: 10px 0;
+    color: #2B88D9;
+    position: relative;
+}
+
+.accordion-header:hover {
+    color: #554AD2;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+.accordion-content ul {
+    padding-left: 20px;
+}
+
+.accordion-content ul li {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.accordion-content ul li a {
+    color: #2B88D9;
+    text-decoration: none;
+}
+
+.accordion-content ul li a:hover {
+    color: #554AD2;
+}
+
+.accordion input[type="checkbox"] {
+    display: none;
+}
+
+.accordion input[type="checkbox"]:checked ~ .accordion-content {
+    max-height: 300px; 
+}
+
+@media screen and (max-width: 600px) {
+    .main-content {
+        width: 100%;
+        max-width: 380px; 
+        margin: 0 auto; 
+        padding: 0 10px; 
+        box-sizing: border-box; 
+    }
+
+    .main-content .top-section {
+        width: 100%; 
+        max-width: 100%; 
+        flex-direction: column;
+        align-items: center; 
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-links, .footer-logo, .footer-socials {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .footer-links a {
+        font-size: 0.9em;
+    }
+}

@@ -1,0 +1,456 @@
+.main-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 270px; 
+    flex: 1; 
+}
+
+.top-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; 
+    width: 100%;
+}
+
+.carousel-container {
+    width: 50%;
+    max-width: 350px; 
+    margin: 0px;
+    overflow: hidden;
+    padding-bottom: 40px; 
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%; 
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 3px solid #00f; 
+}
+
+.carousel-navigation {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.carousel-navigation label {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(104, 36, 177, 0.534);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-navigation label:hover {
+    background-color: rgba(104, 36, 117, 0.534);
+}
+
+.carousel-prev {
+    position: absolute;
+    left: -50px;
+}
+
+.carousel-next {
+    position: absolute;
+    right: -50px;
+}
+
+#slide1:checked ~ .carousel-slides {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .carousel-slides {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .carousel-slides {
+    transform: translateX(-200%);
+}
+
+.explore-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    margin-left: 20px;
+    text-align: left;
+    width: 50%; 
+}
+
+.explore-section h1 {
+    font-family: 'Audiowide', cursive;
+    font-size: 60px;
+    color: #2B88D9;
+    background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2); 
+    -webkit-background-clip: text; 
+    color: transparent; 
+    margin-bottom: 20px;
+}
+
+.explore-section p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    color: #2B88D9;
+}
+
+.explore-section a.shop-btn, .featured a.shop-btn {
+    display: inline-block; 
+    padding: 10px 20px; 
+    background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2); 
+    -webkit-background-clip: text; 
+    color: transparent;
+    text-decoration: none;
+    font-family: 'Audiowide', cursive;
+    font-size: 25px;
+    border: none;
+    width: auto; 
+    max-width: 250px; 
+    text-align: center; 
+    margin-top: 20px;
+}
+
+.explore-section a.shop-btn:hover, .featured a.shop-btn:hover {
+    background-color: none; 
+}
+
+.featured {
+    margin-top: 40px; 
+    text-align: center; 
+    color: #bf1fdf;
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start;
+}
+
+.featured h1 {
+    font-family: 'Audiowide', cursive;
+    font-size: 45px; 
+    margin-bottom: 20px;
+}
+
+.most-wanted {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 40px;
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+
+.most-wanted .game-cover {
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    margin: 0 40px 0 0;
+}
+
+.most-wanted .game-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 15px;
+    border: 3px solid #a912c7; 
+}
+
+.most-wanted-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 40px;
+}
+
+.most-wanted-text h2 {
+    font-family: 'Audiowide', cursive;
+    font-size: 36px; 
+    background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2); 
+    -webkit-background-clip: text; 
+    color: transparent; 
+    margin-bottom: 30px; 
+}
+
+
+.most-wanted-text h3 {
+    font-family: 'Audiowide', cursive;
+    font-size: 50px; 
+    background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2); 
+    -webkit-background-clip: text; 
+    color: transparent; 
+    margin-bottom: 40px; 
+}
+
+.game-cover-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: flex-start;
+}
+
+.most-wanted-text span.shop-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2); 
+    -webkit-background-clip: text; 
+    color: transparent;
+    font-family: 'Audiowide', cursive;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.most-wanted-text span.shop-btn:hover {
+    color: #fff;
+}
+
+.popup-checkbox {
+    display: none;
+}
+
+.popup-trigger {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: transparent;
+    z-index: 1000;
+}
+
+.newsletter-popup {
+    position: fixed;
+    bottom: 150px;
+    right: 30px;
+    width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    transform: translateY(100%); 
+    transition: transform 0.5s ease-in-out;
+    visibility: hidden; 
+}
+
+.popup-trigger:hover + .popup-checkbox:checked ~ .newsletter-popup,
+.popup-trigger:hover ~ .newsletter-popup {
+    transform: translateY(0); 
+    visibility: visible;
+}
+
+.newsletter-popup:hover {
+    transform: translateY(0); 
+    visibility: visible;
+}
+
+.popup-checkbox:checked ~ .newsletter-popup {
+    transform: translateY(100%); 
+    visibility: hidden;
+}
+
+.popup-content h2 {
+    font-size: 22px;
+    color: #3A0BC2;
+}
+
+.popup-content p {
+    font-size: 16px;
+    color: #2B88D9;
+    margin-bottom: 15px;
+}
+
+.popup-content input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #3A0BC2;
+}
+
+.popup-content .sign-up-btn {
+    padding: 10px 40px;
+    background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2);  
+    color: transparent;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #ddd;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.close-button:hover {
+    background-color: #bbb;
+}
+
+@media screen and (max-width: 600px) {
+    .main-content {
+        width: 100%;
+        max-width: 380px; 
+        margin: 0 auto; 
+        padding: 0 10px; 
+        box-sizing: border-box; 
+    }
+
+    .main-content .top-section {
+        width: 100%; 
+        max-width: 100%; 
+        flex-direction: column;
+        align-items: center; 
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-content .carousel-container,
+    .main-content .explore-section {
+        width: 100%;
+        max-width: 330px; 
+        margin: 0 auto;
+    }
+
+    
+    .main-content .explore-section h1 {
+        font-size: 1.8em; 
+        text-align: left;
+        padding-left: 5px;
+    }
+
+    .main-content .explore-section p {
+        font-size: 1.1em; 
+        text-align: left;
+        padding-left: 5px;
+    }
+
+    .main-content .explore-section .shop-btn {
+        display: inline-block;
+        font-size: 1em;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        width: fit-content; 
+    }
+
+    .main-content .explore-section h1,
+    .main-content .explore-section p,
+    .main-content .explore-section .shop-btn {
+        text-align: center;
+    }
+
+    .main-content .featured .most-wanted {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: fit-content;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .main-content .featured .most-wanted .game-cover {
+        width: 100%;
+        max-width: 300px; 
+        height: auto;
+        margin: 0 auto 15px auto;
+    }
+
+    .main-content .featured .most-wanted-text h2 {
+        font-size: 1.5em; 
+        text-align: center;
+        margin: 0 auto;
+        width: fit-content; 
+    }
+
+    .main-content .featured .most-wanted-text h3 {
+        font-size: 1.2em; 
+        text-align: center;
+        margin: 0 auto;
+        width: fit-content; 
+    }
+
+    .main-content .featured .most-wanted-text .shop-btn {
+        display: inline-block;
+        font-size: 1em;
+        margin: 10px auto 0 auto; 
+        text-align: center;
+        width: fit-content; 
+    }
+
+    @media screen and (max-width: 600px) {
+        .newsletter-popup {
+            width: 90%; 
+            max-width: 400px; 
+            right: 5%; 
+            bottom: 10%;
+            padding: 15px;
+            transform: translateY(0); 
+            visibility: visible; 
+            z-index: 1001; 
+        }
+    
+        .popup-content h2 {
+            font-size: 1.4em;
+            text-align: center;
+        }
+    
+        .popup-content p {
+            font-size: 1em;
+            text-align: center;
+        }
+    
+        .popup-content .sign-up-btn {
+            display: block;
+            margin: 10px auto 0 auto;
+            padding: 10px 20px;
+            width: 100%; 
+            font-size: 1em;
+            text-align: center;
+        }
+    
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 5px;
+            background-color: #ddd;
+            border-radius: 50%;
+        }
+    }    
+
+    .footer-links, .footer-logo, .footer-socials {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .footer-links a {
+        font-size: 0.9em;
+    }
+}

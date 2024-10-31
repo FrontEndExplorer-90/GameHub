@@ -6,7 +6,9 @@
     <meta name="description" content="Cyberpunk - Game Product Page">
     <title>Cyberpunk: Rise of the Rebel</title>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/cyberpunk-product.css">
+
 </head>
 <body>
     <div class="wrapper">
@@ -16,51 +18,74 @@
                 <img src="images/GameHub_Logo.png" alt="Game Hub Logo">
             </div>
             <nav class="nav">
-                <a href="#">Home</a>
-                <a href="#">Games</a>
-                <a href="#">Community</a>
-                <a href="#">About</a>
+                <a href="index.html">Home</a>
+                <a href="products.html">Games</a>
+                <a href="community.html">Community</a>
+                <a href="about.html">About</a>
             </nav>
-            <div class="header-icons">
-                <input type="text" placeholder="Search for Games" class="search-bar">
-                <div class="icons">
-                    <img src="images/icons8-settings-50.png" alt="Settings">
-                    <img src="images/icons8-male-user-24.png" alt="User">
-                    <img src="images/icons8-cart-32.png" alt="Cart">
+            <div class="header-actions">
+                <form action="#" class="search-form">
+                    <input type="text" id="search-bar" name="search" placeholder="Search for Games" class="search-bar">
+                </form>
+                <div class="header-icons">
+                    <a href="settings.html">
+                        <img src="images/icons8-settings-50.png" alt="Settings">
+                    </a>
+                    <a href="login.html">
+                        <img src="images/icons8-male-user-24.png" alt="User" class="login-icon">
+                    </a>
+                    <a href="empty cart.html">
+                        <img src="images/icons8-cart-32.png" alt="Cart">
+                    </a>
                 </div>
             </div>
-        </header>
+        </header>        
 
-        <!-- Content Container -->
-        <div class="content-container">
-            <!-- Sidebar -->
+        <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-checkbox">
+
+        <label for="sidebar-toggle" class="sidebar-toggle-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <div class="wrapper">
+            <!-- Sidebar Section -->
             <aside class="sidebar">
-                <h3>Recommendations</h3>
-                <ul>
-                    <li><a href="#">By Community</a></li>
-                    <li><a href="#">By Experts</a></li>
-                </ul>
-                <h3>Browse Categories</h3>
-                <ul>
-                    <li><a href="#">For Beginners</a></li>
-                    <li><a href="#">Upcoming</a></li>
-                    <li><a href="#">New Releases</a></li>
-                    <li><a href="#">Top Sellers</a></li>
-                </ul>
-                <h3>Browse By Genre</h3>
-                <ul>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Adventure</a></li>
-                    <li><a href="#">Free to Play</a></li>
-                    <li><a href="#">Sports</a></li>
-                </ul>
-                <h3>Membership</h3>
-                <ul>
-                    <li><a href="#">Become a member</a></li>
-                    <li><a href="#">Early Access</a></li>
-                    <li><a href="#">Sell Your Used Games</a></li>
-                    <li><a href="#">Buy Used Games</a></li>
-                </ul>
+                <div class="sidebar-section">
+                    <h3>Recommendations</h3>
+                    <ul>
+                        <li><a href="#">By Community</a></li>
+                        <li><a href="#">By Experts</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Browse Categories</h3>
+                    <ul>
+                        <li><a href="#">For Beginners</a></li>
+                        <li><a href="#">Upcoming</a></li>
+                        <li><a href="#">New Releases</a></li>
+                        <li><a href="#">Top Sellers</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Browse By Genre</h3>
+                    <ul>
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Adventure</a></li>
+                        <li><a href="#">Free to Play</a></li>
+                        <li><a href="#">Sports</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Membership</h3>
+                    <ul>
+                        <li><a href="#">Become a member</a></li>
+                        <li><a href="#">Early Access</a></li>
+                        <li><a href="#">Sell Your Used Games</a></li>
+                        <li><a href="#">Buy Used Games</a></li>
+                    </ul>
+                </div>
             </aside>
 
             <!-- Main Product Section -->
@@ -84,7 +109,9 @@
                         
                         <!-- Add to Cart Button and Price -->
                         <div class="product-purchase">
-                            <button class="add-to-cart-btn">Add to Cart</button>
+                            <a href="cart.html">
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </a>    
                             <span class="price">450,00 kr</span>
                         </div>
                     </div>
@@ -116,18 +143,23 @@
         <!-- Footer Section -->
         <footer class="footer">
             <div class="footer-container">
+                <!-- Social Media Icons (Left) -->
                 <div class="footer-socials">
                     <a href="#"><img src="images/icons8-facebook-30.png" alt="Facebook"></a>
                     <a href="#"><img src="images/icons8-instagram-24.png" alt="Instagram"></a>
                     <a href="#"><img src="images/icons8-twitter-24.png" alt="Twitter"></a>
                     <a href="#"><img src="images/icons8-tiktok-32.png" alt="TikTok"></a>
                 </div>
+                
+                <!-- Footer Links (Center) -->
                 <div class="footer-links">
                     <a href="#">Jobs</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Support</a>
-                    <a href="#">Newsletter</a>
+                    <a href="privacy policy.html">Privacy Policy</a>
+                    <a href="support center.html">Support</a>
+                    <a href="newsletter.html">Newsletter</a>
                 </div>
+                
+                <!-- Game Hub Logo (Right) -->
                 <div class="footer-logo">
                     <img src="images/GameHub_Logo.png" alt="Game Hub Logo">
                 </div>
