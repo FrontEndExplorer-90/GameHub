@@ -1,0 +1,142 @@
+/* Newsletter Page Styles */
+.newsletter-wrapper {
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+}
+
+.newsletter-cta {
+    margin-bottom: 20px;
+}
+
+.newsletter-cta h1 {
+    font-family: 'Audiowide', sans-serif;
+    font-size: 2rem;
+    background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2);;
+    margin-bottom: 25px;
+}
+
+.newsletter-cta p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.subscription-form {
+    margin: 20px 0;
+}
+
+.subscription-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.subscription-form input[type="email"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 80%;
+    max-width: 400px;
+}
+
+.subscription-form .consent {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.subscription-form button {
+    padding: 10px 20px;
+    border: none;
+    background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.subscription-form button:hover {
+    background-color: #0088cc;
+}
+
+/* Newsletter Previews */
+.newsletter-previews {
+    margin: 30px 0;
+}
+
+.newsletter-previews h2 {
+    font-size: 1.5rem;
+    color: #00aaff;
+    margin-bottom: 15px;
+}
+
+.preview-card {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px auto;
+    max-width: 400px;
+    text-align: left;
+    color: #fff;
+}
+
+.preview-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #00aaff;
+}
+
+.preview-card p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* FAQ Section */
+.newsletter-faq {
+    margin: 30px 0;
+    color: #ccc;
+}
+
+.newsletter-faq h2 {
+    font-size: 1.5rem;
+    color: #00aaff;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.faq-item {
+    text-align: left;
+    max-width: 500px;
+    margin: 10px auto;
+}
+
+.faq-item h4 {
+    font-size: 1.1rem;
+    color: #00aaff;
+}
+
+.faq-item p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+
+    .newsletter-cta h1 {
+        font-family: 'Audiowide', sans-serif;
+        font-size: 2rem;
+        color: #00aaff;
+        margin-bottom: 25px;
+        background: none;
+    }
+
+    .footer-links, .footer-logo, .footer-socials {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .footer-links a {
+        font-size: 0.9em;
+    }
+}
