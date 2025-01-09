@@ -37,6 +37,23 @@
     margin-bottom: 20px;
 }
 
+.collapsible-section ul {
+    max-height: 1000px; /* Default max-height to show content */
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.collapsible-section ul.collapsed {
+    max-height: 0; /* Hide content when collapsed */
+    overflow: hidden;
+}
+
+/* Hide the sidebar toggle checkbox */
+.sidebar-toggle-checkbox {
+    display: none;
+}
+
+
 @media screen and (max-width: 600px) {
     .main-content {
         width: 100%;

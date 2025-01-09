@@ -1,39 +1,40 @@
+/* Privacy Policy Styles */
 .privacy-policy {
     max-width: 800px;
-    width: 100%;
-    margin: 0 auto;
+    margin: 30px auto;
     padding: 20px;
-    box-sizing: border-box;
+    background-color: #111;
+    border: 1px solid #3A0BC2;
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
 }
 
 .privacy-policy h1 {
     font-family: 'Audiowide', cursive;
-    font-size: 40px;
-    margin-bottom: 20px;
     text-align: center;
-}
-
-.privacy-policy p,
-.privacy-policy ul li {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 36px;
     margin-bottom: 20px;
+    color: #00aaff;
 }
 
 .privacy-policy h2 {
-    font-family: 'Roboto', sans-serif;
     font-size: 28px;
+    color: #00aaff;
     margin-bottom: 15px;
-    color: #2B88D9;
 }
 
 .privacy-policy h3 {
-    font-family: 'Roboto', sans-serif;
     font-size: 22px;
+    color: #7dc2ff;
     margin-bottom: 10px;
-    color: #7dc2ff ;
+}
+
+.privacy-policy p {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 20px;
 }
 
 .privacy-policy ul {
@@ -43,36 +44,39 @@
 }
 
 .privacy-policy ul li {
-    font-family: 'Roboto', sans-serif;
     margin-bottom: 10px;
-    line-height: 1.5;
 }
 
+a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0088cc;
+}
+
+/* Responsive Design */
 @media screen and (max-width: 600px) {
-    .main-content {
-        width: 100%;
-        max-width: 380px; 
-        margin: 0 auto; 
-        padding: 0 10px; 
-        box-sizing: border-box; 
+    .privacy-policy {
+        padding: 15px;
     }
 
-    .main-content .top-section {
-        width: 100%; 
-        max-width: 100%; 
-        flex-direction: column;
-        align-items: center; 
-        gap: 10px;
-        margin: 0;
-        padding: 0;
+    .privacy-policy h1 {
+        font-size: 28px;
     }
 
-    .footer-links, .footer-logo, .footer-socials {
-        margin: 10px 0;
-        text-align: center;
+    .privacy-policy h2 {
+        font-size: 22px;
     }
 
-    .footer-links a {
-        font-size: 0.9em;
+    .privacy-policy h3 {
+        font-size: 18px;
+    }
+
+    .privacy-policy p,
+    .privacy-policy ul li {
+        font-size: 14px;
     }
 }

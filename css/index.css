@@ -25,11 +25,11 @@
 .carousel-slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    transform: translateX(0);
 }
 
 .carousel-slide {
-    min-width: 100%; 
-    transition: transform 0.5s ease-in-out;
+    min-width: 100%;
 }
 
 .carousel-slide img {
@@ -62,15 +62,17 @@
     background-color: rgba(104, 36, 117, 0.534);
 }
 
-.carousel-prev {
+.carousel-prev, .carousel-next {
     position: absolute;
-    left: -50px;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
 }
 
-.carousel-next {
-    position: absolute;
-    right: -50px;
-}
 
 #slide1:checked ~ .carousel-slides {
     transform: translateX(0);
@@ -130,12 +132,13 @@
 }
 
 .featured {
-    margin-top: 40px; 
+    margin-top: 60px; 
     text-align: center; 
     color: #bf1fdf;
     display: flex;
     justify-content: center; 
     align-items: flex-start;
+    margin-bottom: 20px;
 }
 
 .featured h1 {
@@ -154,8 +157,8 @@
 }
 
 .most-wanted .game-cover {
-    width: 250px;
-    height: 350px;
+    width: 350px;
+    height: 450px;
     overflow: hidden;
     margin: 0 40px 0 0;
 }
@@ -173,7 +176,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-left: 40px;
+    margin-left: 30px;
 }
 
 .most-wanted-text h2 {
@@ -183,6 +186,7 @@
     -webkit-background-clip: text; 
     color: transparent; 
     margin-bottom: 30px; 
+    margin-top: 20px;
 }
 
 

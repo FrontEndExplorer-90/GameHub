@@ -65,6 +65,13 @@ h1, h2, h3, .big-text {
     font-family: 'Audiowide', cursive;
 }
 
+.nav {
+    flex: 2; 
+    display: flex;
+    justify-content: center; 
+    gap: 20px;
+}
+
 .nav a {
     margin-right: 20px;
     font-size: 18px;
@@ -99,14 +106,15 @@ h1, h2, h3, .big-text {
     padding: 10px 20px;
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 50px;
+    background-color: #000; 
 }
 
 .header-actions {
+    flex: 1; 
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     gap: 15px;
-    max-width: 400px;
 }
 
 .header-icons {
@@ -124,6 +132,11 @@ h1, h2, h3, .big-text {
     transform: scale(1.2);
 }
 
+.logo {
+    flex: 1; 
+    display: flex;
+    align-items: center;
+}
 
 .logo img {
     height: 60px;
@@ -148,37 +161,68 @@ h1, h2, h3, .big-text {
     color: #888;
 }
 
+/* Sidebar Styles */
 .sidebar {
     position: fixed;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-    padding: 20px;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: #111;
+    color: white;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding: 80px 15px 20px;
+    box-sizing: border-box;
 }
 
-.sidebar-toggle-checkbox {
-    display: none; 
+.sidebar-section {
+    margin-bottom: 30px; 
 }
 
-.sidebar h3 {
-    margin-bottom: 20px;
-    color: #fff;
+.sidebar-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px; 
+    color: #00aaff;
 }
 
 .sidebar ul {
     list-style: none;
+    padding-left: 0;
 }
 
 .sidebar ul li {
-    margin-bottom: 15px;
+    margin-bottom: 10px; 
 }
 
 .sidebar ul li a {
     color: #fff;
+    text-decoration: none;
 }
 
 .sidebar ul li a:hover {
-    color: #008cff;
+    color: #00aaff;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-toggle-label {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 300px;
+    top: -50px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.sidebar-toggle-label span {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
 }
 
 .footer-container {
@@ -194,8 +238,8 @@ h1, h2, h3, .big-text {
 .footer {
     text-align: center;
     background-color: none;
-    padding: 20px;
-    margin-top: auto; 
+    padding: 10px;
+    margin-top: 0px; 
 }
 
 .footer-socials {

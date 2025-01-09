@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/cart.css">
+    <script defer src="js/cart.js"></script>
 
 </head>
 <body>
@@ -45,36 +46,30 @@
         <!-- Main Content Section -->
         <main class="main-content">
             <div class="cart-header">
-            <h1>Cart</h1>
-            <p>Please check your cart before proceeding to payment</p>
+                <h1>Cart</h1>
+                <p>Please check your cart before proceeding to payment</p>
             </div>
-
-            <!-- Cart with Items -->
+        
+            <!-- Placeholder for Empty Cart Message -->
+            <div class="empty-cart" style="display: none;">
+                <h2>Your Cart Is Empty!</h2>
+                <p>Looks like you haven’t added anything yet. Start shopping now!</p>
+            </div>
+        
+            <!-- Cart Items Container -->
             <div class="cart-items">
-                <div class="cart-item">
-                    <img src="images/GameHub_covers6.jpg" alt="Space War: Galactic Command">
-                    <span>Space War: Galactic Command</span>
-                    <span>1</span>
-                    <span class="price">650 kr</span>
-                </div>
-
-                <div class="cart-item">
-                    <img src="images/GameHub_covers9.jpg" alt="Cyberpunk: Rise of the Rebel">
-                    <span>Cyberpunk: Rise of the Rebel</span>
-                    <span>1</span>
-                    <span class="price">450 kr</span>
-                </div>
-
-                <!-- Total Price -->
-                <div class="cart-total">
-                    <h2 class="total-price">Total <span class="currency">kr</span> 1100</h2>
-                </div>
-
-                <!-- Checkout Button -->
-                <a href="checkout.html">
-                    <button class="checkout-btn">Proceed to Checkout!</button>
-                </a>
+                <!-- Items will be dynamically added here via JavaScript -->
             </div>
+        
+            <!-- Total Price -->
+            <div class="cart-total" style="display: none;">
+                <h2 class="total-price">Total <span class="currency">kr</span> <span id="total-amount">0</span></h2>
+            </div>
+        
+            <!-- Checkout Button -->
+            <a href="checkout.html" style="display: none;" class="checkout-btn-wrapper">
+                <button class="checkout-btn">Proceed to Checkout!</button>
+            </a>
         </main>
 
         <!-- Footer Section (Same as other pages) -->

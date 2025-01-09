@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GameHub Support Center">
     <title>GameHub Support Center</title>
+    <meta name="description" content="GameHub Support Center">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/support-center.css">
-
 </head>
 <body>
     <!-- Wrapper for all content -->
@@ -35,22 +34,22 @@
                     <a href="login.html">
                         <img src="images/icons8-male-user-24.png" alt="User" class="login-icon">
                     </a>
-                    <a href="empty-cart.html">
+                    <a href="cart.html">
                         <img src="images/icons8-cart-32.png" alt="Cart">
                     </a>
                 </div>
             </div>
-        </header>        
+        </header>
 
+        <!-- Sidebar Toggle -->
         <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-checkbox">
-
         <label for="sidebar-toggle" class="sidebar-toggle-label">
             <span></span>
             <span></span>
             <span></span>
         </label>
 
-        <div class="wrapper">
+        <div class="content-container">
             <!-- Sidebar Section -->
             <aside class="sidebar">
                 <div class="sidebar-section">
@@ -100,9 +99,9 @@
 
                     <!-- Accordion for Support Topics -->
                     <div class="accordion">
+                        <!-- Accordion Item 1 -->
                         <div class="accordion-item">
-                            <input type="checkbox" id="section1">
-                            <label for="section1" class="accordion-header">1. Account and Login Issues</label>
+                            <div class="accordion-header">1. Account and Login Issues</div>
                             <div class="accordion-content">
                                 <ul>
                                     <li>Forgot your password? <a href="#">Reset your password here.</a></li>
@@ -112,9 +111,9 @@
                             </div>
                         </div>
 
+                        <!-- Accordion Item 2 -->
                         <div class="accordion-item">
-                            <input type="checkbox" id="section2">
-                            <label for="section2" class="accordion-header">2. Purchasing Games</label>
+                            <div class="accordion-header">2. Purchasing Games</div>
                             <div class="accordion-content">
                                 <ul>
                                     <li>How do I purchase a game? <a href="#">Step-by-step guide to buying games on GameHub.</a></li>
@@ -125,9 +124,9 @@
                             </div>
                         </div>
 
+                        <!-- Accordion Item 3 -->
                         <div class="accordion-item">
-                            <input type="checkbox" id="section3">
-                            <label for="section3" class="accordion-header">3. Selling Games</label>
+                            <div class="accordion-header">3. Selling Games</div>
                             <div class="accordion-content">
                                 <ul>
                                     <li>How do I list a game for sale? <a href="#">Complete guide to selling games on GameHub.</a></li>
@@ -137,9 +136,9 @@
                             </div>
                         </div>
 
+                        <!-- Accordion Item 4 -->
                         <div class="accordion-item">
-                            <input type="checkbox" id="section4">
-                            <label for="section4" class="accordion-header">4. Refunds and Returns</label>
+                            <div class="accordion-header">4. Refunds and Returns</div>
                             <div class="accordion-content">
                                 <ul>
                                     <li>Can I return a game? <a href="#">Understand GameHub’s return policy.</a></li>
@@ -148,9 +147,9 @@
                             </div>
                         </div>
 
+                        <!-- Accordion Item 5 -->
                         <div class="accordion-item">
-                            <input type="checkbox" id="section5">
-                            <label for="section5" class="accordion-header">5. Download and Installation Issues</label>
+                            <div class="accordion-header">5. Download and Installation Issues</div>
                             <div class="accordion-content">
                                 <ul>
                                     <li>My game won’t download. <a href="#">Troubleshoot common download issues.</a></li>
@@ -159,9 +158,9 @@
                             </div>
                         </div>
 
+                        <!-- Accordion Item 6 -->
                         <div class="accordion-item">
-                            <input type="checkbox" id="section6">
-                            <label for="section6" class="accordion-header">6. Technical Support</label>
+                            <div class="accordion-header">6. Technical Support</div>
                             <div class="accordion-content">
                                 <ul>
                                     <li>Game crashing or not working? <a href="#">Basic troubleshooting steps.</a></li>
@@ -174,7 +173,7 @@
                     </div> <!-- End of Accordion -->
                 </div>
             </main>
-        </div> <!-- End of content container -->
+        </div> <!-- End of content-container -->
 
         <!-- Footer Section -->
         <footer class="footer">
@@ -186,7 +185,7 @@
                     <a href="#"><img src="images/icons8-twitter-24.png" alt="Twitter"></a>
                     <a href="#"><img src="images/icons8-tiktok-32.png" alt="TikTok"></a>
                 </div>
-                
+
                 <!-- Footer Links (Center) -->
                 <div class="footer-links">
                     <a href="#">Jobs</a>
@@ -194,7 +193,7 @@
                     <a href="support-center.html">Support</a>
                     <a href="newsletter.html">Newsletter</a>
                 </div>
-                
+
                 <!-- Game Hub Logo (Right) -->
                 <div class="footer-logo">
                     <img src="images/GameHub_Logo.png" alt="Game Hub Logo">
@@ -202,5 +201,8 @@
             </div>
         </footer>
     </div> <!-- End of wrapper -->
+
+    <!-- JavaScript Files -->
+    <script src="js/support-center.js"></script>
 </body>
 </html>

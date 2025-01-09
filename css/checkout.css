@@ -85,11 +85,19 @@
 }
 
 .payment-card {
-    display: block;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #222;
+    transition: background-color 0.3s ease;
+}
+
+.payment-card input:checked + span {
+    color: #fff; /* Adjust color for contrast */
+}
+
+#promocode {
+    width: 70%;
+    padding: 5px;
+    border: 1px solid #2B88D9;
     border-radius: 5px;
+    background-color: #111;
     color: #fff;
 }
 
@@ -140,14 +148,16 @@ legend {
 }
 
 .apply-promo-btn {
-    background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2);  
-    color: transparent;
-    border: none;
-    color: #fff;
     padding: 5px 10px;
+    font-size: 14px;
+    background-color: #2B88D9;
+    color: #fff;
+    border: none;
     border-radius: 5px;
-    margin-left: 10px;
     cursor: pointer;
+}
+.apply-promo-btn:hover {
+    background-color: #1E6FB3;
 }
 
 .checkout-btn {

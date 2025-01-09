@@ -60,10 +60,46 @@ body {
     font-size: 16px;
 }
 
+/* Password Container */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.password-container input[type="password"] {
+    width: 100%; /* Full width for the input */
+    padding: 12px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 16px;
+    padding-right: 60px; /* Space for the "Show" button */
+}
+
+.password-container button#toggle-password {
+    position: absolute;
+    right: 10px; /* Adjusts the button's placement inside the container */
+    padding: 5px 10px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.password-container button#toggle-password:hover {
+    background-color: #005fb8; /* Add hover effect for better UX */
+}
+
 .login-btn {
     width: 100%;
     padding: 12px;
-    background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2);  
+    background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2);
     color: #fff;
     font-size: 16px;
     font-weight: bold;
@@ -96,50 +132,20 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-    .main-content {
-        width: 100%;
-        max-width: 380px; 
-        margin: 0 auto; 
-        padding: 0 10px; 
-        box-sizing: border-box; 
-    }
-
-    .main-content .top-section {
-        width: 100%; 
-        max-width: 100%; 
-        flex-direction: column;
-        align-items: center; 
-        gap: 10px;
-        margin: 0;
-        padding: 0;
-    }
-
     .login-wrapper {
-        width: 100%;            
-        max-width: 100%;        
-        padding: 20px 10px;     
-        border-radius: 0; 
-        border: none;     
-        background-color: transparent;          
-    }
-
-    .body {
-        background-color: none;
+        width: 100%;
+        padding: 20px 10px;
+        border-radius: 0;
+        border: none;
+        background-color: transparent;
     }
 
     .login-form h2 {
         font-size: 20px;
     }
-    .login-form p, .login-footer a {
-        font-size: 13px;
-    }
 
-    .footer-links a {
-        font-size: 0.9em;
-    }
-    
-    .footer-links, .footer-logo, .footer-socials {
-        margin: 10px 0;
-        text-align: center;
+    .login-form p,
+    .login-footer a {
+        font-size: 13px;
     }
 }

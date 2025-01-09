@@ -3,26 +3,23 @@
     text-align: center;
     padding: 20px;
     color: #fff;
-}
-
-.newsletter-cta {
-    margin-bottom: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .newsletter-cta h1 {
     font-family: 'Audiowide', sans-serif;
-    font-size: 2rem;
-    background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2);;
-    margin-bottom: 25px;
+    font-size: 2.5rem;
+    background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 15px;
 }
 
 .newsletter-cta p {
     font-size: 1rem;
     color: #ccc;
-}
-
-.subscription-form {
-    margin: 20px 0;
+    margin-bottom: 30px;
 }
 
 .subscription-form form {
@@ -38,11 +35,15 @@
     border: none;
     width: 80%;
     max-width: 400px;
+    font-size: 16px;
 }
 
 .subscription-form .consent {
     font-size: 0.9rem;
     color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .subscription-form button {
@@ -53,7 +54,7 @@
     font-size: 1rem;
     cursor: pointer;
     border-radius: 5px;
-    margin-bottom: 25px;
+    transition: background-color 0.3s ease;
 }
 
 .subscription-form button:hover {
@@ -61,19 +62,15 @@
 }
 
 /* Newsletter Previews */
-.newsletter-previews {
-    margin: 30px 0;
-}
-
 .newsletter-previews h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #00aaff;
     margin-bottom: 15px;
 }
 
 .preview-card {
     background-color: #222;
-    padding: 15px;
+    padding: 20px;
     border-radius: 8px;
     margin: 10px auto;
     max-width: 400px;
@@ -83,8 +80,8 @@
 
 .preview-card h3 {
     font-size: 1.2rem;
-    margin-bottom: 5px;
     color: #00aaff;
+    margin-bottom: 8px;
 }
 
 .preview-card p {
@@ -93,27 +90,16 @@
 }
 
 /* FAQ Section */
-.newsletter-faq {
-    margin: 30px 0;
-    color: #ccc;
-}
-
 .newsletter-faq h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #00aaff;
-    margin-bottom: 25px;
-    margin-top: 25px;
-}
-
-.faq-item {
-    text-align: left;
-    max-width: 500px;
-    margin: 10px auto;
+    margin-bottom: 20px;
 }
 
 .faq-item h4 {
     font-size: 1.1rem;
     color: #00aaff;
+    margin-bottom: 5px;
 }
 
 .faq-item p {
@@ -121,22 +107,17 @@
     color: #ccc;
 }
 
+/* Responsive Design */
 @media screen and (max-width: 600px) {
-
     .newsletter-cta h1 {
-        font-family: 'Audiowide', sans-serif;
         font-size: 2rem;
-        color: #00aaff;
-        margin-bottom: 25px;
-        background: none;
     }
 
-    .footer-links, .footer-logo, .footer-socials {
-        margin: 10px 0;
-        text-align: center;
+    .preview-card {
+        padding: 15px;
     }
 
-    .footer-links a {
-        font-size: 0.9em;
+    .faq-item h4 {
+        font-size: 1rem;
     }
 }

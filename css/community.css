@@ -99,6 +99,20 @@ body {
     margin-bottom: 10px;
 }
 
+.leaderboard li:nth-child(1) {
+    font-weight: bold;
+    color: #ffaa00; /* Gold */
+}
+.leaderboard li:nth-child(2) {
+    font-weight: bold;
+    color: #c0c0c0; /* Silver */
+}
+.leaderboard li:nth-child(3) {
+    font-weight: bold;
+    color: #cd7f32; /* Bronze */
+}
+
+
 /* Latest Posts */
 .latest-posts {
     background-color: #00aaffb2;
@@ -161,14 +175,15 @@ body {
 }
 
 .chat-box {
-    background-color: #222;
-    padding: 10px;
-    border-radius: 5px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
     height: 150px;
-    overflow-y: auto;
-    margin-bottom: 10px;
-    line-height: 2.5;
+    padding: 10px;
+    background-color: #222;
+    border: 1px solid #333;
+    border-radius: 5px;
 }
+
 
 .chat-input {
     width: calc(100% - 80px);
@@ -207,6 +222,12 @@ body {
     font-size: 20px;
     color: #ffaa00;
     margin-bottom: 10px;
+}
+
+.poll-item.selected {
+    background-color: #ffaa00;
+    color: #111;
+    font-weight: bold;
 }
 
 .poll-item {

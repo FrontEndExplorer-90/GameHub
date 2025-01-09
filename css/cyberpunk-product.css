@@ -4,6 +4,9 @@
     gap: 30px;
     margin-bottom: 40px;
 }
+.sidebar-toggle-checkbox {
+    display: none;
+}
 
 .product-cyberpunk .product-image img {
     width: 300px;
@@ -40,6 +43,22 @@
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+.toggle-features-btn {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 8px 12px;
+    background-color: #554AD2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Audiowide', cursive;
+}
+
+.toggle-features-btn:hover {
+    background-color: #3A0BC2;
 }
 
 .add-to-cart-btn {

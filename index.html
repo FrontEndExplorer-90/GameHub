@@ -8,11 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/index.css">
+    <script defer src="js/main.js"></script>
 </head>
 <body>
     <div class="wrapper">
-        
-        <!-- Header Section -->
+        <!-- Header -->
         <header class="header">
             <div class="logo">
                 <img src="images/GameHub_Logo.png" alt="Game Hub Logo">
@@ -28,21 +28,14 @@
                     <input type="text" id="search-bar" name="search" placeholder="Search for Games" class="search-bar">
                 </form>
                 <div class="header-icons">
-                    <a href="settings.html">
-                        <img src="images/icons8-settings-50.png" alt="Settings">
-                    </a>
-                    <a href="login.html">
-                        <img src="images/icons8-male-user-24.png" alt="User" class="login-icon">
-                    </a>
-                    <a href="empty-cart.html">
-                        <img src="images/icons8-cart-32.png" alt="Cart">
-                    </a>
+                    <a href="settings.html"><img src="images/icons8-settings-50.png" alt="Settings"></a>
+                    <a href="login.html"><img src="images/icons8-male-user-24.png" alt="User" class="login-icon"></a>
+                    <a href="empty-cart.html"><img src="images/icons8-cart-32.png" alt="Cart"></a>
                 </div>
             </div>
-        </header>       
+        </header>
 
-        <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-checkbox">
-
+        <!-- Sidebar -->
         <label for="sidebar-toggle" class="sidebar-toggle-label">
             <span></span>
             <span></span>
@@ -87,30 +80,21 @@
                     </ul>
                 </div>
             </aside>
-        
-        <!-- Main Content Section -->
+            
+        <!-- Main Content -->
         <main class="main-content">
             <div class="top-section">
+                <!-- Carousel -->
                 <div class="carousel-container">
-                    <input type="radio" name="carousel" id="slide1" aria-label="Go to slide 1" checked>
-                    <input type="radio" name="carousel" id="slide2" aria-label="Go to slide 2">
-                    <input type="radio" name="carousel" id="slide3" aria-label="Go to slide 3">
-
                     <div class="carousel-slides">
-                        <div class="carousel-slide" id="slide1-content">
-                            <img src="images/GameHub_covers10.jpg" alt="Game 1 - Forge Legend">
-                        </div>
-                        <div class="carousel-slide" id="slide2-content">
-                            <img src="images/GameHub_covers3.jpg" alt="Game 2 - Black">
-                        </div>
-                        <div class="carousel-slide" id="slide3-content">
-                            <a href="spacewar-product.html">
-                                <img src="images/GameHub_covers6.jpg" alt="Game 3 - Space War">
-                            </a>
-                        </div>
+                        <div class="carousel-slide"><img src="images/GameHub_covers10.jpg" alt="Game 1"></div>
+                        <div class="carousel-slide"><img src="images/GameHub_covers3.jpg" alt="Game 2"></div>
+                        <div class="carousel-slide"><img src="images/GameHub_covers6.jpg" alt="Game 3"></div>
                     </div>
+                    <button class="carousel-prev">←</button>
+                    <button class="carousel-next">→</button>
                 </div>
-
+                <!-- Explore Section -->
                 <div class="explore-section">
                     <h1>Explore the universe of games</h1>
                     <p>Your one-stop shop for digital games at competitive prices</p>
@@ -118,6 +102,7 @@
                 </div>
             </div>
 
+            <!-- Featured Section -->
             <section class="featured">
                 <div class="most-wanted">
                     <div class="game-cover">
@@ -128,58 +113,42 @@
                         <h3>Try it now!</h3>
                         <a href="cyberpunk-product.html" class="shop-btn">SHOP HERE</a>
                     </div>
-                </div>                    
+                </div>
             </section>
         </main>
 
-        <!-- Footer Section -->
+        <!-- Newsletter Popup -->
+        <div class="popup-trigger"></div>
+        <div class="newsletter-popup">
+            <div class="popup-content">
+                <h2>Game Hub Newsletter</h2>
+                <p>Sign up to our newsletter to receive the latest gaming trends</p>
+                <input type="email" id="newsletter-email" placeholder="Your email address...">
+                <button class="sign-up-btn">Sign Up</button>
+                <span class="close-button">&times;</span>
+            </div>
+        </div>
+
+        <!-- Footer -->
         <footer class="footer">
             <div class="footer-container">
-                <!-- Social Media Icons (Left) -->
                 <div class="footer-socials">
                     <a href="#"><img src="images/icons8-facebook-30.png" alt="Facebook"></a>
                     <a href="#"><img src="images/icons8-instagram-24.png" alt="Instagram"></a>
                     <a href="#"><img src="images/icons8-twitter-24.png" alt="Twitter"></a>
                     <a href="#"><img src="images/icons8-tiktok-32.png" alt="TikTok"></a>
                 </div>
-                
-                <!-- Footer Links (Center) -->
                 <div class="footer-links">
                     <a href="#">Jobs</a>
                     <a href="privacy-policy.html">Privacy Policy</a>
                     <a href="support-center.html">Support</a>
                     <a href="newsletter.html">Newsletter</a>
                 </div>
-                
-                <!-- Game Hub Logo (Right) -->
                 <div class="footer-logo">
                     <img src="images/GameHub_Logo.png" alt="Game Hub Logo">
                 </div>
             </div>
         </footer>
-    </div>
-
-    <!--trigger for pop up-->
-    <input type="checkbox" id="popup-checkbox" class="popup-checkbox">
-
-    <div class="popup-trigger"></div>
-    <!--Newsletter-popup-->
-    <div class="newsletter-popup">
-        <div class="popup-content">
-            <h2>Game Hub Newsletter</h2>
-            <p>Sign up to our newsletter to receive the latest gaming trends</p>
-            
-            <!-- Email Input -->
-            <label for="newsletter-email" class="visually-hidden">Email Address</label>
-            <input type="email" id="newsletter-email" placeholder="Your email address...">
-            
-            <!-- Signup Button -->
-            <button class="sign-up-btn" aria-label="Sign up for the newsletter">Sign Up</button>
-        </div>
-        
-        <!-- Close Button -->
-        <label for="popup-checkbox" class="close-button" aria-label="Close Newsletter Popup">×</label>
-    </div>
     </div>
 </body>
 </html>
