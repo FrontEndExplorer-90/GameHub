@@ -1,5 +1,13 @@
-console.log("main.js is loaded!");
 // ======= Header Navigation Links =======
+document.addEventListener("DOMContentLoaded", () => {
+    const myGameHubLink = document.getElementById("myGameHubLink");
+    const loggedInUser = localStorage.getItem("loggedInUser");
+
+    if (loggedInUser) {
+        myGameHubLink.style.display = "inline-block"; // Vis linken hvis bruker er logget inn
+    }
+});
+
 const navLinks = document.querySelectorAll('.nav a');
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {

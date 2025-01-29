@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Game Hub - The universe of games">
+    <title>Game Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/mygamehub.css">
+    <script defer src="js/mygamehub.js"></script>
+    <script defer src="js/main.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo"><a href="index.html"><img src="images/GameHub_Logo.png" alt="Game Hub Logo"></a></div>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="products.html">Games</a>
+            <a href="community.html">Community</a>
+            <a href="about.html">About</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+    </header>
+
+    <label class="sidebar-toggle-label">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <!-- Sidebar Section -->
+    <aside class="sidebar">
+        <div class="sidebar-section">
+            <h3>Recommendations</h3>
+            <ul>
+                <li><a href="#">By Community</a></li>
+                <li><a href="#">By Experts</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-section">
+            <h3>Browse By Genre</h3>
+            <ul id="genre-list">
+                <li><a href="products.html" data-genre="Sports">Sports</a></li>
+                <li><a href="products.html" data-genre="Action">Action</a></li>
+                <li><a href="products.html" data-genre="Adventure">Adventure</a></li>
+                <li><a href="products.html" data-genre="Horror">Horror</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-section">
+            <h3>Membership</h3>
+            <ul>
+                <li><a href="membership.html">Become a member</a></li>
+                <li><a href="#">Early Access</a></li>
+                <li><a href="#">Sell Your Used Games</a></li>
+                <li><a href="#">Buy Used Games</a></li>
+                <li><a href="community.html">Our Community</a></li>
+
+            </ul>
+        </div>
+    </aside>
+
+    <main class="profile-wrapper">
+        <section class="profile-header">
+            <img src="images/DragonFourthWing.jpg" alt="Profile Picture" class="profile-pic">
+            <div class="profile-info">
+                <h2 id="username">Username</h2>
+                <p>GameHub Points: <span id="points">0</span></p>
+            </div>
+        </section>
+
+        <section class="profile-content">
+            <!-- Order History -->
+            <div class="profile-card">
+                <h3><img src="images/order-icon.png" alt="Order"> Order History</h3>
+                <ul id="order-history">
+                    <!-- Dummy data her -->
+                </ul>
+            </div>
+
+            <!-- Blog Posts -->
+            <div class="profile-card">
+                <h3><img src="images/blog-icon.png" alt="Blog"> Your Blog Posts</h3>
+                <ul id="blog-posts">
+                    <!-- Dummy data her -->
+                </ul>
+            </div>
+
+            <!-- Friends -->
+            <div class="profile-card">
+                <h3><img src="images/friends-icon.png" alt="Friends"> Friends</h3>
+                <ul id="friends-list">
+                    <!-- Dummy data her -->
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-socials">
+                <a href="#"><img src="images/icons8-facebook-30.png" alt="Facebook"></a>
+                <a href="#"><img src="images/icons8-instagram-24.png" alt="Instagram"></a>
+                <a href="#"><img src="images/icons8-twitter-24.png" alt="Twitter"></a>
+                <a href="#"><img src="images/icons8-tiktok-32.png" alt="TikTok"></a>
+            </div>
+            <div class="footer-links">
+                <a href="#">Jobs</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="support-center.html">Support</a>
+                <a href="newsletter.html">Newsletter</a>
+            </div>
+            <div class="footer-logo">
+                <img src="images/GameHub_Logo.png" alt="Game Hub Logo">
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
