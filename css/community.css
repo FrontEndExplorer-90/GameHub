@@ -64,6 +64,25 @@ body {
     cursor: pointer;
 }
 
+.logout-btn {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Audiowide', cursive;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: block;
+    margin: 15px auto;
+}
+
+.logout-btn:hover {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    transform: scale(1.05);
+}
+
 /* Community Guidelines Button */
 .guidelines-btn {
     grid-column: 1 / -1;

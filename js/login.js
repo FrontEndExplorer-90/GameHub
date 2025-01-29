@@ -30,11 +30,14 @@ loginForm.addEventListener('submit', function (e) {
     );
 
     if (userExists) {
-        // Simulate login success
-        alert('Login successful! Redirecting...');
-        window.location.href = 'community.html'; // Replace with actual dashboard page
+        // ✅ Lagre brukernavn i localStorage for bruk i community.html
+        localStorage.setItem('loggedInUser', username);
+
+        // ✅ Simulate login success
+        alert(`Login successful! Welcome, ${username}. Redirecting...`);
+        window.location.href = 'community.html'; // Redirect til community-siden
     } else {
-        // Show error message for invalid credentials
+        // ❌ Show error message for invalid credentials
         alert('Invalid username or password. Please try again.');
         passwordInput.value = ''; // Clear the password field
     }
@@ -44,7 +47,6 @@ loginForm.addEventListener('submit', function (e) {
 document.getElementById('forgot-password-link').addEventListener('click', function (e) {
     e.preventDefault();
     alert('Forgot Password? Contact support or reset your password!');
-    console.log('Forgot Password clicked'); // For debugging purposes
 });
 
 // Password toggle visibility

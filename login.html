@@ -11,6 +11,7 @@
     <script defer src="js/main.js"></script>
 </head>
 <body>
+
     <div class="login-wrapper">
         <!-- Logo at the top -->
         <div class="login-logo">
@@ -34,9 +35,17 @@
 
             <div class="login-footer">
                 <a href="#" id="forgot-password-link">Forgot Password?</a>
-                <a href="membership.html">Create an Account</a>
+                <a href="signup.html">Create an Account</a>
             </div>
         </div>
     </div>
+
+    <script>
+        
+        if (localStorage.getItem('loggedInUser')) {
+            window.location.href = "community.html";
+        }
+    </script>
+
 </body>
 </html>

@@ -4,9 +4,36 @@ const chatInput = document.querySelector('.chat-input');
 const chatBox = document.getElementById("chat-box");
 const pollItems = document.querySelectorAll('.poll-item');
 const voteButton = document.querySelector('.vote-btn');
-const joinButton = document.querySelector('.view-all-btn');
+const joinButton = document.querySelector('.view-all-btn'); 
+const membershipSection = document.querySelector('.membership');
+const loggedInUser = localStorage.getItem('loggedInUser'); 
 
 // ======= Functions =======
+
+document.addEventListener("DOMContentLoaded", () => {
+   
+    if (loggedInUser) {
+        // ✅ Brukeren er innlogget → Vis velkomstmelding
+        membershipSection.innerHTML = `
+            <h2 class="section-title">Welcome, ${loggedInUser}!</h2>
+            <p>Welcome back, enjoy your stay.</p>
+            <button class="logout-btn">Logout</button>
+        `;
+
+        // ✅ Logg ut-knapp → Fjern brukerdata og oppdater siden
+        document.querySelector(".logout-btn").addEventListener("click", () => {
+            localStorage.removeItem("loggedInUser");
+            location.reload();
+        });
+
+    } else {
+        // ❌ Brukeren er ikke innlogget → Behold "Become a Member"
+        joinButton.addEventListener("click", () => {
+            window.location.href = "membership.html"; // Send til medlemskapssiden
+        });
+    }
+});
+
 
 // Calendar with Events
 document.addEventListener('DOMContentLoaded', () => {
