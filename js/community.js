@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (loggedInUser) {
         // ✅ Brukeren er innlogget → Vis velkomstmelding
         membershipSection.innerHTML = `
-            <h2 class="section-title">Welcome, ${loggedInUser}!</h2>
+            <h2 class="section-title">Hi, ${loggedInUser}!</h2>
             <p>Welcome back, enjoy your stay.</p>
             <button class="logout-btn">Logout</button>
         `;

@@ -1,3 +1,4 @@
+console.log("main.js is loaded!");
 // ======= Header Navigation Links =======
 const navLinks = document.querySelectorAll('.nav a');
 navLinks.forEach(link => {
@@ -13,16 +14,36 @@ navLinks.forEach(link => {
     });
 });
 
-// ======= Search Bar Placeholder =======
-const searchBar = document.querySelector('.search-bar');
-if (searchBar) {
-    searchBar.addEventListener('focus', () => {
-        searchBar.setAttribute('placeholder', '');
-    });
-    searchBar.addEventListener('blur', () => {
-        searchBar.setAttribute('placeholder', 'Search for Games');
-    });
-}
+// ======= Search Bar Functionality =======
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("main.js is loaded!");
+
+    const searchBar = document.getElementById("search-bar");
+
+    if (searchBar) {
+        console.log("🔍 Search bar found!");
+
+        searchBar.addEventListener("keypress", (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                const searchTerm = searchBar.value.trim().toLowerCase();
+                
+                if (searchTerm.length > 0) { // Sjekk at søkefeltet ikke er tomt
+                    localStorage.setItem("searchTerm", searchTerm);
+                    console.log(`🔍 Search term saved: ${searchTerm}`);
+                    console.log("➡ Redirecting to products.html...");
+                    window.location.href = "products.html";
+                } else {
+                    console.log("❌ Empty search input, no action taken.");
+                }
+            }
+        });
+    } else {
+        console.log("❌ Search bar NOT found!");
+    }
+});
+
+
 
 // ======= Footer Social Icons Hover Effect =======
 const footerIcons = document.querySelectorAll('.footer-socials a img');
@@ -39,7 +60,7 @@ footerIcons.forEach(icon => {
 const sidebar = document.querySelector('.sidebar');
 const sidebarToggleLabel = document.querySelector('.sidebar-toggle-label');
 
-// Når hamburgermenyen klikkes
+
 sidebarToggleLabel.addEventListener('click', (e) => {
     e.stopPropagation(); // Forhindre at klikket bobler opp og registreres som "klikk utenfor"
     sidebar.classList.toggle('active'); // Toggle 'active'-klassen

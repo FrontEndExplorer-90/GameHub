@@ -42,10 +42,18 @@
                 <div class="settings-card">
                     <h2>Account Information</h2>
                     <p>Manage your account details and login credentials.</p>
+                
+                    <!-- Profile Picture Section -->
+                    <div class="profile-picture">
+                        <img id="profile-img" src="images/DragonFourthWing.jpg" alt="Profile Picture">
+                        <input type="file" id="profile-img-upload" accept="image/*">
+                    </div>
+                
                     <label for="username">Username:</label>
                     <input type="text" id="username" value="CurrentUsername" disabled>
                     <label for="email">Email:</label>
                     <input type="email" id="email" value="user@example.com" disabled>
+                    
                     <button class="edit-btn">Edit Profile</button>
                     <button class="password-btn">Change Password</button>
                 </div>

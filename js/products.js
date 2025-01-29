@@ -39,7 +39,7 @@ function renderProducts(products) {
                     <img src="${product.image.url}" alt="${product.image.alt || product.title}">
                 </a>
                 <h2>${product.title}</h2>
-                <p>${product.onSale ? `<s>${product.price} kr</s> ${product.discountedPrice} kr` : `${product.price} kr`}</p>
+                <p>${product.onSale ? `<s>${product.price} $</s> ${product.discountedPrice} $` : `${product.price} $`}</p>
                 <p>Release: ${product.released}</p>
                 <button class="add-to-cart-btn" data-id="${product.id}">Add to Cart</button>
             </div>
@@ -49,6 +49,42 @@ function renderProducts(products) {
 
     attachAddToCartEvents(products);
 }
+
+// 🎯 Hent produkter når siden laster
+document.addEventListener("DOMContentLoaded", async () => {
+    allProducts = await fetchAllProducts();
+    renderProducts(allProducts);
+
+    // 🔍 Hent lagret søkeord fra localStorage
+    const storedSearchTerm = localStorage.getItem("searchTerm");
+
+    if (storedSearchTerm) {
+        console.log(`📥 Loaded search term: ${storedSearchTerm}`); // Debugging
+        filterProductsBySearch(storedSearchTerm);
+        localStorage.removeItem("searchTerm"); // Slett etter bruk
+    }
+});
+
+// 🔍 Funksjon for å filtrere søk
+function filterProductsBySearch(searchTerm) {
+    const lowerCaseSearch = searchTerm.toLowerCase();
+
+    const filteredGames = allProducts.filter(game =>
+        game.title.toLowerCase().includes(lowerCaseSearch)
+    );
+
+    if (filteredGames.length === 1) {
+        // 🔥 Hvis kun ett treff, gå direkte til produktets side
+        window.location.href = `productpage.html?id=${filteredGames[0].id}`;
+    } else if (filteredGames.length > 1) {
+        // 🔥 Hvis flere treff, vis dem i produktlisten
+        renderProducts(filteredGames);
+    } else {
+        // ❌ Ingen treff, vis feilmelding
+        gameListContainer.innerHTML = `<p class="error-message">No products found for "${searchTerm}".</p>`;
+    }
+}
+
 
 // 🎯 Filtrer produkter basert på valgte kriterier
 function filterProducts() {
@@ -113,6 +149,26 @@ categoryFilter.addEventListener("change", filterProducts);
 priceFilter.addEventListener("change", filterProducts);
 releaseFilter.addEventListener("change", filterProducts);
 
+// 🎯 Legg til event listeners for søk
+document.addEventListener("DOMContentLoaded", async () => {
+    allProducts = await fetchAllProducts();
+    renderProducts(allProducts);
+
+    // 🎯 Sjekk om det finnes et lagret søk når products.html lastes
+    const storedSearchTerm = localStorage.getItem("searchTerm");
+    if (storedSearchTerm) {
+        filterProductsBySearch(storedSearchTerm);
+        localStorage.removeItem("searchTerm"); // Slett etter bruk
+    }
+
+    // 🎯 Hent valgt sjanger fra localStorage (hvis brukeren klikket fra sidebar)
+    const selectedGenre = localStorage.getItem("selectedGenre");
+    if (selectedGenre) {
+        filterByGenre(selectedGenre);
+        localStorage.removeItem("selectedGenre"); // Fjern etter bruk
+    }
+});
+
 // 🎯 Legg til spill i handlekurven
 function attachAddToCartEvents(products) {
     const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
@@ -150,17 +206,3 @@ function addToCart(product) {
     localStorage.setItem("cart", JSON.stringify(cart)); // Oppdater localStorage
 }
 
-// 🎯 Start applikasjonen
-async function init() {
-    allProducts = await fetchAllProducts();
-    renderProducts(allProducts);
-
-    // 🎯 Hent valgt sjanger fra localStorage (hvis brukeren klikket fra sidebar)
-    const selectedGenre = localStorage.getItem("selectedGenre");
-    if (selectedGenre) {
-        filterByGenre(selectedGenre);
-        localStorage.removeItem("selectedGenre"); // Fjern etter bruk
-    }
-}
-
-document.addEventListener("DOMContentLoaded", init);
