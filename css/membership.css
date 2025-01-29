@@ -1,0 +1,60 @@
+.membership-container {
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.membership-container h1 {
+    font-family: 'Audiowide', cursive;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.membership-container p {
+    color: #ddd;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    text-align: left;
+    font-weight: bold;
+    color: #ddd;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+}
+
+.logout-btn {
+    background-color: #ff4d4d;
+}
+
+.logout-btn:hover {
+    background-color: #cc0000;
+}
+
+button {
+    background-color: #2B88D9;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #1E6FB3;
+}

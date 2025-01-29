@@ -81,8 +81,8 @@ async function displayProduct() {
         document.getElementById("page-title").textContent = title;
         document.getElementById("product-desc").textContent = description;
         document.getElementById("product-price").textContent = onSale
-            ? `Sale Price: ${discountedPrice} kr (Original: ${price} kr)`
-            : `${price} kr`;
+            ? `Sale Price: ${discountedPrice} $ (Original: ${price} $)`
+            : `${price} $`;
 
         // Optionally display tags
         const productTags = document.getElementById("product-tags");

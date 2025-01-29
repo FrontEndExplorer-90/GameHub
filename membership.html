@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Game Product Page">
-    <title>GameHub - Product</title>
+    <title>Become a Member | GameHub</title>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/productpage.css">
-    <script defer src="js/productpage.js"></script>
-    <script defer src="js/main.js"></script>
-
+    <link rel="stylesheet" href="css/membership.css">
+    <script defer src="js/membership.js"></script>
 </head>
 <body>
     <div class="wrapper">
-        <!-- Header -->
+        <!-- Header Section -->
         <header class="header">
             <div class="logo">
                 <img src="images/GameHub_Logo.png" alt="Game Hub Logo">
@@ -42,60 +39,32 @@
                 </div>
             </div>
         </header>
-        
-        <label class="sidebar-toggle-label">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
 
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-section">
-                <h3>Recommendations</h3>
-                <ul>
-                    <li><a href="#">By Community</a></li>
-                    <li><a href="#">By Experts</a></li>
-                </ul>
-            </div>
-            <div class="sidebar-section">
-                <h3>Browse By Genre</h3>
-                <ul id="genre-list">
-                    <li><a href="products.html" data-genre="Sports">Sports</a></li>
-                    <li><a href="products.html" data-genre="Action">Action</a></li>
-                    <li><a href="products.html" data-genre="Adventure">Adventure</a></li>
-                    <li><a href="products.html" data-genre="Horror">Horror</a></li>
-                </ul>
-            </div>
-            <div class="sidebar-section">
-                <h3>Membership</h3>
-                <ul>
-                    <li><a href="membership.html">Become a member</a></li>
-                    <li><a href="#">Early Access</a></li>
-                    <li><a href="#">Sell Your Used Games</a></li>
-                    <li><a href="#">Buy Used Games</a></li>
-                    <li><a href="community.html">Our Community</a></li>
+        <!-- Main Content -->
+        <main class="membership-container">
+            <h1>Become a Member</h1>
+            <p>Join GameHub to get exclusive deals, early access to games, and more!</p>
 
-                </ul>
-            </div>
-        </aside>
-        
-        <!-- Main Product Section -->
-        <main class="main-content">
-            <section id="product-info">
-                <div id="image-section">
-                    <img id="product-image" src="" alt="">
-                </div>
-                <div id="product-details">
-                    <h1 id="page-title"></h1>
-                    <p id="product-desc"></p>
-                    <p id="product-price"></p>
-                    <div id="product-tags"></div>
-                </div>
-            </section>
+            <form id="membership-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" required>
+
+                <button type="submit">Create Account</button>
+            </form>
+
+            <p>Already a member? <a href="login.html">Log in here</a>.</p>
         </main>
 
-        <!-- Footer -->
+        <!-- Footer Section -->
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-socials">

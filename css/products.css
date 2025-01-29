@@ -12,6 +12,38 @@
     margin-bottom: 60px;
 }
 
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.filters label {
+    color: white;
+    font-weight: bold;
+}
+
+.filters select {
+    padding: 5px;
+    border: 1px solid #2B88D9;
+    border-radius: 5px;
+    background-color: #111;
+    color: #fff;
+}
+
+.reset-filters-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .game-list {
     display: flex;
     flex-wrap: wrap;
@@ -39,6 +71,20 @@
     border-radius: 10px;
     margin-bottom: 10px;
     border: 3px solid #00f; 
+}
+
+.game-item button {
+    background-color: #2B88D9;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.game-item button:hover {
+    background-color: #1E6FB3;
 }
 
 .game-item h2 {

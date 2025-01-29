@@ -25,9 +25,9 @@ function renderCartItems() {
     if (cart.length === 0) {
         // If cart is empty
         cartItemsContainer.innerHTML = '<p>Your cart is empty!</p>';
-        totalDisplay.textContent = '0kr';
-        shippingDisplay.textContent = '0kr';
-        finalTotalDisplay.textContent = '0kr';
+        totalDisplay.textContent = '0$';
+        shippingDisplay.textContent = '0$';
+        finalTotalDisplay.textContent = '0$';
         return;
     }
 
@@ -41,13 +41,13 @@ function renderCartItems() {
             <img src="${item.image || 'default-image.png'}" alt="${item.name}">
             <span>${item.name}</span>
             <span>${item.quantity}</span>
-            <span class="price">${(item.price * item.quantity).toFixed(2)} kr</span>
+            <span class="price">${(item.price * item.quantity).toFixed(2)} $</span>
         `;
         cartItemsContainer.appendChild(cartItem);
     });
 
     // Update total price
-    totalDisplay.textContent = `${total.toFixed(2)}kr`;
+    totalDisplay.textContent = `${total.toFixed(2)}$`;
     updateFinalTotal(total);
 }
 
@@ -56,8 +56,8 @@ function updateFinalTotal(total) {
     const promoDiscount = calculatePromoDiscount(total);
     const finalTotal = total - promoDiscount + SHIPPING_COST;
 
-    shippingDisplay.textContent = `${SHIPPING_COST}kr`;
-    finalTotalDisplay.textContent = `${finalTotal.toFixed(2)}kr`;
+    shippingDisplay.textContent = `${SHIPPING_COST}$`;
+    finalTotalDisplay.textContent = `${finalTotal.toFixed(2)}$`;
 }
 
 // Calculate promo discount
@@ -70,11 +70,11 @@ function calculatePromoDiscount(total) {
 
 // Apply promo code
 function applyPromo() {
-    const total = parseFloat(totalDisplay.textContent.replace('kr', ''));
+    const total = parseFloat(totalDisplay.textContent.replace('$', ''));
     const promoDiscount = calculatePromoDiscount(total);
 
     if (promoDiscount > 0) {
-        alert(`Promo code applied! You saved ${promoDiscount.toFixed(2)}kr.`);
+        alert(`Promo code applied! You saved ${promoDiscount.toFixed(2)}$.`);
     } else {
         alert('Invalid promo code!');
     }
@@ -88,7 +88,7 @@ function processPayment() {
         return;
     }
 
-    const finalTotal = finalTotalDisplay.textContent.replace('kr', '').trim();
+    const finalTotal = finalTotalDisplay.textContent.replace('$', '').trim();
 
     localStorage.removeItem('cart'); // Clear the cart
     location.href = 'purchase.html'; // Redirect to purchase page

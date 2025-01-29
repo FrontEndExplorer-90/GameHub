@@ -41,7 +41,7 @@ function renderCartItems() {
                     <span>Qty: ${item.quantity}</span>
                     <button class="increase-btn" data-title="${productTitle}">+</button>
                 </div>
-                <span class="price">${(productPrice * item.quantity).toFixed(2)} kr</span>
+                <span class="price">${(productPrice * item.quantity).toFixed(2)} $</span>
                 <button class="remove-btn" data-title="${productTitle}">Remove</button>
             `;
 
@@ -55,7 +55,7 @@ function renderCartItems() {
             cartItemsContainer.appendChild(cartItem);
         });
 
-        totalAmountElement.textContent = `${total.toFixed(2)} kr`;
+        totalAmountElement.textContent = `${total.toFixed(2)} $`;
     }
 }
 

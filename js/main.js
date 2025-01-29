@@ -46,6 +46,22 @@ sidebarToggleLabel.addEventListener('click', (e) => {
     console.log(`Hamburger clicked. Sidebar toggled: ${sidebar.classList.contains('active')}`);
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const genreLinks = document.querySelectorAll("#genre-list a");
+
+    genreLinks.forEach(link => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault(); // Hindrer siden fra å laste på nytt
+
+            const selectedGenre = event.target.dataset.genre; // Hent sjanger
+            localStorage.setItem("selectedGenre", selectedGenre); // Lagre i LocalStorage
+
+            window.location.href = "products.html"; // Send til produktsiden
+        });
+    });
+});
+
+
 // Når du klikker utenfor sidebaren
 document.addEventListener('click', (e) => {
     // Sjekk om klikket er utenfor både sidebar og hamburgermeny
