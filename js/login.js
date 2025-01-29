@@ -6,7 +6,7 @@ const passwordInput = document.getElementById('password');
 // Mock user data (you can replace this with server-side authentication)
 const users = [
     { username: 'gamer123', password: 'password123' },
-    { username: 'proplayer', password: 'supersecure' }
+    { username: 'test', password: '1234' }
 ];
 
 // Form submission handler
@@ -32,7 +32,7 @@ loginForm.addEventListener('submit', function (e) {
     if (userExists) {
         // Simulate login success
         alert('Login successful! Redirecting...');
-        window.location.href = 'dashboard.html'; // Replace with actual dashboard page
+        window.location.href = 'community.html'; // Replace with actual dashboard page
     } else {
         // Show error message for invalid credentials
         alert('Invalid username or password. Please try again.');

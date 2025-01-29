@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,82 +7,108 @@
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/settings.css">
+    <script defer src="js/settings.js"></script>
+    <script defer src="js/main.js"></script>
 </head>
-
 <body>
-    <div class="settings-wrapper">
-        <header class="settings-header">
-            <h1>Account Settings</h1>
-            <p>Manage your Game Hub account settings, privacy, and preferences.</p>
+    <div class="wrapper">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">
+                <a href="index.html"><img src="images/GameHub_Logo.png" alt="Game Hub Logo"></a>
+            </div>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="products.html">Games</a>
+                <a href="community.html">Community</a>
+                <a href="about.html">About</a>
+            </nav>
+            <div class="header-actions">
+                <form action="#" class="search-form">
+                    <input type="text" id="search-bar" name="search" placeholder="Search for Games" class="search-bar">
+                </form>
+                <div class="header-icons">
+                    <a href="settings.html"><img src="images/icons8-settings-50.png" alt="Settings"></a>
+                    <a href="login.html"><img src="images/icons8-male-user-24.png" alt="User"></a>
+                    <a href="cart.html"><img src="images/icons8-cart-32.png" alt="Cart"></a>
+                </div>
+            </div>
         </header>
 
-        <section class="settings-section">
-            <!-- Account Information Section -->
-            <div class="settings-card">
-                <h2>Account Information</h2>
-                <p>Manage your account details and login credentials.</p>
-                <label for="username">Username:</label>
-                <input type="text" id="username" value="CurrentUsername" disabled placeholder="Your username">
-                <label for="email">Email:</label>
-                <input type="email" id="email" value="user@example.com" disabled placeholder="Your email address">
-                <button class="edit-btn">Edit Profile</button>
-                <button class="password-btn">Change Password</button>
-            </div>
+        <!-- Main Content -->
+        <main class="settings-wrapper">
+            <section class="settings-section">
+                <!-- Account Information Section -->
+                <div class="settings-card">
+                    <h2>Account Information</h2>
+                    <p>Manage your account details and login credentials.</p>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" value="CurrentUsername" disabled>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" value="user@example.com" disabled>
+                    <button class="edit-btn">Edit Profile</button>
+                    <button class="password-btn">Change Password</button>
+                </div>
 
-            <!-- Notification Settings Section -->
-            <div class="settings-card">
-                <h2>Notifications</h2>
-                <p>Control which notifications you want to receive.</p>
-                <label>
-                    <input type="checkbox" checked> Game Recommendations
-                </label>
-                <label>
-                    <input type="checkbox" checked> Friend Requests
-                </label>
-                <label>
-                    <input type="checkbox"> Sales & Promotions
-                </label>
-                <label>
-                    <input type="checkbox"> Updates & News
-                </label>
-            </div>
+                <!-- Notification Settings Section -->
+                <div class="settings-card">
+                    <h2>Notifications</h2>
+                    <p>Control which notifications you want to receive.</p>
+                    <label><input type="checkbox" checked> Game Recommendations</label>
+                    <label><input type="checkbox" checked> Friend Requests</label>
+                    <label><input type="checkbox"> Sales & Promotions</label>
+                    <label><input type="checkbox"> Updates & News</label>
+                </div>
 
-            <!-- Display Preferences Section -->
-            <div class="settings-card">
-                <h2>Display Preferences</h2>
-                <p>Customize your interface and theme preferences.</p>
-                <label for="theme">Theme:</label>
-                <select id="theme">
-                    <option value="dark">Dark</option>
-                    <option value="light">Light</option>
-                </select>
-                
-                <label for="language">Language:</label>
-                <select id="language">
-                    <option value="en">English</option>
-                    <option value="es">Norwegian</option>
-                    <option value="de">German</option>
-                </select>
-            </div>
+                <!-- Display Preferences Section -->
+                <div class="settings-card">
+                    <h2>Display Preferences</h2>
+                    <p>Customize your interface and theme preferences.</p>
+                    <label for="theme">Theme:</label>
+                    <select id="theme">
+                        <option value="dark">Dark</option>
+                        <option value="light">Light</option>
+                    </select>
+                    <label for="language">Language:</label>
+                    <select id="language">
+                        <option value="en">English</option>
+                        <option value="no">Norwegian</option>
+                        <option value="de">German</option>
+                    </select>
+                </div>
 
-            <!-- Privacy Settings Section -->
-            <div class="settings-card">
-                <h2>Privacy & Security</h2>
-                <p>Manage your data and control privacy options.</p>
-                <label>
-                    <input type="checkbox"> Show my profile publicly
-                </label>
-                <label>
-                    <input type="checkbox" checked> Allow friend requests
-                </label>
-                <label>
-                    <input type="checkbox" checked> Receive messages from non-friends
-                </label>
-                <button class="delete-account-btn">Delete Account</button>
+                <!-- Privacy Settings Section -->
+                <div class="settings-card">
+                    <h2>Privacy & Security</h2>
+                    <p>Manage your data and control privacy options.</p>
+                    <label><input type="checkbox"> Show my profile publicly</label>
+                    <label><input type="checkbox" checked> Allow friend requests</label>
+                    <label><input type="checkbox" checked> Receive messages from non-friends</label>
+                    <button class="delete-account-btn">Delete Account</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-socials">
+                    <a href="#"><img src="images/icons8-facebook-30.png" alt="Facebook"></a>
+                    <a href="#"><img src="images/icons8-instagram-24.png" alt="Instagram"></a>
+                    <a href="#"><img src="images/icons8-twitter-24.png" alt="Twitter"></a>
+                    <a href="#"><img src="images/icons8-tiktok-32.png" alt="TikTok"></a>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Jobs</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="support-center.html">Support</a>
+                    <a href="newsletter.html">Newsletter</a>
+                </div>
+                <div class="footer-logo">
+                    <img src="images/GameHub_Logo.png" alt="Game Hub Logo">
+                </div>
             </div>
-        </section>
+        </footer>
     </div>
-    <script src="js/settings.js"></script>
-
 </body>
 </html>

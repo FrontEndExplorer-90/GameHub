@@ -1,94 +1,89 @@
-// Get all Add to Cart buttons
-const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+const baseAPIUrl = "https://v2.api.noroff.dev/gamehub/";
+const gameListContainer = document.querySelector('.game-list');
 
-// Cart stored in localStorage (or empty array if not initialized)
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-// Add click event listeners to all buttons
-addToCartButtons.forEach((button, index) => {
-    button.addEventListener('click', () => {
-        // Get game details (parent container's details)
-        const gameItem = button.closest('.game-item');
-        const gameName = gameItem.querySelector('h2').textContent;
-        const gamePrice = gameItem.querySelector('p').textContent;
-        const gameImage = gameItem.querySelector('img').src;
-
-        // Check if the item already exists in the cart
-        const existingItem = cart.find(item => item.name === gameName);
-
-        if (existingItem) {
-            alert(`${gameName} is already in the cart.`);
-        } else {
-            // Add new game to the cart
-            cart.push({ name: gameName, price: gamePrice, image: gameImage });
-            alert(`${gameName} has been added to the cart!`);
+// Hent alle spill fra API
+async function fetchAllProducts() {
+    try {
+        const response = await fetch(baseAPIUrl);
+        if (!response.ok) {
+            throw new Error("Failed to fetch products");
         }
+        const jsonData = await response.json();
+        return jsonData.data || []; // Spillene finnes i `data`
+    } catch (error) {
+        console.error("Error fetching products:", error);
+        gameListContainer.innerHTML = `<p class="error-message">Failed to load products. Please try again later.</p>`;
+        return [];
+    }
+}
 
-        // Save updated cart to localStorage
-        localStorage.setItem('cart', JSON.stringify(cart));
+// Generer HTML for spill
+function renderProducts(products) {
+    gameListContainer.innerHTML = ''; // Tømmer containeren
+
+    if (products.length === 0) {
+        gameListContainer.innerHTML = `<p class="error-message">No products available at the moment.</p>`;
+        return;
+    }
+
+    products.forEach(product => {
+        const productHTML = `
+            <div class="game-item">
+                <a href="productpage.html?id=${product.id}">
+                    <img src="${product.image.url}" alt="${product.image.alt || product.title}">
+                </a>
+                <h2>${product.title}</h2>
+                <p>${product.onSale ? `<s>${product.price} kr</s> ${product.discountedPrice} kr` : `${product.price} kr`}</p>
+                <button class="add-to-cart-btn" data-id="${product.id}">Add to Cart</button>
+            </div>
+        `;
+        gameListContainer.innerHTML += productHTML;
     });
-});
 
-// Optional: Display the number of items in the cart (header icon)
-function updateCartIcon() {
-    const cartIcon = document.querySelector('.header-icons a[href="cart.html"] img');
-    if (cartIcon) {
-        const cartCount = cart.length;
-        cartIcon.setAttribute('title', `Cart (${cartCount} items)`);
-    }
+    attachAddToCartEvents(products);
 }
 
-// Run on page load
-updateCartIcon();
+// Legg til spill i handlekurven
+function attachAddToCartEvents(products) {
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
 
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const productId = e.target.dataset.id;
+            const product = products.find(p => p.id === productId);
 
-// -----------------------------------------------------------------
+            if (product) {
+                addToCart(product);
+                alert(`${product.title} has been added to your cart!`);
+            }
+        });
+    });
+}
 
-// Dynamic Cart Rendering for cart.html
-if (document.body.classList.contains('cart-page')) {
-    // Fetch cart data from localStorage
+// Funksjon for å legge til spill i handlekurven
+function addToCart(product) {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingProduct = cart.find(item => item.id === product.id);
 
-    // Select the cart container
-    const cartContainer = document.querySelector('.cart-items');
-
-    // Generate HTML for each item in the cart
-    if (cart.length === 0) {
-        // Show "Cart is empty" message
-        cartContainer.innerHTML = `<h2>Your Cart is Empty!</h2>`;
+    if (existingProduct) {
+        existingProduct.quantity += 1;
     } else {
-        cart.forEach((item, index) => {
-            const cartItem = document.createElement('div');
-            cartItem.classList.add('cart-item');
-            cartItem.innerHTML = `
-                <img src="${item.image}" alt="${item.name}">
-                <span>${item.name}</span>
-                <span>${item.price}</span>
-                <button class="remove-btn" data-index="${index}">Remove</button>
-            `;
-            cartContainer.appendChild(cartItem);
+        cart.push({
+            id: product.id,
+            title: product.title,
+            price: product.discountedPrice || product.price,
+            quantity: 1,
+            image: product.image.url
         });
-
-        // Add functionality to remove items from the cart
-        document.querySelectorAll('.remove-btn').forEach((button) => {
-            button.addEventListener('click', (e) => {
-                const index = e.target.dataset.index;
-                cart.splice(index, 1); // Remove item from cart array
-                localStorage.setItem('cart', JSON.stringify(cart)); // Update localStorage
-                location.reload(); // Reload page to reflect changes
-            });
-        });
-
-        // Update total price
-        const totalPrice = cart.reduce((total, item) => {
-            const price = parseFloat(item.price.replace(' kr', ''));
-            return total + price;
-        }, 0);
-
-        // Add total price to the DOM
-        const totalElement = document.createElement('div');
-        totalElement.classList.add('cart-total');
-        totalElement.innerHTML = `<h2>Total Price: ${totalPrice} kr</h2>`;
-        cartContainer.appendChild(totalElement);
     }
+
+    localStorage.setItem('cart', JSON.stringify(cart)); // Oppdaterer localStorage
 }
+
+// Start applikasjonen
+async function init() {
+    const products = await fetchAllProducts();
+    renderProducts(products);
+}
+
+document.addEventListener('DOMContentLoaded', init);

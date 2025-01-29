@@ -1,16 +1,15 @@
 // Select the newsletter form
 const newsletterForm = document.getElementById('newsletter-form');
 
-// Handle form submission
 newsletterForm.addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
 
     const email = document.getElementById('email').value.trim();
 
     if (email) {
-        alert('Thank you for subscribing!');
-        newsletterForm.reset(); // Clear the form
+        alert(`Thank you, ${email}! You have successfully subscribed to Game Hub's newsletter.`);
+        newsletterForm.reset();
     } else {
-        alert('Please enter a valid email address.');
+        alert('Please provide a valid email address.');
     }
 });

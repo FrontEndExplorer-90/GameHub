@@ -1,80 +1,106 @@
 // ======= Variables =======
-const cartItems = document.querySelectorAll('.cart-item');
+const cartItemsContainer = document.querySelector('.cart-items');
+const totalDisplay = document.querySelector('.summary-totals .total span:last-child');
+const shippingDisplay = document.querySelector('.summary-totals .shipping span:last-child');
+const finalTotalDisplay = document.querySelector('.summary-totals .final-total span:last-child');
 const promoInput = document.getElementById('promocode');
 const applyPromoButton = document.querySelector('.apply-promo-btn');
-const totalElement = document.querySelector('.summary-totals .total span:last-child');
-const shippingElement = document.querySelector('.summary-totals .shipping span:last-child');
-const finalTotalElement = document.querySelector('.summary-totals .final-total span:last-child');
-const paymentMethods = document.querySelectorAll('.payment-card input');
+const checkoutButton = document.querySelector('.checkout-btn');
 
-// Default prices
-let cartTotal = 0;
-const shippingCost = 99; // Fixed shipping cost
+// Constants
+const SHIPPING_COST = 99; // Fixed shipping cost
+const PROMO_CODE = 'SAVE10'; // Example promo code
+const PROMO_DISCOUNT = 10; // Discount percentage for promo code
 
-// Promo codes and discounts
-const promoCodes = {
-    GAME10: 0.1, // 10% discount
-    GAME20: 0.2, // 20% discount
-};
+// Retrieve cart from local storage or initialize empty array
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // ======= Functions =======
 
-// Calculate the total price of the cart
-function calculateCartTotal() {
-    cartTotal = 0; // Reset total
-    cartItems.forEach((item) => {
-        const priceText = item.querySelector('.price').textContent;
-        const price = parseInt(priceText.replace('kr', '').trim());
-        cartTotal += price;
-    });
-    updateFinalTotal();
-}
+// Render cart items dynamically
+function renderCartItems() {
+    cartItemsContainer.innerHTML = ''; // Clear existing items
+    let total = 0;
 
-// Update the final total (including shipping and discounts)
-function updateFinalTotal(discount = 0) {
-    const discountedTotal = cartTotal * (1 - discount);
-    const finalTotal = discountedTotal + shippingCost;
-
-    // Update the DOM
-    totalElement.textContent = `${discountedTotal.toFixed(2)}kr`;
-    finalTotalElement.textContent = `${finalTotal.toFixed(2)}kr`;
-}
-
-// Apply a promo code
-function applyPromoCode() {
-    const promoCode = promoInput.value.trim().toUpperCase();
-    if (promoCodes[promoCode]) {
-        const discount = promoCodes[promoCode];
-        updateFinalTotal(discount);
-        alert(`Promo code "${promoCode}" applied! You got a ${discount * 100}% discount.`);
-    } else {
-        alert('Invalid promo code. Please try again.');
-        updateFinalTotal(); // Reset to default
+    if (cart.length === 0) {
+        // If cart is empty
+        cartItemsContainer.innerHTML = '<p>Your cart is empty!</p>';
+        totalDisplay.textContent = '0kr';
+        shippingDisplay.textContent = '0kr';
+        finalTotalDisplay.textContent = '0kr';
+        return;
     }
-}
 
-// Highlight selected payment method
-function highlightSelectedPayment() {
-    paymentMethods.forEach((method) => {
-        const parentLabel = method.closest('.payment-card');
-        if (method.checked) {
-            parentLabel.style.backgroundColor = '#2B88D9';
-        } else {
-            parentLabel.style.backgroundColor = '#222';
-        }
+    // Loop through cart items and render them
+    cart.forEach((item) => {
+        total += item.price * item.quantity; // Calculate total price
+
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+        cartItem.innerHTML = `
+            <img src="${item.image || 'default-image.png'}" alt="${item.name}">
+            <span>${item.name}</span>
+            <span>${item.quantity}</span>
+            <span class="price">${(item.price * item.quantity).toFixed(2)} kr</span>
+        `;
+        cartItemsContainer.appendChild(cartItem);
     });
+
+    // Update total price
+    totalDisplay.textContent = `${total.toFixed(2)}kr`;
+    updateFinalTotal(total);
 }
 
-// ======= Event Listeners =======
+// Update final total (including shipping and promo code discount)
+function updateFinalTotal(total) {
+    const promoDiscount = calculatePromoDiscount(total);
+    const finalTotal = total - promoDiscount + SHIPPING_COST;
+
+    shippingDisplay.textContent = `${SHIPPING_COST}kr`;
+    finalTotalDisplay.textContent = `${finalTotal.toFixed(2)}kr`;
+}
+
+// Calculate promo discount
+function calculatePromoDiscount(total) {
+    if (promoInput.value.trim().toUpperCase() === PROMO_CODE) {
+        return (PROMO_DISCOUNT / 100) * total;
+    }
+    return 0;
+}
+
+// Apply promo code
+function applyPromo() {
+    const total = parseFloat(totalDisplay.textContent.replace('kr', ''));
+    const promoDiscount = calculatePromoDiscount(total);
+
+    if (promoDiscount > 0) {
+        alert(`Promo code applied! You saved ${promoDiscount.toFixed(2)}kr.`);
+    } else {
+        alert('Invalid promo code!');
+    }
+    updateFinalTotal(total);
+}
+
+// Handle payment
+function processPayment() {
+    if (cart.length === 0) {
+        alert('Your cart is empty! Add some items before proceeding.');
+        return;
+    }
+
+    const finalTotal = finalTotalDisplay.textContent.replace('kr', '').trim();
+
+    localStorage.removeItem('cart'); // Clear the cart
+    location.href = 'purchase.html'; // Redirect to purchase page
+}
+
+// ======= Initialization =======
 document.addEventListener('DOMContentLoaded', () => {
-    // Initial calculation of cart total
-    calculateCartTotal();
+    renderCartItems(); // Render cart items on page load
 
-    // Add event listener for applying promo codes
-    applyPromoButton.addEventListener('click', applyPromoCode);
+    // Add event listener for promo code
+    applyPromoButton.addEventListener('click', applyPromo);
 
-    // Add event listener for payment method selection
-    paymentMethods.forEach((method) => {
-        method.addEventListener('change', highlightSelectedPayment);
-    });
+    // Add event listener for checkout button
+    checkoutButton.addEventListener('click', processPayment);
 });

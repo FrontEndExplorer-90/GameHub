@@ -35,12 +35,57 @@
                 <a href="login.html">
                     <img src="images/icons8-male-user-24.png" alt="User" class="login-icon">
                 </a>
-                <a href="empty-cart.html">
+                <a href="cart.html">
                     <img src="images/icons8-cart-32.png" alt="Cart">
                 </a>
             </div>
         </div>
-    </header>        
+    </header>   
+    
+     <!-- Sidebar -->
+     <label class="sidebar-toggle-label">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <!-- Sidebar Section -->
+    <aside class="sidebar">
+        <div class="sidebar-section">
+            <h3>Recommendations</h3>
+            <ul>
+                <li><a href="#">By Community</a></li>
+                <li><a href="#">By Experts</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-section">
+            <h3>Browse Categories</h3>
+            <ul>
+                <li><a href="#">For Beginners</a></li>
+                <li><a href="#">Upcoming</a></li>
+                <li><a href="#">New Releases</a></li>
+                <li><a href="#">Top Sellers</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-section">
+            <h3>Browse By Genre</h3>
+            <ul>
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Adventure</a></li>
+                <li><a href="#">Free to Play</a></li>
+                <li><a href="#">Sports</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-section">
+            <h3>Membership</h3>
+            <ul>
+                <li><a href="#">Become a member</a></li>
+                <li><a href="#">Early Access</a></li>
+                <li><a href="#">Sell Your Used Games</a></li>
+                <li><a href="#">Buy Used Games</a></li>
+            </ul>
+        </div>
+    </aside>
 
     <!-- Community Wrapper -->
     <div class="community-wrapper">
@@ -67,7 +112,7 @@
 
         <!-- Latest Posts -->
         <section class="latest-posts">
-            <h2 class="section-title">Latest Posts</h2>
+            <h2 class="section-title">Latest Bloggposts</h2>
             <!-- Example Content -->
             <li>New updates in Forge Legend !&nbsp &nbsp &nbsp (posted by: ElvenSword15, last updated: today, 9:00 pm)</li>
             <li>Boss level 100 in Spacewar !&nbsp &nbsp &nbsp (posted by: HelloFritty, last updated: yesterday, 1:15 am)</li>
@@ -75,12 +120,25 @@
         </section>
 
         <!-- Upcoming Events -->
-        <section class="upcoming-events">
-            <h2 class="section-title">Upcoming Events</h2>
-            <!-- Example Content -->
-            <p>Community Game Night - Nov 20</p>
+        <section class="event-calendar">
+            <h2 class="section-title">Event Calendar</h2>
+            <div id="calendar-header">
+                <button id="prev-month">&lt;</button>
+                <span id="month-year"></span>
+                <button id="next-month">&gt;</button>
+            </div>
+            <div id="calendar-days">
+                <div class="day-name">Mon</div>
+                <div class="day-name">Tue</div>
+                <div class="day-name">Wed</div>
+                <div class="day-name">Thu</div>
+                <div class="day-name">Fri</div>
+                <div class="day-name">Sat</div>
+                <div class="day-name">Sun</div>
+            </div>
+            <div id="calendar"></div>
         </section>
-
+        
         <!-- Featured Discussions -->
         <section class="featured-discussions">
             <div class="discussion-card">
@@ -144,6 +202,6 @@
             </div>
         </div>
     </footer>
-
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Game Hub - The universe of games">
-    <title>Game Hub</title>
+    <meta name="description" content="Game Product Page">
+    <title>GameHub - Product</title>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/index.css">
-    <script defer src="js/index.js"></script>
+    <link rel="stylesheet" href="css/productpage.css">
+    <script defer src="js/productpage.js"></script>
     <script defer src="js/main.js"></script>
+
 </head>
 <body>
     <div class="wrapper">
@@ -29,21 +30,26 @@
                     <input type="text" id="search-bar" name="search" placeholder="Search for Games" class="search-bar">
                 </form>
                 <div class="header-icons">
-                    <a href="settings.html"><img src="images/icons8-settings-50.png" alt="Settings"></a>
-                    <a href="login.html"><img src="images/icons8-male-user-24.png" alt="User" class="login-icon"></a>
-                    <a href="cart.html"><img src="images/icons8-cart-32.png" alt="Cart"></a>
+                    <a href="settings.html">
+                        <img src="images/icons8-settings-50.png" alt="Settings">
+                    </a>
+                    <a href="login.html">
+                        <img src="images/icons8-male-user-24.png" alt="User" class="login-icon">
+                    </a>
+                    <a href="cart.html">
+                        <img src="images/icons8-cart-32.png" alt="Cart">
+                    </a>
                 </div>
             </div>
         </header>
-
-        <!-- Sidebar -->
+        
         <label class="sidebar-toggle-label">
             <span></span>
             <span></span>
             <span></span>
         </label>
 
-        <!-- Sidebar Section -->
+        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-section">
                 <h3>Recommendations</h3>
@@ -80,54 +86,21 @@
                 </ul>
             </div>
         </aside>
-            
-        <!-- Main Content -->
+        
+        <!-- Main Product Section -->
         <main class="main-content">
-            <div class="top-section">
-                <!-- Carousel -->
-                <div class="carousel-container">
-                    <div class="carousel-slides">
-                        <div class="carousel-slide"><img src="images/GameHub_covers10.jpg" alt="Game 1"></div>
-                        <div class="carousel-slide"><img src="images/GameHub_covers3.jpg" alt="Game 2"></div>
-                        <div class="carousel-slide"><img src="images/GameHub_covers6.jpg" alt="Game 3"></div>
-                    </div>
-                    <button class="carousel-prev">←</button>
-                    <button class="carousel-next">→</button>
+            <section id="product-info">
+                <div id="image-section">
+                    <img id="product-image" src="" alt="">
                 </div>
-                <!-- Explore Section -->
-                <div class="explore-section">
-                    <h1>Explore the universe of games</h1>
-                    <p>Your one-stop shop for digital games at competitive prices</p>
-                    <a href="products.html" class="shop-btn">EXPLORE HERE</a>
-                </div>
-            </div>
-
-            <!-- Featured Section -->
-            <section class="featured">
-                <div class="most-wanted">
-                    <div class="game-cover">
-                        <img src="images/GameHub_covers9.jpg" alt="Cyberpunk: Rise of the Rebel">
-                    </div>
-                    <div class="most-wanted-text">
-                        <h2>Today's Most Wanted</h2>
-                        <h3>Try it now!</h3>
-                        <a href="#" class="shop-link shop-btn">SHOP HERE</a>
-                    </div>
+                <div id="product-details">
+                    <h1 id="page-title"></h1>
+                    <p id="product-desc"></p>
+                    <p id="product-price"></p>
+                    <div id="product-tags"></div>
                 </div>
             </section>
         </main>
-
-        <!-- Newsletter Popup -->
-        <div class="popup-trigger"></div>
-        <div class="newsletter-popup">
-            <div class="popup-content">
-                <h2>Game Hub Newsletter</h2>
-                <p>Sign up to our newsletter to receive the latest gaming trends</p>
-                <input type="email" id="newsletter-email" placeholder="Your email address...">
-                <button class="sign-up-btn">Sign Up</button>
-                <span class="close-button">&times;</span>
-            </div>
-        </div>
 
         <!-- Footer -->
         <footer class="footer">

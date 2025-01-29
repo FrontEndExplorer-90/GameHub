@@ -128,7 +128,8 @@
 }
 
 .explore-section a.shop-btn:hover, .featured a.shop-btn:hover {
-    background-color: none; 
+    background-color: transparent; 
+    color: #fff
 }
 
 .featured {
@@ -206,21 +207,23 @@
     align-items: flex-start;
 }
 
-.most-wanted-text span.shop-btn {
+.most-wanted-text .shop-btn {
     display: inline-block;
     padding: 10px 20px;
     margin-top: 15px;
-    background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2); 
-    -webkit-background-clip: text; 
-    color: transparent;
+    background-color: #2B88D9; 
+    color: #fff; 
     font-family: 'Audiowide', cursive;
     font-size: 20px;
     border-radius: 5px;
+    text-decoration: none; 
     cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.most-wanted-text span.shop-btn:hover {
-    color: #fff;
+.most-wanted-text .shop-btn:hover {
+    background-color: transparent; 
+    color: #fff; 
 }
 
 .popup-checkbox {

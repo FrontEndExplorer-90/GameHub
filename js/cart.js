@@ -16,83 +16,117 @@ function renderCartItems() {
     let total = 0;
 
     if (cart.length === 0) {
-        // Show empty cart message and hide other sections
         emptyCartMessage.style.display = 'flex';
         cartItemsContainer.style.display = 'none';
         totalPriceContainer.style.display = 'none';
         checkoutButtonWrapper.style.display = 'none';
     } else {
-        // Hide empty cart message and show other sections
         emptyCartMessage.style.display = 'none';
         cartItemsContainer.style.display = 'block';
         totalPriceContainer.style.display = 'block';
         checkoutButtonWrapper.style.display = 'block';
 
-        // Loop through cart items and render them
-        cart.forEach((item) => {
-            total += parseFloat(item.price.replace(',', '.').replace(' kr', '')); // Parse price
+        cart.forEach((item, index) => {
+            const productTitle = item.title || `Unnamed Product ${index + 1}`;
+            const productPrice = item.price || 0;
+            total += productPrice * item.quantity;
+
             const cartItem = document.createElement('div');
             cartItem.classList.add('cart-item');
-            cartItem.setAttribute('data-price', item.price);
             cartItem.innerHTML = `
-                <img src="${item.image}" alt="${item.name}">
-                <span>${item.name}</span>
-                <span>${item.quantity}</span>
-                <span class="price">${item.price}</span>
-                <button class="remove-btn">Remove</button>
+                <img src="${item.image || 'default-image.png'}" alt="${productTitle}">
+                <span>${productTitle}</span>
+                <div class="quantity-controls">
+                    <button class="decrease-btn" data-title="${productTitle}">-</button>
+                    <span>Qty: ${item.quantity}</span>
+                    <button class="increase-btn" data-title="${productTitle}">+</button>
+                </div>
+                <span class="price">${(productPrice * item.quantity).toFixed(2)} kr</span>
+                <button class="remove-btn" data-title="${productTitle}">Remove</button>
             `;
 
-            // Add event listener to remove button
-            cartItem.querySelector('.remove-btn').addEventListener('click', () => removeItem(item.name));
+            cartItem.querySelector('.decrease-btn').addEventListener('click', () => adjustQuantity(productTitle, -1));
+            cartItem.querySelector('.increase-btn').addEventListener('click', () => adjustQuantity(productTitle, 1));
+            cartItem.querySelector('.remove-btn').addEventListener('click', () => {
+                console.log('Remove button clicked for:', productTitle);
+                removeItem(productTitle);
+            });
 
             cartItemsContainer.appendChild(cartItem);
         });
 
-        // Update total price
         totalAmountElement.textContent = `${total.toFixed(2)} kr`;
     }
 }
 
+
 // Add an item to the cart
 function addToCart(product) {
-    // Check if the product already exists in the cart
-    const existingProduct = cart.find((item) => item.name === product.name);
+    const existingProduct = cart.find((item) => item.title === product.title);
     if (existingProduct) {
-        existingProduct.quantity += 1; // Increment quantity
+        existingProduct.quantity += 1;
     } else {
-        cart.push({ ...product, quantity: 1 }); // Add new product
+        cart.push({
+            title: product.title || `Unnamed Product`,
+            price: parseFloat(product.price) || 0,
+            image: product.image || 'default-image.png',
+            quantity: 1,
+        });
     }
 
-    localStorage.setItem('cart', JSON.stringify(cart)); // Update local storage
-    renderCartItems(); // Re-render cart
-    alert(`${product.name} has been added to the cart!`);
+    console.log('Product added:', product);
+    console.log('Updated cart:', cart);
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCartItems();
+}
+
+
+// Adjust the quantity of an item in the cart
+function adjustQuantity(name, adjustment) {
+    const product = cart.find((item) => item.name === name);
+    if (product) {
+        product.quantity += adjustment;
+        if (product.quantity <= 0) {
+            // Remove the item if quantity is zero or less
+            removeItem(name);
+        } else {
+            localStorage.setItem('cart', JSON.stringify(cart)); // Update local storage
+            renderCartItems(); // Re-render cart
+        }
+    }
 }
 
 // Remove an item from the cart
-function removeItem(name) {
-    cart = cart.filter((item) => item.name !== name);
-    localStorage.setItem('cart', JSON.stringify(cart)); // Update local storage
-    renderCartItems(); // Re-render cart
-}
+function removeItem(title) {
+    console.log('Current cart:', cart);
+    console.log('Removing item:', title);
 
-// Initialize "Add to Cart" buttons
-function initializeAddToCartButtons() {
-    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-    addToCartButtons.forEach((button) => {
-        button.addEventListener('click', (event) => {
-            const product = {
-                name: event.target.dataset.name,
-                price: event.target.dataset.price,
-                image: event.target.dataset.image,
-            };
+    if (!title) {
+        console.error('Error: title is undefined or null.');
+        return;
+    }
 
-            addToCart(product);
-        });
+    const originalCartLength = cart.length;
+
+    // Fjern element basert på eksakt tittel
+    cart = cart.filter((item) => {
+        if (!item.title) {
+            console.error('Error: item.title is undefined or null:', item);
+            return true; // Behold elementet i handlekurven hvis tittel ikke er gyldig
+        }
+        return item.title.trim() !== title.trim();
     });
+
+    console.log('Updated cart:', cart);
+    console.log('Items removed:', originalCartLength - cart.length);
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCartItems();
 }
+
 
 // ======= Initialization =======
 document.addEventListener('DOMContentLoaded', () => {
     renderCartItems(); // Render cart items on page load
-    initializeAddToCartButtons(); // Initialize "Add to Cart" functionality
 });

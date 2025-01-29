@@ -7,6 +7,10 @@
     margin: 0 auto;
 }
 
+.newsletter-cta {
+    margin-bottom: 40px; /* Avstand mellom CTA og neste seksjon */
+}
+
 .newsletter-cta h1 {
     font-family: 'Audiowide', sans-serif;
     font-size: 2.5rem;
@@ -14,12 +18,17 @@
     -webkit-background-clip: text;
     color: transparent;
     margin-bottom: 15px;
+    margin-top: 40px;
 }
 
 .newsletter-cta p {
     font-size: 1rem;
     color: #ccc;
     margin-bottom: 30px;
+}
+
+.subscription-form {
+    margin-bottom: 50px; /* Avstand til neste seksjon */
 }
 
 .subscription-form form {
@@ -62,6 +71,10 @@
 }
 
 /* Newsletter Previews */
+.newsletter-previews {
+    margin-bottom: 60px; /* Avstand mellom previews og FAQ */
+}
+
 .newsletter-previews h2 {
     font-size: 1.8rem;
     color: #00aaff;
@@ -94,6 +107,13 @@
     font-size: 1.8rem;
     color: #00aaff;
     margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.faq-item {
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: left;
 }
 
 .faq-item h4 {
@@ -107,6 +127,28 @@
     color: #ccc;
 }
 
+/* Footer Fix */
+.footer {
+    margin-top: 300px; /* Gir god avstand til innhold over */
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+
+
 /* Responsive Design */
 @media screen and (max-width: 600px) {
     .newsletter-cta h1 {
@@ -119,5 +161,11 @@
 
     .faq-item h4 {
         font-size: 1rem;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
     }
 }
