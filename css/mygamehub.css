@@ -1,52 +1,78 @@
+/* 📌 Gjør wrapperen større og sentrerer alt */
 .profile-wrapper {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 40px auto;
     padding: 20px;
+    text-align: center;
+    min-height: calc(100vh - 150px); /* Sørger for at footeren ikke trekkes opp */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+/* 📌 Større header for profilen */
 .profile-header {
     display: flex;
     align-items: center;
-    gap: 20px;
-    background: #222;
-    padding: 20px;
-    border-radius: 10px;
+    justify-content: center;
+    gap: 30px;
+    background: linear-gradient(to right, #1a1a1a, #333);
+    padding: 50px;
+    border-radius: 15px;
 }
 
-.profile-pic {
-    width: 80px;
-    height: 80px;
+/* 📌 Gjør profilbildet større */
+.profile-picture img {
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
-    border: 3px solid #ffcc00;
+    border: 5px solid #ffcc00;
 }
 
-.profile-info h2 {
-    margin: 0;
-    font-size: 24px;
-    color: #fff;
-}
-
+/* 📌 Justerer kortstørrelse og layout */
 .profile-content {
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Gjør kortene større */
+    gap: 30px;
+    margin-top: 30px;
 }
 
+/* 📌 Kortdesign for ordene, blogginnlegg, venner */
 .profile-card {
-    flex: 1;
-    background: #333;
-    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
     border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-height: 200px; /* Gjør kortene jevnere */
 }
 
-.profile-card h3 {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 20px;
+.profile-card h2 i {
+    font-size: 22px; /* Øker ikonstørrelsen */
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
-.profile-card img {
-    width: 24px;
-    height: 24px;
+/* 📌 Spesifikk fiks for blogginnlegg-ikonet */
+.blog-icon {
+    font-size:26px; /* Samme størrelse som de andre ikonene */
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* 📌 Gjør vennelisten mer visuelt tiltalende */
+.friend-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+/* 📌 Footer skal alltid være nederst */
+.footer {
+    margin-top: auto; /* Sørger for at footeren holder seg nederst */
+    padding: 30px;
+    text-align: center;
 }

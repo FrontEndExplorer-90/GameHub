@@ -1,95 +1,64 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const username = document.getElementById("username");
-    const profileImg = document.getElementById("profile-img");
-    const points = document.getElementById("points");
-    const orderList = document.getElementById("orders");
-    const blogList = document.getElementById("blogs");
-    const friendsList = document.getElementById("friends");
+    console.log("📌 MyGameHub JS loaded");
 
-    // 🎯 Hent brukerinfo fra localStorage
-    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-    const savedProfileImg = localStorage.getItem("profileImage");
-    const savedPoints = localStorage.getItem("gameHubPoints") || 0;
-    const savedOrders = JSON.parse(localStorage.getItem("orderHistory")) || [];
-    const savedBlogs = JSON.parse(localStorage.getItem("userBlogs")) || [];
-    const savedFriends = JSON.parse(localStorage.getItem("friendsList")) || [];
+    // 🎯 Hent HTML-elementene
+    const usernameElem = document.getElementById("username");
+    const profileImgElem = document.getElementById("profile-img");
+    const pointsElem = document.getElementById("points");
+    const orderListElem = document.getElementById("order-history");
+    const blogListElem = document.getElementById("blog-posts");
+    const friendsListElem = document.getElementById("friends-list");
 
-    if (loggedInUser) {
-        username.textContent = loggedInUser.username;
+    // 🎯 Hent brukerdata fra localStorage (og håndter feil)
+    let loggedInUser = { username: "Guest" }; // Standardverdi hvis ingen er logget inn
+
+    try {
+        const storedUser = localStorage.getItem("loggedInUser");
+        if (storedUser) {
+            loggedInUser = JSON.parse(storedUser);
+            if (!loggedInUser.username) throw new Error("Username missing in storage");
+        }
+    } catch (error) {
+        console.error("🚨 Feil ved henting av loggedInUser fra localStorage", error);
+        localStorage.removeItem("loggedInUser"); // Fjern korrupt data
     }
 
-    if (savedProfileImg) {
-        profileImg.src = savedProfileImg;
-    }
+    // 🎯 Oppdater brukerprofil
+    usernameElem.textContent = loggedInUser.username || "Guest";
+    profileImgElem.src = localStorage.getItem("profileImage") || "images/foxprofilpicture.webp";
+    pointsElem.textContent = localStorage.getItem("gameHubPoints") || 0;
 
-    points.textContent = savedPoints;
+    console.log(`👤 Logged in as: ${loggedInUser.username}`);
 
-    // 🎯 Fyll ut ordrehistorikk
-    savedOrders.forEach(order => {
-        const li = document.createElement("li");
-        li.textContent = `${order.title} - ${order.date}`;
-        orderList.appendChild(li);
-    });
-
-    // 🎯 Fyll ut blogginnlegg
-    savedBlogs.forEach(blog => {
-        const li = document.createElement("li");
-        li.innerHTML = `<a href="blogpost.html?id=${blog.id}">${blog.title}</a>`;
-        blogList.appendChild(li);
-    });
-
-    // 🎯 Fyll ut venneliste
-    savedFriends.forEach(friend => {
-        const li = document.createElement("li");
-        li.textContent = friend;
-        friendsList.appendChild(li);
-    });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const username = localStorage.getItem("loggedInUser") || "Guest";
-    const points = localStorage.getItem("gameHubPoints") || 0;
-
-    document.getElementById("username").textContent = username;
-    document.getElementById("points").textContent = points;
-
-    // Dummy data for order history
+    // 🎯 Dummydata for ordre, blogginnlegg og venner
     const orderHistory = [
         { title: "Cyberpunk", date: "Jan 15, 2025" },
         { title: "Space War", date: "Dec 20, 2024" },
         { title: "Boxer", date: "Nov 10, 2024" }
     ];
-    
-    const orderList = document.getElementById("order-history");
     orderHistory.forEach(order => {
         const li = document.createElement("li");
         li.textContent = `${order.title} - Purchased on ${order.date}`;
-        orderList.appendChild(li);
+        orderListElem.appendChild(li);
     });
 
-    // Dummy data for blog posts
     const blogPosts = [
         { title: "How to master Space War", date: "Feb 2, 2025" },
         { title: "Best Racing Games of 2024", date: "Jan 10, 2025" }
     ];
-    
-    const blogList = document.getElementById("blog-posts");
     blogPosts.forEach(post => {
         const li = document.createElement("li");
         li.textContent = `${post.title} - Posted on ${post.date}`;
-        blogList.appendChild(li);
+        blogListElem.appendChild(li);
     });
 
-    // Dummy data for friends
     const friends = [
-        { name: "GamerX", avatar: "images/friend1.png" },
-        { name: "ShadowNinja", avatar: "images/friend2.png" }
+        { name: "ShadowNinja", avatar: "images/foxprofilpicture.webp" },
+        { name: "GamerX", avatar: "images/womenglowingimg.webp" }
     ];
-    
-    const friendsList = document.getElementById("friends-list");
     friends.forEach(friend => {
         const li = document.createElement("li");
         li.innerHTML = `<img src="${friend.avatar}" alt="${friend.name}" class="friend-avatar"> ${friend.name}`;
-        friendsList.appendChild(li);
+        friendsListElem.appendChild(li);
     });
 });

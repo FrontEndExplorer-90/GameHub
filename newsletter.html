@@ -15,7 +15,7 @@
     <!-- Header Section -->
     <header class="header">
         <div class="logo">
-            <img src="images/GameHub_Logo.png" alt="Game Hub Logo">
+            <a href="index.html"><img src="images/GameHub_Logo.webp" alt="Game Hub Logo"></a>
         </div>
         <nav class="nav">
             <a href="index.html">Home</a>
@@ -28,9 +28,9 @@
                 <input type="text" id="search-bar" name="search" placeholder="Search for Games" class="search-bar">
             </form>
             <div class="header-icons">
-                <a href="settings.html"><img src="images/icons8-settings-50.png" alt="Settings"></a>
-                <a href="login.html"><img src="images/icons8-male-user-24.png" alt="User" class="login-icon"></a>
-                <a href="cart.html"><img src="images/icons8-cart-32.png" alt="Cart"></a>
+                <a href="settings.html"><img src="images/icons8-settings-50.webp" alt="Settings"></a>
+                <a href="login.html"><img src="images/icons8-male-user-24.webp" alt="User" class="login-icon"></a>
+                <a href="cart.html"><img src="images/icons8-cart-32.webp" alt="Cart"></a>
             </div>
         </div>
     </header>
@@ -42,17 +42,22 @@
             <p>Join our community and get the latest updates on new games, exclusive discounts, and more.</p>
         </section>
 
+        <!-- Subscription Form -->
         <section class="subscription-form">
-            <form id="newsletter-form" method="POST">
+            <form id="newsletter-form">
                 <label for="email">Enter your email:</label>
-                <input type="email" id="email" name="email" placeholder="Your email address" required>
+                <input type="email" id="newsletter-full-email" placeholder="Enter your email..." required>
                 <label class="consent">
                     <input type="checkbox" required> I agree to receive marketing emails from Game Hub.
                 </label>
                 <button type="submit">Subscribe</button>
             </form>
+            <p id="subscription-message" style="display: none; color: #0f0; font-weight: bold;">
+                ✔️ You have successfully subscribed!
+            </p>            
         </section>
 
+        <!-- Newsletter Benefits -->
         <section class="newsletter-previews">
             <h2>What You’ll Get</h2>
             <div class="preview-card">
@@ -69,6 +74,7 @@
             </div>
         </section>
 
+        <!-- FAQ Section -->
         <section class="newsletter-faq">
             <h2>Frequently Asked Questions</h2>
             <div class="faq-item">
@@ -86,10 +92,10 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-socials">
-                <a href="#"><img src="images/icons8-facebook-30.png" alt="Facebook"></a>
-                <a href="#"><img src="images/icons8-instagram-24.png" alt="Instagram"></a>
-                <a href="#"><img src="images/icons8-twitter-24.png" alt="Twitter"></a>
-                <a href="#"><img src="images/icons8-tiktok-32.png" alt="TikTok"></a>
+                <a href="#"><img src="images/icons8-facebook-30.webp" alt="Facebook"></a>
+                <a href="#"><img src="images/icons8-instagram-24.webp" alt="Instagram"></a>
+                <a href="#"><img src="images/icons8-twitter-24.webp" alt="Twitter"></a>
+                <a href="#"><img src="images/icons8-tiktok-32.webp" alt="TikTok"></a>
             </div>
             <div class="footer-links">
                 <a href="#">Jobs</a>
@@ -98,10 +104,9 @@
                 <a href="newsletter.html">Newsletter</a>
             </div>
             <div class="footer-logo">
-                <img src="images/GameHub_Logo.png" alt="Game Hub Logo">
+                <img src="images/GameHub_Logo.webp" alt="Game Hub Logo">
             </div>
         </div>
     </footer>
 </body>
 </html>
-

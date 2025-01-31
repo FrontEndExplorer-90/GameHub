@@ -38,7 +38,7 @@ function renderCartItems() {
         const cartItem = document.createElement('div');
         cartItem.classList.add('cart-item');
         cartItem.innerHTML = `
-            <img src="${item.image || 'default-image.png'}" alt="${item.name}">
+            <img src="${item.image || 'default-image.webp'}" alt="${item.name}">
             <span>${item.name}</span>
             <span>${item.quantity}</span>
             <span class="price">${(item.price * item.quantity).toFixed(2)} $</span>

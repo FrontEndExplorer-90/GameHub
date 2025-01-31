@@ -34,7 +34,7 @@ function renderCartItems() {
             const cartItem = document.createElement('div');
             cartItem.classList.add('cart-item');
             cartItem.innerHTML = `
-                <img src="${item.image || 'default-image.png'}" alt="${productTitle}">
+                <img src="${item.image || 'default-image.webp'}" alt="${productTitle}">
                 <span>${productTitle}</span>
                 <div class="quantity-controls">
                     <button class="decrease-btn" data-title="${productTitle}">-</button>
@@ -69,7 +69,7 @@ function addToCart(product) {
         cart.push({
             title: product.title || `Unnamed Product`,
             price: parseFloat(product.price) || 0,
-            image: product.image || 'default-image.png',
+            image: product.image || 'default-image.webp',
             quantity: 1,
         });
     }

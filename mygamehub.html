@@ -13,14 +13,25 @@
 </head>
 <body>
     <header class="header">
-        <div class="logo"><a href="index.html"><img src="images/GameHub_Logo.png" alt="Game Hub Logo"></a></div>
+        <div class="logo">
+            <img src="images/GameHub_Logo.webp" alt="Game Hub Logo">
+        </div>
         <nav class="nav">
             <a href="index.html">Home</a>
             <a href="products.html">Games</a>
             <a href="community.html">Community</a>
             <a href="about.html">About</a>
-            <a href="settings.html">Settings</a>
         </nav>
+        <div class="header-actions">
+            <form action="#" class="search-form">
+                <input type="text" id="search-bar" name="search" placeholder="Search for Games" class="search-bar">
+            </form>
+            <div class="header-icons">
+                <a href="settings.html"><img src="images/icons8-settings-50.webp" alt="Settings"></a>
+                <a href="login.html"><img src="images/icons8-male-user-24.webp" alt="User" class="login-icon"></a>
+                <a href="cart.html"><img src="images/icons8-cart-32.webp" alt="Cart"></a>
+            </div>
+        </div>
     </header>
 
     <label class="sidebar-toggle-label">
@@ -61,48 +72,52 @@
     </aside>
 
     <main class="profile-wrapper">
+        <!-- Profile Section -->
         <section class="profile-header">
-            <img src="images/DragonFourthWing.jpg" alt="Profile Picture" class="profile-pic">
+            <div class="profile-picture">
+                <img src="images/DragonFourthWing.webp" alt="Profile Picture" id="profile-pic">
+            </div>
             <div class="profile-info">
                 <h2 id="username">Username</h2>
-                <p>GameHub Points: <span id="points">0</span></p>
+                <p>🎮 GameHub Points: <span id="points">0</span></p>
             </div>
         </section>
 
         <section class="profile-content">
             <!-- Order History -->
             <div class="profile-card">
-                <h3><img src="images/order-icon.png" alt="Order"> Order History</h3>
-                <ul id="order-history">
-                    <!-- Dummy data her -->
-                </ul>
+                <h3><img src="images/icons8-order-history-50.webp" alt="Order"> Order History</h3>
+                <ul id="order-history"></ul>
             </div>
 
             <!-- Blog Posts -->
             <div class="profile-card">
-                <h3><img src="images/blog-icon.png" alt="Blog"> Your Blog Posts</h3>
-                <ul id="blog-posts">
-                    <!-- Dummy data her -->
-                </ul>
+                <h3><img src="images/icons8-blog-32.webp" alt="Blog"> Your Blog Posts</h3>
+                <ul id="blog-posts"></ul>
             </div>
 
             <!-- Friends -->
             <div class="profile-card">
-                <h3><img src="images/friends-icon.png" alt="Friends"> Friends</h3>
-                <ul id="friends-list">
-                    <!-- Dummy data her -->
-                </ul>
+                <h3><img src="images/icons8-friends-50.webp" alt="Friends"> Friends</h3>
+                <ul id="friends-list"></ul>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="profile-card">
+                <h3><img src="images/icons8-activities-48.webp" alt="Activity"> Recent Activity</h3>
+                <ul id="recent-activity"></ul>
             </div>
         </section>
     </main>
 
+
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-socials">
-                <a href="#"><img src="images/icons8-facebook-30.png" alt="Facebook"></a>
-                <a href="#"><img src="images/icons8-instagram-24.png" alt="Instagram"></a>
-                <a href="#"><img src="images/icons8-twitter-24.png" alt="Twitter"></a>
-                <a href="#"><img src="images/icons8-tiktok-32.png" alt="TikTok"></a>
+                <a href="#"><img src="images/icons8-facebook-30.webp" alt="Facebook"></a>
+                <a href="#"><img src="images/icons8-instagram-24.webp" alt="Instagram"></a>
+                <a href="#"><img src="images/icons8-twitter-24.webp" alt="Twitter"></a>
+                <a href="#"><img src="images/icons8-tiktok-32.webp" alt="TikTok"></a>
             </div>
             <div class="footer-links">
                 <a href="#">Jobs</a>
@@ -111,7 +126,7 @@
                 <a href="newsletter.html">Newsletter</a>
             </div>
             <div class="footer-logo">
-                <img src="images/GameHub_Logo.png" alt="Game Hub Logo">
+                <img src="images/GameHub_Logo.webp" alt="Game Hub Logo">
             </div>
         </div>
     </footer>

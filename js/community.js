@@ -6,19 +6,19 @@ const pollItems = document.querySelectorAll('.poll-item');
 const voteButton = document.querySelector('.vote-btn');
 const joinButton = document.querySelector('.view-all-btn'); 
 const membershipSection = document.querySelector('.membership');
-const loggedInUser = localStorage.getItem('loggedInUser'); 
+const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
 
 // ======= Functions =======
 
 document.addEventListener("DOMContentLoaded", () => {
    
     if (loggedInUser) {
-        // ✅ Brukeren er innlogget → Vis velkomstmelding
         membershipSection.innerHTML = `
-            <h2 class="section-title">Hi, ${loggedInUser}!</h2>
+            <h2 class="section-title">Hi, ${loggedInUser.username}!</h2>
             <p>Welcome back, enjoy your stay.</p>
             <button class="logout-btn">Logout</button>
         `;
+    
 
         // ✅ Logg ut-knapp → Fjern brukerdata og oppdater siden
         document.querySelector(".logout-btn").addEventListener("click", () => {

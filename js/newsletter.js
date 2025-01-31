@@ -1,15 +1,32 @@
 // Select the newsletter form
-const newsletterForm = document.getElementById('newsletter-form');
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("newsletter-form");
+    const message = document.getElementById("subscription-message");
 
-newsletterForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+    form.addEventListener("submit", (event) => {
+        event.preventDefault(); // Stopper standard form submission
 
-    const email = document.getElementById('email').value.trim();
+        const emailInput = document.getElementById("newsletter-full-email");
+        if (emailInput.value.trim() !== "") {
+            // Viser meldingen når brukeren trykker "Subscribe"
+            message.style.display = "block";
 
-    if (email) {
-        alert(`Thank you, ${email}! You have successfully subscribed to Game Hub's newsletter.`);
-        newsletterForm.reset();
-    } else {
-        alert('Please provide a valid email address.');
+            // Lagrer eposten i localStorage (valgfritt)
+            localStorage.setItem("subscribedEmail", emailInput.value.trim());
+
+            // Tømmer inputfeltet
+            emailInput.value = "";
+        } else {
+            alert("Please enter a valid email address.");
+        }
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const savedEmail = localStorage.getItem("subscribedEmail");
+
+    if (savedEmail) {
+        document.getElementById("newsletter-full-email").value = savedEmail;
     }
 });
