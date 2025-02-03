@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // 🎯 Dummy brukere (kan byttes med backend senere)
+   
     const users = [
         { username: "gamer123", password: "password123" },
         { username: "test", password: "1234" }
@@ -35,10 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (user) {
             console.log("✅ Login successful!");
 
-            // 🎯 Lagre bruker i localStorage
             localStorage.setItem("loggedInUser", JSON.stringify({ username: user.username }));
 
-            // 🎯 Omdiriger til community-siden
             window.location.href = "community.html";
         } else {
             alert("Invalid username or password. Please try again.");

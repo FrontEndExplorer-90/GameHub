@@ -11,7 +11,7 @@
 
 .main-content h1 {
     font-family: 'Audiowide', cursive;
-    font-size: 48px;
+    font-size: 3;
     margin-bottom: 40px;
     line-height: 1.5; 
     color: #fff;
@@ -19,7 +19,7 @@
 
 .main-content p {
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-size: 1.25rem;
     margin-bottom: 50px; 
     color: #ccc;
     line-height: 1.8; 
@@ -30,7 +30,7 @@
     background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2);
     color: #fff;
     border: none;
-    font-size: 20px;
+    font-size: 1.25rem;
     text-decoration: none;
     border-radius: 5px;
     cursor: pointer;
@@ -67,6 +67,6 @@
     }
 
     .footer-links a {
-        font-size: 0.9em;
+        font-size: 0.9rem;
     }
 }

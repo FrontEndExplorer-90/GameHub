@@ -11,17 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
       currentIndex = index;
   }
 
-  // Neste-knapp
+  
   document.querySelector(".carousel-next").addEventListener("click", () => {
       showSlide((currentIndex + 1) % slides.length);
   });
 
-  // Forrige-knapp
+  
   document.querySelector(".carousel-prev").addEventListener("click", () => {
       showSlide((currentIndex - 1 + slides.length) % slides.length);
   });
 
-  // Automatisk slide hvert 5. sekund
+  
   setInterval(() => {
       showSlide((currentIndex + 1) % slides.length);
   }, 5000);
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const emailInput = document.getElementById("newsletter-email");
   const signUpButton = document.getElementById("newsletter-signup-btn");
 
-  // 🎯 Åpne pop-up
+
   if (popupTrigger) {
       popupTrigger.addEventListener("click", () => {
           popup.style.display = "block";
@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // 🎯 Lukk pop-up
   if (closeButton) {
       closeButton.addEventListener("click", () => {
           popup.style.display = "none";
@@ -60,10 +59,10 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // 🎯 Håndter sign-up når knappen trykkes
+  
   if (signUpButton) {
       signUpButton.addEventListener("click", (event) => {
-          event.preventDefault(); // Hindrer siden fra å laste på nytt
+          event.preventDefault(); 
 
           const email = emailInput.value.trim();
           if (email === "") {
@@ -74,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
           console.log(`📩 Signing up with email: ${email}`);
           localStorage.setItem("subscribedEmail", email);
 
-          // 🎯 Send brukeren til `newsletter.html`
+          
           window.location.href = "newsletter.html";
       });
   }

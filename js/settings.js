@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const profileImg = document.getElementById('profile-img');
     const profileImgUpload = document.getElementById('profile-img-upload');
 
-    // 🎯 Hent lagrede verdier fra LocalStorage
+  
     const savedUsername = localStorage.getItem("username");
     const savedEmail = localStorage.getItem("email");
     const savedProfileImg = localStorage.getItem("profileImage");
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (savedEmail) emailInput.value = savedEmail;
     if (savedProfileImg) profileImg.src = savedProfileImg;
 
-    // 🎯 Rediger profil
+
     document.querySelector('.edit-btn').addEventListener('click', () => {
         if (usernameInput.disabled && emailInput.disabled) {
             usernameInput.disabled = false;
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 🎯 Endre passord
+  
     document.querySelector('.password-btn').addEventListener('click', () => {
         const newPassword = prompt('Enter your new password:');
         if (newPassword) {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 🎯 Profilbilde-opplasting
+ 
     profileImgUpload.addEventListener("change", (event) => {
         const file = event.target.files[0];
         if (file) {
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 🎯 Temavelger (Dark/Light)
+ 
     document.getElementById('theme').addEventListener('change', (event) => {
         const selectedTheme = event.target.value;
         if (selectedTheme === 'light') {
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 🎯 Slett konto
+  
     document.querySelector('.delete-account-btn').addEventListener('click', () => {
         const confirmation = confirm('Are you sure you want to delete your account? This action cannot be undone.');
         if (confirmation) {

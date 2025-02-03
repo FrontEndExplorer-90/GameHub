@@ -7,14 +7,14 @@
 
 .about-page h1 {
     font-family: 'Audiowide', cursive;
-    font-size: 40px;
+    font-size: 2.5rem;
     margin-bottom: 50px;
     text-align: center;
 }
 
 .about-page h2 {
     font-family: 'Audiowide', cursive;
-    font-size: 25px;
+    font-size: 1.6rem;
     margin-bottom: 15px;
     color: #2B88D9;
 }
@@ -22,7 +22,7 @@
 .about-page p,
 .about-page ul li {
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 25px;
 }
@@ -38,17 +38,17 @@
 }
 
 .collapsible-section ul {
-    max-height: 1000px; /* Default max-height to show content */
+    max-height: 1000px;
     overflow: hidden;
     transition: max-height 0.5s ease-in-out;
 }
 
 .collapsible-section ul.collapsed {
-    max-height: 0; /* Hide content when collapsed */
+    max-height: 0; 
     overflow: hidden;
 }
 
-/* Hide the sidebar toggle checkbox */
+
 .sidebar-toggle-checkbox {
     display: none;
 }
@@ -79,6 +79,6 @@
     }
 
     .footer-links a {
-        font-size: 0.9em;
+        font-size: 0.9rem;
     }
 }

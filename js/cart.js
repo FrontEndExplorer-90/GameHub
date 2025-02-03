@@ -5,14 +5,12 @@ const totalPriceContainer = document.querySelector('.cart-total');
 const totalAmountElement = document.getElementById('total-amount');
 const checkoutButtonWrapper = document.querySelector('.checkout-btn-wrapper');
 
-// Retrieve cart from local storage or initialize empty array
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // ======= Functions =======
 
-// Render cart items dynamically
 function renderCartItems() {
-    cartItemsContainer.innerHTML = ''; // Clear existing items
+    cartItemsContainer.innerHTML = ''; 
     let total = 0;
 
     if (cart.length === 0) {
@@ -60,7 +58,7 @@ function renderCartItems() {
 }
 
 
-// Add an item to the cart
+
 function addToCart(product) {
     const existingProduct = cart.find((item) => item.title === product.title);
     if (existingProduct) {
@@ -82,22 +80,22 @@ function addToCart(product) {
 }
 
 
-// Adjust the quantity of an item in the cart
+
 function adjustQuantity(name, adjustment) {
     const product = cart.find((item) => item.name === name);
     if (product) {
         product.quantity += adjustment;
         if (product.quantity <= 0) {
-            // Remove the item if quantity is zero or less
+            
             removeItem(name);
         } else {
-            localStorage.setItem('cart', JSON.stringify(cart)); // Update local storage
-            renderCartItems(); // Re-render cart
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCartItems(); 
         }
     }
 }
 
-// Remove an item from the cart
+
 function removeItem(title) {
     console.log('Current cart:', cart);
     console.log('Removing item:', title);
@@ -109,11 +107,11 @@ function removeItem(title) {
 
     const originalCartLength = cart.length;
 
-    // Fjern element basert på eksakt tittel
+    
     cart = cart.filter((item) => {
         if (!item.title) {
             console.error('Error: item.title is undefined or null:', item);
-            return true; // Behold elementet i handlekurven hvis tittel ikke er gyldig
+            return true; 
         }
         return item.title.trim() !== title.trim();
     });
@@ -128,5 +126,5 @@ function removeItem(title) {
 
 // ======= Initialization =======
 document.addEventListener('DOMContentLoaded', () => {
-    renderCartItems(); // Render cart items on page load
+    renderCartItems(); 
 });

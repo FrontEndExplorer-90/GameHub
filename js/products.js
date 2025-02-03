@@ -4,18 +4,17 @@ const categoryFilter = document.getElementById("category-filter");
 const priceFilter = document.getElementById("price-filter");
 const releaseFilter = document.getElementById("release-filter");
 const resetFiltersBtn = document.getElementById("reset-filters");
-const genreLinks = document.querySelectorAll("#genre-list a"); // Sidebar-sjangere
+const genreLinks = document.querySelectorAll("#genre-list a"); 
 
-let allProducts = []; // Lagrer alle produkter for filtrering
+let allProducts = []; 
 
-// 🎯 Hent alle spill fra API
 async function fetchAllProducts() {
     try {
         const response = await fetch(baseAPIUrl);
         if (!response.ok) throw new Error("Failed to fetch products");
 
         const jsonData = await response.json();
-        return jsonData.data || []; // Spillene ligger i `data`
+        return jsonData.data || []; 
     } catch (error) {
         console.error("Error fetching products:", error);
         gameListContainer.innerHTML = `<p class="error-message">Failed to load products. Please try again later.</p>`;
@@ -23,9 +22,9 @@ async function fetchAllProducts() {
     }
 }
 
-// 🎯 Generer HTML for spill
+
 function renderProducts(products) {
-    gameListContainer.innerHTML = ""; // Tøm containeren
+    gameListContainer.innerHTML = ""; 
 
     if (products.length === 0) {
         gameListContainer.innerHTML = `<p class="error-message">No products available based on the selected filters.</p>`;
@@ -50,22 +49,20 @@ function renderProducts(products) {
     attachAddToCartEvents(products);
 }
 
-// 🎯 Hent produkter når siden laster
 document.addEventListener("DOMContentLoaded", async () => {
     allProducts = await fetchAllProducts();
     renderProducts(allProducts);
 
-    // 🔍 Hent lagret søkeord fra localStorage
     const storedSearchTerm = localStorage.getItem("searchTerm");
 
     if (storedSearchTerm) {
-        console.log(`📥 Loaded search term: ${storedSearchTerm}`); // Debugging
+        console.log(`📥 Loaded search term: ${storedSearchTerm}`); 
         filterProductsBySearch(storedSearchTerm);
-        localStorage.removeItem("searchTerm"); // Slett etter bruk
+        localStorage.removeItem("searchTerm"); 
     }
 });
 
-// 🔍 Funksjon for å filtrere søk
+
 function filterProductsBySearch(searchTerm) {
     const lowerCaseSearch = searchTerm.toLowerCase();
 
@@ -74,23 +71,23 @@ function filterProductsBySearch(searchTerm) {
     );
 
     if (filteredGames.length === 1) {
-        // 🔥 Hvis kun ett treff, gå direkte til produktets side
+       
         window.location.href = `productpage.html?id=${filteredGames[0].id}`;
     } else if (filteredGames.length > 1) {
-        // 🔥 Hvis flere treff, vis dem i produktlisten
+        
         renderProducts(filteredGames);
     } else {
-        // ❌ Ingen treff, vis feilmelding
+        
         gameListContainer.innerHTML = `<p class="error-message">No products found for "${searchTerm}".</p>`;
     }
 }
 
 
-// 🎯 Filtrer produkter basert på valgte kriterier
+
 function filterProducts() {
     let filteredProducts = [...allProducts];
 
-    // 🎯 Filter etter kategori/sjanger (brukes sammen)
+   
     const selectedCategory = categoryFilter.value.toLowerCase();
     if (selectedCategory !== "all") {
         filteredProducts = filteredProducts.filter(game =>
@@ -98,7 +95,7 @@ function filterProducts() {
         );
     }
 
-    // 🎯 Sortering etter pris
+   
     const selectedPrice = priceFilter.value;
     if (selectedPrice === "low-to-high") {
         filteredProducts.sort((a, b) => a.price - b.price);
@@ -106,18 +103,17 @@ function filterProducts() {
         filteredProducts.sort((a, b) => b.price - a.price);
     }
 
-    // 🎯 Sortering etter utgivelsesdato
     const selectedRelease = releaseFilter.value;
     if (selectedRelease === "newest") {
-        filteredProducts.sort((a, b) => b.released - a.released); // Nyeste først
+        filteredProducts.sort((a, b) => b.released - a.released); 
     } else if (selectedRelease === "oldest") {
-        filteredProducts.sort((a, b) => a.released - b.released); // Eldste først
+        filteredProducts.sort((a, b) => a.released - b.released); 
     }
 
     renderProducts(filteredProducts);
 }
 
-// 🎯 Håndter sjanger-klikk i sidebar
+
 genreLinks.forEach(link => {
     link.addEventListener("click", (event) => {
         event.preventDefault();
@@ -126,17 +122,17 @@ genreLinks.forEach(link => {
     });
 });
 
-// 🎯 Filtrer spill etter sjanger fra sidebar
+
 function filterByGenre(selectedGenre) {
     const filteredProducts = allProducts.filter(game => 
         game.genre.toLowerCase() === selectedGenre.toLowerCase()
     );
 
-    categoryFilter.value = selectedGenre; // Oppdater dropdown
+    categoryFilter.value = selectedGenre; 
     renderProducts(filteredProducts);
 }
 
-// 🎯 Håndter klikk på "Reset Filters"
+
 resetFiltersBtn.addEventListener("click", () => {
     categoryFilter.value = "all";
     priceFilter.value = "all";
@@ -144,32 +140,31 @@ resetFiltersBtn.addEventListener("click", () => {
     renderProducts(allProducts);
 });
 
-// 🎯 Legg til event listeners på filtrene
+
 categoryFilter.addEventListener("change", filterProducts);
 priceFilter.addEventListener("change", filterProducts);
 releaseFilter.addEventListener("change", filterProducts);
 
-// 🎯 Legg til event listeners for søk
+
 document.addEventListener("DOMContentLoaded", async () => {
     allProducts = await fetchAllProducts();
     renderProducts(allProducts);
 
-    // 🎯 Sjekk om det finnes et lagret søk når products.html lastes
+    
     const storedSearchTerm = localStorage.getItem("searchTerm");
     if (storedSearchTerm) {
         filterProductsBySearch(storedSearchTerm);
-        localStorage.removeItem("searchTerm"); // Slett etter bruk
+        localStorage.removeItem("searchTerm"); 
     }
 
-    // 🎯 Hent valgt sjanger fra localStorage (hvis brukeren klikket fra sidebar)
+    
     const selectedGenre = localStorage.getItem("selectedGenre");
     if (selectedGenre) {
         filterByGenre(selectedGenre);
-        localStorage.removeItem("selectedGenre"); // Fjern etter bruk
+        localStorage.removeItem("selectedGenre"); 
     }
 });
 
-// 🎯 Legg til spill i handlekurven
 function attachAddToCartEvents(products) {
     const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
 
@@ -186,7 +181,7 @@ function attachAddToCartEvents(products) {
     });
 }
 
-// 🎯 Funksjon for å legge til spill i handlekurven
+
 function addToCart(product) {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const existingProduct = cart.find((item) => item.id === product.id);
@@ -203,6 +198,6 @@ function addToCart(product) {
         });
     }
 
-    localStorage.setItem("cart", JSON.stringify(cart)); // Oppdater localStorage
+    localStorage.setItem("cart", JSON.stringify(cart)); 
 }
 

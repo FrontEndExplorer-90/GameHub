@@ -97,7 +97,7 @@
 
 .explore-section h1 {
     font-family: 'Audiowide', cursive;
-    font-size: 60px;
+    font-size: 3.75rem;
     color: #2B88D9;
     background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2); 
     -webkit-background-clip: text; 
@@ -107,7 +107,7 @@
 
 .explore-section p {
     font-family: 'Roboto', sans-serif;
-    font-size: 25px;
+    font-size: 1.6rem;
     color: #2B88D9;
 }
 
@@ -119,7 +119,7 @@
     color: transparent;
     text-decoration: none;
     font-family: 'Audiowide', cursive;
-    font-size: 25px;
+    font-size: 1.6rem;
     border: none;
     width: auto; 
     max-width: 250px; 
@@ -144,7 +144,7 @@
 
 .featured h1 {
     font-family: 'Audiowide', cursive;
-    font-size: 45px; 
+    font-size: 2.8rem; 
     margin-bottom: 20px;
 }
 
@@ -182,7 +182,7 @@
 
 .most-wanted-text h2 {
     font-family: 'Audiowide', cursive;
-    font-size: 36px; 
+    font-size: 2.25rem; 
     background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2); 
     -webkit-background-clip: text; 
     color: transparent; 
@@ -193,7 +193,7 @@
 
 .most-wanted-text h3 {
     font-family: 'Audiowide', cursive;
-    font-size: 50px; 
+    font-size: 3.12rem; 
     background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2); 
     -webkit-background-clip: text; 
     color: transparent; 
@@ -207,7 +207,7 @@
     -webkit-background-clip: text; 
     color: transparent; 
     font-family: 'Audiowide', cursive;
-    font-size: 25px;
+    font-size: 1.6rem;
     text-transform: uppercase;
     border-radius: 8px;
     text-decoration: none;
@@ -235,7 +235,7 @@
     background-color: #2B88D9; 
     color: #fff; 
     font-family: 'Audiowide', cursive;
-    font-size: 20px;
+    font-size: 1.25rem;
     border-radius: 5px;
     text-decoration: none; 
     cursor: pointer;
@@ -293,12 +293,12 @@
 }
 
 .popup-content h2 {
-    font-size: 22px;
+    font-size: 1.34rem;
     color: #3A0BC2;
 }
 
 .popup-content p {
-    font-size: 16px;
+    font-size: 1rem;
     color: #2B88D9;
     margin-bottom: 15px;
 }
@@ -314,7 +314,7 @@
 #newsletter-signup-btn {
     background: linear-gradient(to right, #6a11cb, #2575fc); 
     color: white;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
     border: none;
     border-radius: 5px;
@@ -334,7 +334,7 @@
     position: absolute;
     top: 15px;
     right: 15px;
-    font-size: 20px;
+    font-size: 1.25rem;
     cursor: pointer;
     background-color: #ddd;
     padding: 5px;
@@ -373,20 +373,20 @@
 
     
     .main-content .explore-section h1 {
-        font-size: 1.8em; 
+        font-size: 1.8rem; 
         text-align: left;
         padding-left: 5px;
     }
 
     .main-content .explore-section p {
-        font-size: 1.1em; 
+        font-size: 1.1rem; 
         text-align: left;
         padding-left: 5px;
     }
 
     .main-content .explore-section .shop-btn {
         display: inline-block;
-        font-size: 1em;
+        font-size: 1rem;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
@@ -416,14 +416,14 @@
     }
 
     .main-content .featured .most-wanted-text h2 {
-        font-size: 1.5em; 
+        font-size: 1.5rem; 
         text-align: center;
         margin: 0 auto;
         width: fit-content; 
     }
 
     .main-content .featured .most-wanted-text h3 {
-        font-size: 1.2em; 
+        font-size: 1.2rem; 
         text-align: center;
         margin: 0 auto;
         width: fit-content; 
@@ -431,7 +431,7 @@
 
     .main-content .featured .most-wanted-text .shop-btn {
         display: inline-block;
-        font-size: 1em;
+        font-size: 1rem;
         margin: 10px auto 0 auto; 
         text-align: center;
         width: fit-content; 
@@ -450,12 +450,12 @@
         }
     
         .popup-content h2 {
-            font-size: 1.4em;
+            font-size: 1.4rem;
             text-align: center;
         }
     
         .popup-content p {
-            font-size: 1em;
+            font-size: 1rem;
             text-align: center;
         }
     
@@ -464,7 +464,7 @@
             margin: 10px auto 0 auto;
             padding: 10px 20px;
             width: 100%; 
-            font-size: 1em;
+            font-size: 1rem;
             text-align: center;
         }
     
@@ -472,7 +472,7 @@
             position: absolute;
             top: 8px;
             right: 8px;
-            font-size: 1.0em;
+            font-size: 1.0rem;
             cursor: pointer;
             padding: 5px;
             background-color: #ddd;
@@ -486,6 +486,6 @@
     }
 
     .footer-links a {
-        font-size: 0.9em;
+        font-size: 0.9rem;
     }
 }

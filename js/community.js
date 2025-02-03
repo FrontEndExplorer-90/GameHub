@@ -20,16 +20,16 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     
 
-        // ✅ Logg ut-knapp → Fjern brukerdata og oppdater siden
+        
         document.querySelector(".logout-btn").addEventListener("click", () => {
             localStorage.removeItem("loggedInUser");
             location.reload();
         });
 
     } else {
-        // ❌ Brukeren er ikke innlogget → Behold "Become a Member"
+        
         joinButton.addEventListener("click", () => {
-            window.location.href = "membership.html"; // Send til medlemskapssiden
+            window.location.href = "membership.html";
         });
     }
 });

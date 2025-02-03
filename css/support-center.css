@@ -8,7 +8,7 @@
 
 .support-center h1 {
     font-family: 'Audiowide', cursive;
-    font-size: 36px;
+    font-size: 2.25rem;
     margin-bottom: 20px;
     color: #fff;
 }
@@ -32,7 +32,7 @@
 
 .accordion-header {
     font-family: 'Audiowide', cursive;
-    font-size: 24px;
+    font-size: 1.5rem;
     display: block;
     cursor: pointer;
     padding: 10px 0;
@@ -107,10 +107,10 @@
     }
 
     .support-center h1 {
-        font-size: 28px;
+        font-size:1.75rem;
     }
 
     .accordion-header {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 }

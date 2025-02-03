@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const loggedInUser = localStorage.getItem("loggedInUser");
 
     if (loggedInUser) {
-        myGameHubLink.style.display = "inline-block"; // Vis linken hvis bruker er logget inn
+        myGameHubLink.style.display = "inline-block"; 
     }
 });
 
@@ -13,7 +13,7 @@ navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         const href = link.getAttribute('href');
         if (!href || href.startsWith('#')) {
-            // Prevent navigation for empty or anchor links
+           
             e.preventDefault();
             console.log(`Invalid or anchor link clicked: ${href}`);
         } else {
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 event.preventDefault();
                 const searchTerm = searchBar.value.trim().toLowerCase();
                 
-                if (searchTerm.length > 0) { // Sjekk at søkefeltet ikke er tomt
+                if (searchTerm.length > 0) { 
                     localStorage.setItem("searchTerm", searchTerm);
                     console.log(`🔍 Search term saved: ${searchTerm}`);
                     console.log("➡ Redirecting to products.html...");
@@ -70,8 +70,8 @@ const sidebarToggleLabel = document.querySelector('.sidebar-toggle-label');
 
 
 sidebarToggleLabel.addEventListener('click', (e) => {
-    e.stopPropagation(); // Forhindre at klikket bobler opp og registreres som "klikk utenfor"
-    sidebar.classList.toggle('active'); // Toggle 'active'-klassen
+    e.stopPropagation(); 
+    sidebar.classList.toggle('active'); 
     console.log(`Hamburger clicked. Sidebar toggled: ${sidebar.classList.contains('active')}`);
 });
 
@@ -80,23 +80,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     genreLinks.forEach(link => {
         link.addEventListener("click", (event) => {
-            event.preventDefault(); // Hindrer siden fra å laste på nytt
+            event.preventDefault(); 
 
-            const selectedGenre = event.target.dataset.genre; // Hent sjanger
-            localStorage.setItem("selectedGenre", selectedGenre); // Lagre i LocalStorage
+            const selectedGenre = event.target.dataset.genre; 
+            localStorage.setItem("selectedGenre", selectedGenre); 
 
-            window.location.href = "products.html"; // Send til produktsiden
+            window.location.href = "products.html"; 
         });
     });
 });
 
-
-// Når du klikker utenfor sidebaren
 document.addEventListener('click', (e) => {
-    // Sjekk om klikket er utenfor både sidebar og hamburgermeny
+    
     if (!sidebar.contains(e.target) && !sidebarToggleLabel.contains(e.target)) {
         if (sidebar.classList.contains('active')) {
-            sidebar.classList.remove('active'); // Fjern 'active'-klassen
+            sidebar.classList.remove('active'); 
             console.log('Clicked outside, sidebar closed.');
         }
     }
@@ -106,10 +104,9 @@ document.addEventListener('click', (e) => {
 const cartIcon = document.querySelector('.header-icons a[href="empty-cart.html"]');
 if (cartIcon) {
     cartIcon.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent default anchor behavior
-        window.location.href = 'cart.html'; // Redirect to the cart page
+        e.preventDefault(); 
+        window.location.href = 'cart.html'; 
     });
 }
 
-// ======= Debugging Utility (Optional) =======
-console.log('Header, footer, and sidebar functionality initialized.');
+

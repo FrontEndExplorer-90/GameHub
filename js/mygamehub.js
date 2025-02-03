@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log("📌 MyGameHub JS loaded");
 
-    // 🎯 Hent HTML-elementene
+
     const usernameElem = document.getElementById("username");
     const profileImgElem = document.getElementById("profile-img");
     const pointsElem = document.getElementById("points");
@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const blogListElem = document.getElementById("blog-posts");
     const friendsListElem = document.getElementById("friends-list");
 
-    // 🎯 Hent brukerdata fra localStorage (og håndter feil)
-    let loggedInUser = { username: "Guest" }; // Standardverdi hvis ingen er logget inn
+  
+    let loggedInUser = { username: "Guest" }; 
 
     try {
         const storedUser = localStorage.getItem("loggedInUser");
@@ -20,17 +20,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     } catch (error) {
         console.error("🚨 Feil ved henting av loggedInUser fra localStorage", error);
-        localStorage.removeItem("loggedInUser"); // Fjern korrupt data
+        localStorage.removeItem("loggedInUser"); 
     }
 
-    // 🎯 Oppdater brukerprofil
+   
     usernameElem.textContent = loggedInUser.username || "Guest";
     profileImgElem.src = localStorage.getItem("profileImage") || "images/foxprofilpicture.webp";
     pointsElem.textContent = localStorage.getItem("gameHubPoints") || 0;
 
     console.log(`👤 Logged in as: ${loggedInUser.username}`);
 
-    // 🎯 Dummydata for ordre, blogginnlegg og venner
+   
     const orderHistory = [
         { title: "Cyberpunk", date: "Jan 15, 2025" },
         { title: "Space War", date: "Dec 20, 2024" },

@@ -16,7 +16,7 @@
 .page-title h1 {
     font-family: 'Audiowide', cursive;
     color: #fff;
-    font-size: 48px;
+    font-size: 3rem;
 }
 
 .left-section {
@@ -57,7 +57,7 @@
 
 .cart-item .price {
     color: #fff;
-    font-size: 18px;
+    font-size: 1.2rem;
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
 }
@@ -89,7 +89,7 @@
 }
 
 .payment-card input:checked + span {
-    color: #fff; /* Adjust color for contrast */
+    color: #fff; 
 }
 
 #promocode {
@@ -111,7 +111,7 @@ fieldset {
 legend {
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    font-size: 18px;
+    font-size: 1.2rem;
     padding: 0 10px;         
 }
 
@@ -149,7 +149,7 @@ legend {
 
 .apply-promo-btn {
     padding: 5px 10px;
-    font-size: 14px;
+    font-size: 0.9rem;
     background-color: #2B88D9;
     color: #fff;
     border: none;
@@ -224,6 +224,6 @@ legend {
     }
 
     .footer-links a {
-        font-size: 0.9em;
+        font-size: 0.9rem;
     }
 }

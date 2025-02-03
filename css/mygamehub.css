@@ -1,16 +1,15 @@
-/* 📌 Gjør wrapperen større og sentrerer alt */
 .profile-wrapper {
     max-width: 1200px;
     margin: 40px auto;
     padding: 20px;
     text-align: center;
-    min-height: calc(100vh - 150px); /* Sørger for at footeren ikke trekkes opp */
+    min-height: calc(100vh - 150px); 
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-/* 📌 Større header for profilen */
+
 .profile-header {
     display: flex;
     align-items: center;
@@ -21,7 +20,6 @@
     border-radius: 15px;
 }
 
-/* 📌 Gjør profilbildet større */
 .profile-picture img {
     width: 140px;
     height: 140px;
@@ -29,32 +27,31 @@
     border: 5px solid #ffcc00;
 }
 
-/* 📌 Justerer kortstørrelse og layout */
+
 .profile-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Gjør kortene større */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
     gap: 30px;
     margin-top: 30px;
 }
 
-/* 📌 Kortdesign for ordene, blogginnlegg, venner */
+
 .profile-card {
     background: rgba(255, 255, 255, 0.1);
     padding: 25px;
     border-radius: 10px;
     transition: transform 0.2s, box-shadow 0.2s;
-    min-height: 200px; /* Gjør kortene jevnere */
+    min-height: 200px; 
 }
 
 .profile-card h2 i {
-    font-size: 22px; /* Øker ikonstørrelsen */
+    font-size: 1.4rem; 
     margin-right: 10px;
     vertical-align: middle;
 }
 
-/* 📌 Spesifikk fiks for blogginnlegg-ikonet */
 .blog-icon {
-    font-size:26px; /* Samme størrelse som de andre ikonene */
+    font-size:1.6rem; 
 }
 
 .profile-card:hover {
@@ -62,7 +59,6 @@
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
 }
 
-/* 📌 Gjør vennelisten mer visuelt tiltalende */
 .friend-avatar {
     width: 40px;
     height: 40px;
@@ -70,9 +66,8 @@
     margin-right: 12px;
 }
 
-/* 📌 Footer skal alltid være nederst */
 .footer {
-    margin-top: auto; /* Sørger for at footeren holder seg nederst */
+    margin-top: auto; 
     padding: 30px;
     text-align: center;
 }

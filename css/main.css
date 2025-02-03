@@ -64,12 +64,11 @@ a:hover {
     position: relative;
 }
 
-/* Headings and Fonts */
+
 h1, h2, h3, .big-text {
     font-family: 'Audiowide', cursive;
 }
 
-/* Header Styles */
 .header {
     display: flex;
     justify-content: space-between;
@@ -96,7 +95,7 @@ h1, h2, h3, .big-text {
     cursor: pointer;
 }
 
-/* Navigation Links */
+
 .nav {
     flex: 2;
     display: flex;
@@ -105,7 +104,7 @@ h1, h2, h3, .big-text {
 }
 
 .nav a {
-    font-size: 18px;
+    font-size: 1.2rem;
     color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
@@ -119,7 +118,7 @@ h1, h2, h3, .big-text {
     color: #fff;
 }
 
-/* Header Actions */
+
 .header-actions {
     display: flex;
     align-items: center;
@@ -142,7 +141,7 @@ h1, h2, h3, .big-text {
     transform: scale(1.2);
 }
 
-/* Search Bar */
+
 .search-form {
     display: flex;
     align-items: center;
@@ -162,24 +161,23 @@ h1, h2, h3, .big-text {
     color: #888;
 }
 
-/* Sidebar Styles */
+
 .sidebar {
     position: fixed;
     top: 0;
-    left: -250px; /* Startposisjon utenfor skjermen */
+    left: -250px; 
     width: 250px;
     height: 100vh;
     background-color: #111;
     color: white;
-    transition: left 0.3s ease; /* Myk animasjon for å skyve sidebaren */
+    transition: left 0.3s ease; 
     z-index: 1000;
     padding: 80px 15px 20px;
     box-sizing: border-box;
 }
 
-/* Når sidebaren er aktiv */
 .sidebar.active {
-    left: 0; /* Flytt sidebaren inn på skjermen */
+    left: 0; 
 }
 
 .sidebar-section {
@@ -187,7 +185,7 @@ h1, h2, h3, .big-text {
 }
 
 .sidebar-section h3 {
-    font-size: 18px;
+    font-size: 1.2rem;
     margin-bottom: 15px;
     margin-top: 15px;
     color: #00aaff;
@@ -211,7 +209,7 @@ h1, h2, h3, .big-text {
     color: #00aaff;
 }
 
-/* Hamburgermeny (toggle-knapp) */
+
 .sidebar-toggle-label {
     display: flex;
     flex-direction: column;
@@ -235,13 +233,11 @@ h1, h2, h3, .big-text {
     background-color: #00aaff; 
 }
 
-/* Skjul checkbox */
+
 .sidebar-toggle-checkbox {
     display: none;
 }
 
-
-/* Footer Styles */
 .footer-container {
     display: flex;
     align-items: center;
@@ -301,7 +297,7 @@ h1, h2, h3, .big-text {
     width: 100px;
 }
 
-/* Responsive Styling */
+
 @media screen and (max-width: 600px) {
     body, .wrapper, .content-container {
         overflow-x: hidden;

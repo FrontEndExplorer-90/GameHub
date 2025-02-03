@@ -1,5 +1,3 @@
-// support-center.js
-
 document.addEventListener('DOMContentLoaded', () => {
     const accordionHeaders = document.querySelectorAll('.accordion-header');
 
@@ -8,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const accordionItem = header.parentElement;
             const accordionContent = accordionItem.querySelector('.accordion-content');
 
-            // Toggle active class
+           
             accordionItem.classList.toggle('active');
 
-            // Close other accordion items
+          
             accordionHeaders.forEach((otherHeader) => {
                 if (otherHeader !== header) {
                     const otherItem = otherHeader.parentElement;
@@ -20,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // Toggle accordion content
             if (accordionItem.classList.contains('active')) {
                 accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
             } else {

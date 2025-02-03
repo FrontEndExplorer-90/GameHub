@@ -21,13 +21,13 @@
 }
 
 .settings-card h2 {
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #00aaff;
     margin-bottom: 10px;
 }
 
 .settings-card p {
-    font-size: 14px;
+    font-size: 0.9rem;
     color: #888;
     margin-bottom: 15px;
 }

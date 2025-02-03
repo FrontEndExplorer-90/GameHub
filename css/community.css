@@ -1,11 +1,9 @@
-/* General Reset */ 
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body and Wrapper */
 body {
     font-family: Arial, sans-serif;
     background-color: #111;
@@ -21,7 +19,7 @@ body {
     gap: 20px;
 }
 
-/* Welcome Banner */
+
 .welcome-banner {
     grid-column: 1 / -1;
     text-align: center;
@@ -30,11 +28,10 @@ body {
 }
 
 .welcome-banner h1 {
-    font-size: 35px;
+    font-size: 2.2rem;
     color: #fff;
 }
 
-/* Membership Section (Top of Page) */
 .membership {
     grid-column: 1 / -1;
     text-align: center;
@@ -45,13 +42,13 @@ body {
 }
 
 .membership .section-title {
-    font-size: 22px;
+    font-size: 1.4rem;
     color: #554AD2;
     margin-bottom: 10px;
 }
 
 .membership p {
-    font-size: 14px;
+    font-size: 0.9rem;
     margin-bottom: 15px;
 }
 
@@ -69,7 +66,7 @@ body {
     color: white;
     border: none;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 1rem;
     font-family: 'Audiowide', cursive;
     border-radius: 5px;
     cursor: pointer;
@@ -83,7 +80,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Community Guidelines Button */
 .guidelines-btn {
     grid-column: 1 / -1;
     text-align: center;
@@ -92,7 +88,7 @@ body {
 
 .guidelines-btn a {
     color: #00aaff;
-    font-size: 25px;
+    font-size: 1.6rem;
     text-decoration: none;
     padding: 10px 20px;
 }
@@ -101,7 +97,7 @@ body {
     background-color: #666;
 }
 
-/* Leaderboard */
+
 .leaderboard {
     background-color: none;
     border:3px solid #ffaa00;
@@ -113,7 +109,7 @@ body {
 }
 
 .leaderboard .section-title {
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #ffaa00;
     margin-bottom: 10px;
 }
@@ -132,7 +128,6 @@ body {
 }
 
 
-/* Latest Posts */
 .latest-posts {
     background-color: #00aaffb2;
     padding: 15px;
@@ -141,8 +136,6 @@ body {
     width: 100%;
     line-height: 4.0;
 }
-
-/* Upcoming Events */
 
 
 .event-calendar {
@@ -235,7 +228,6 @@ body {
 }
 
 
-/* Featured Discussions */
 .featured-discussions {
     grid-column: 1 / span 2;
     display: flex;
@@ -253,12 +245,12 @@ body {
 }
 
 .discussion-card h3 {
-    font-size: 18px;
+    font-size: 1.2rem;
     color: #ffaa00;
     margin-bottom: 10px;
 }
 
-/* Live Chat */
+
 .live-chat {
     grid-column: 1 / span 2;
     padding: 15px;
@@ -269,7 +261,7 @@ body {
 }
 
 .live-chat .section-title {
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #554AD2;
     margin-bottom: 10px;
 }
@@ -308,7 +300,6 @@ body {
     background-color: #0088cc;
 }
 
-/* Poll of the Day */
 .poll {
     grid-column: 1 / -1;
     background-color: none;
@@ -321,7 +312,7 @@ body {
 }
 
 .poll .section-title {
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #ffaa00;
     margin-bottom: 10px;
 }
@@ -358,7 +349,7 @@ body {
     background-color: #cc8800;
 }
 
-/* Utility Classes */
+
 .clearfix::after {
     content: "";
     display: table;
@@ -367,7 +358,6 @@ body {
 
 @media screen and (max-width: 600px) {
 
-    /* Community Wrapper */
     .community-wrapper {
         display: flex;
         flex-direction: column;
@@ -376,22 +366,22 @@ body {
         gap: 15px;
     }
 
-    /* Welcome Banner */
+    
     .welcome-banner h1 {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
 
-    /* Membership Section */
+    
     .membership {
         padding: 15px;
-        font-size: 18px;
+        font-size: 1.2rem;
     }
 
     .membership .section-title {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 
-    /* Leaderboard */
+   
     .leaderboard {
         width: 100%;
         padding: 10px;
@@ -399,23 +389,22 @@ body {
     }
 
     .leaderboard .section-title {
-        font-size: 18px;
+        font-size: 1.2rem;
     }
 
-    /* Latest Posts */
+    
     .latest-posts {
         width: 100%;
         padding: 10px;
-        font-size: 16px;
+        font-size: 1rem;
     }
 
-    /* Upcoming Events */
     .upcoming-events {
         padding: 10px;
-        font-size: 16px;
+        font-size: 1rem;
     }
 
-    /* Featured Discussions */
+    
     .featured-discussions {
         flex-direction: column;
     }
@@ -423,16 +412,16 @@ body {
     .discussion-card {
         padding: 10px;
         margin-bottom: 10px;
-        font-size: 16px;
+        font-size: 1rem;
     }
 
-    /* Live Chat */
+ 
     .live-chat {
         padding: 10px;
     }
 
     .live-chat .section-title {
-        font-size: 18px;
+        font-size: 1.2rem;
     }
 
     .chat-box {
@@ -444,25 +433,23 @@ body {
         margin-top: 10px;
     }
 
-    /* Poll of the Day */
+
     .poll {
         padding: 10px;
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .poll .section-title {
-        font-size: 18px;
+        font-size: 1.2rem;
     }
 
-    /* Buttons and Text Adjustments */
     .view-all-btn, .send-btn, .vote-btn {
-        font-size: 16px;
+        font-size: 1rem;
         padding: 8px;
     }
     
-    /* Guidelines Button */
     .guidelines-btn a {
-        font-size: 20px;
+        font-size: 1.23rem;
         padding: 8px;
     }
 
@@ -472,7 +459,7 @@ body {
     }
 
     .footer-links a {
-        font-size: 0.9em;
+        font-size: 0.9rem;
     }
 
 }

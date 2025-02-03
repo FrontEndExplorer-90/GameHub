@@ -1,6 +1,6 @@
 .main-content h1 {
     font-family: 'Audiowide', cursive;
-    font-size: 48px;
+    font-size: 3rem;
     color: #fff; 
     text-align: center;
     margin-top: 70px;
@@ -89,7 +89,7 @@
 
 .game-item h2 {
     font-family: 'Roboto', sans-serif;
-    font-size: 15px;
+    font-size: 0.94rem;
     color: #fff;
     margin-bottom: 5px;
 }
@@ -155,7 +155,7 @@
     }
 
     .footer-links a {
-        font-size: 0.9em;
+        font-size: 0.9rem;
     }
 
 }

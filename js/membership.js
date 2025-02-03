@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
             password
         };
 
-        // Lagre brukeren i LocalStorage (simulering)
+     
         localStorage.setItem("gamehubUser", JSON.stringify(user));
 
         alert("Registration successful! You can now log in.");

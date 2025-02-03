@@ -1,4 +1,3 @@
-/* Newsletter Page Styles */
 .newsletter-wrapper {
     text-align: center;
     padding: 20px;
@@ -8,7 +7,7 @@
 }
 
 .newsletter-cta {
-    margin-bottom: 40px; /* Avstand mellom CTA og neste seksjon */
+    margin-bottom: 40px; 
 }
 
 .newsletter-cta h1 {
@@ -28,7 +27,7 @@
 }
 
 .subscription-form {
-    margin-bottom: 50px; /* Avstand til neste seksjon */
+    margin-bottom: 50px; 
 }
 
 .subscription-form form {
@@ -44,7 +43,7 @@
     border: none;
     width: 80%;
     max-width: 400px;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .subscription-form .consent {
@@ -70,9 +69,8 @@
     background-color: #0088cc;
 }
 
-/* Newsletter Previews */
 .newsletter-previews {
-    margin-bottom: 60px; /* Avstand mellom previews og FAQ */
+    margin-bottom: 60px; 
 }
 
 .newsletter-previews h2 {
@@ -127,9 +125,8 @@
     color: #ccc;
 }
 
-/* Footer Fix */
 .footer {
-    margin-top: 300px; /* Gir god avstand til innhold over */
+    margin-top: 300px; 
     padding: 20px 0;
     position: relative;
     width: 100%;
@@ -147,9 +144,6 @@
 }
 
 
-
-
-/* Responsive Design */
 @media screen and (max-width: 600px) {
     .newsletter-cta h1 {
         font-size: 2rem;

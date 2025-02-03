@@ -7,23 +7,22 @@ const promoInput = document.getElementById('promocode');
 const applyPromoButton = document.querySelector('.apply-promo-btn');
 const checkoutButton = document.querySelector('.checkout-btn');
 
-// Constants
-const SHIPPING_COST = 99; // Fixed shipping cost
-const PROMO_CODE = 'SAVE10'; // Example promo code
-const PROMO_DISCOUNT = 10; // Discount percentage for promo code
 
-// Retrieve cart from local storage or initialize empty array
+const SHIPPING_COST = 99; 
+const PROMO_CODE = 'SAVE10'; 
+const PROMO_DISCOUNT = 10; 
+
+
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // ======= Functions =======
 
-// Render cart items dynamically
 function renderCartItems() {
-    cartItemsContainer.innerHTML = ''; // Clear existing items
+    cartItemsContainer.innerHTML = ''; 
     let total = 0;
 
     if (cart.length === 0) {
-        // If cart is empty
+      
         cartItemsContainer.innerHTML = '<p>Your cart is empty!</p>';
         totalDisplay.textContent = '0$';
         shippingDisplay.textContent = '0$';
@@ -31,9 +30,9 @@ function renderCartItems() {
         return;
     }
 
-    // Loop through cart items and render them
+    
     cart.forEach((item) => {
-        total += item.price * item.quantity; // Calculate total price
+        total += item.price * item.quantity; 
 
         const cartItem = document.createElement('div');
         cartItem.classList.add('cart-item');
@@ -46,12 +45,12 @@ function renderCartItems() {
         cartItemsContainer.appendChild(cartItem);
     });
 
-    // Update total price
+    
     totalDisplay.textContent = `${total.toFixed(2)}$`;
     updateFinalTotal(total);
 }
 
-// Update final total (including shipping and promo code discount)
+
 function updateFinalTotal(total) {
     const promoDiscount = calculatePromoDiscount(total);
     const finalTotal = total - promoDiscount + SHIPPING_COST;
@@ -60,7 +59,7 @@ function updateFinalTotal(total) {
     finalTotalDisplay.textContent = `${finalTotal.toFixed(2)}$`;
 }
 
-// Calculate promo discount
+
 function calculatePromoDiscount(total) {
     if (promoInput.value.trim().toUpperCase() === PROMO_CODE) {
         return (PROMO_DISCOUNT / 100) * total;
@@ -68,7 +67,7 @@ function calculatePromoDiscount(total) {
     return 0;
 }
 
-// Apply promo code
+
 function applyPromo() {
     const total = parseFloat(totalDisplay.textContent.replace('$', ''));
     const promoDiscount = calculatePromoDiscount(total);
@@ -81,7 +80,7 @@ function applyPromo() {
     updateFinalTotal(total);
 }
 
-// Handle payment
+
 function processPayment() {
     if (cart.length === 0) {
         alert('Your cart is empty! Add some items before proceeding.');
@@ -90,17 +89,17 @@ function processPayment() {
 
     const finalTotal = finalTotalDisplay.textContent.replace('$', '').trim();
 
-    localStorage.removeItem('cart'); // Clear the cart
-    location.href = 'purchase.html'; // Redirect to purchase page
+    localStorage.removeItem('cart'); 
+    location.href = 'purchase.html'; 
 }
 
 // ======= Initialization =======
 document.addEventListener('DOMContentLoaded', () => {
-    renderCartItems(); // Render cart items on page load
+    renderCartItems(); 
 
-    // Add event listener for promo code
+    
     applyPromoButton.addEventListener('click', applyPromo);
 
-    // Add event listener for checkout button
+    
     checkoutButton.addEventListener('click', processPayment);
 });
