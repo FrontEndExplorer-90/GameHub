@@ -9,15 +9,20 @@ const checkoutButton = document.querySelector('.checkout-btn');
 const discountRow = document.querySelector('.discount-row'); 
 const discountDisplay = document.querySelector('.discount'); 
 
-const SHIPPING_COST = 8; 
-const PROMO_CODE = 'SAVE10'; 
+const SHIPPING_COST = 8;
+const PROMO_CODE = 'SAVE10';
 const PROMO_DISCOUNT = 10; 
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+console.log("Script loaded, checking elements:");
+console.log("applyPromoButton:", applyPromoButton);
+console.log("checkoutButton:", checkoutButton);
+
 // ======= Functions =======
 
 function renderCartItems() {
+    console.log("Rendering cart items...");
     cartItemsContainer.innerHTML = ''; 
     let total = 0;
 
@@ -26,7 +31,7 @@ function renderCartItems() {
         totalDisplay.textContent = '0$';
         shippingDisplay.textContent = '0$';
         finalTotalDisplay.textContent = '0$';
-        if (discountRow) discountRow.style.display = 'none'; // Skjul rabattfelt
+        if (discountRow) discountRow.style.display = 'none'; 
         return;
     }
 
@@ -49,6 +54,7 @@ function renderCartItems() {
 }
 
 function updateFinalTotal(total) {
+    console.log("Updating final total with:", total);
     const promoDiscount = calculatePromoDiscount(total);
     const finalTotal = total - promoDiscount + SHIPPING_COST;
 
@@ -66,10 +72,12 @@ function updateFinalTotal(total) {
 }
 
 function calculatePromoDiscount(total) {
+    console.log("Checking promo code:", promoInput.value);
     return promoInput.value.trim().toUpperCase() === PROMO_CODE ? (PROMO_DISCOUNT / 100) * total : 0;
 }
 
 function applyPromo() {
+    console.log("Apply promo button clicked!");
     let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     updateFinalTotal(total);
 }
@@ -86,7 +94,20 @@ function processPayment() {
 
 // ======= Initialization =======
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOMContentLoaded event fired!");
     renderCartItems(); 
-    applyPromoButton.addEventListener('click', applyPromo);
-    checkoutButton.addEventListener('click', processPayment);
+
+    if (applyPromoButton) {
+        console.log("Adding event listener to applyPromoButton");
+        applyPromoButton.addEventListener('click', applyPromo);
+    } else {
+        console.error("applyPromoButton not found!");
+    }
+
+    if (checkoutButton) {
+        console.log("Adding event listener to checkoutButton");
+        checkoutButton.addEventListener('click', processPayment);
+    } else {
+        console.error("checkoutButton not found!");
+    }
 });
