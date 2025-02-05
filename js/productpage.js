@@ -72,17 +72,17 @@ async function displayProduct() {
        
         const productImage = document.getElementById("product-image");
         if (productImage) {
-            productImage.src = image.url;
-            productImage.alt = image.alt || title;
+            productImage.src = image?.url || "images/default-image.webp"; 
+            productImage.alt = image?.alt || title || "Game image";
         }
+        
 
  
-        document.getElementById("page-title").textContent = title;
-        document.getElementById("product-desc").textContent = description;
+        document.getElementById("page-title").textContent = title || "Game Title Not Found";
+        document.getElementById("product-desc").textContent = description || "No description available.";
         document.getElementById("product-price").textContent = onSale
             ? `Sale Price: ${discountedPrice} $ (Original: ${price} $)`
             : `${price} $`;
-
       
         const productTags = document.getElementById("product-tags");
         if (productTags && tags) {
