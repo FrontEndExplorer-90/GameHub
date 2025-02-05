@@ -38,9 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
 // Calendar with Events
 document.addEventListener('DOMContentLoaded', () => {
     const events = {
-        '2025-01-20': ['Community Game Night at 7 PM'],
-        '2025-01-25': ['Space Race Championship Finals'],
-        '2025-01-27': ['Developer AMA at 5 PM'],
+        '2025-02-20': ['Community Game Night at 7 PM'],
+        '2025-02-25': ['Space Race Championship Finals'],
+        '2025-02-27': ['Developer AMA at 5 PM'],
     };
 
     const calendarContainer = document.getElementById('calendar');
