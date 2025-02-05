@@ -1,5 +1,5 @@
 # GameHub
  design,code and bring to live GameHub
- link to last changes before inserting JavaScript.
- https://github.com/FrontEndExplorer-90/GameHub.git
+ last changes before inserting JavaScript.
+ 32f1a79a00afeab6bd49eb8f9882f4479b174b21
  
