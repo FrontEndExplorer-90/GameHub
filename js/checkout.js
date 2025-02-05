@@ -8,7 +8,7 @@ const applyPromoButton = document.querySelector('.apply-promo-btn');
 const checkoutButton = document.querySelector('.checkout-btn');
 
 
-const SHIPPING_COST = 99; 
+const SHIPPING_COST = 8; 
 const PROMO_CODE = 'SAVE10'; 
 const PROMO_DISCOUNT = 10; 
 
