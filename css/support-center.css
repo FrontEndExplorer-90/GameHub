@@ -1,4 +1,3 @@
-/* Support Center Styles */
 .support-center {
     max-width: 800px;
     margin: 0 auto;
@@ -19,8 +18,6 @@
     color: #ccc;
 }
 
-
-/* Accordion Styles */
 .accordion {
     margin-top: 30px;
 }
@@ -52,7 +49,7 @@
 }
 
 .accordion-item.active .accordion-content {
-    max-height: 500px; /* Adjust based on content */
+    max-height: 500px; 
     padding: 10px 15px;
 }
 
@@ -74,7 +71,7 @@
     color: #554AD2;
 }
 
-/* Responsive Design */
+
 @media screen and (max-width: 768px) {
     .sidebar-toggle-label {
         display: block;
