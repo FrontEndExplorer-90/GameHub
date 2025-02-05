@@ -57,7 +57,19 @@ function updateFinalTotal(total) {
 
     shippingDisplay.textContent = `${SHIPPING_COST}$`;
     finalTotalDisplay.textContent = `${finalTotal.toFixed(2)}$`;
+
+    
+    const discountRow = document.querySelector('.discount-row');
+    const discountDisplay = document.querySelector('.discount');
+
+    if (promoDiscount > 0) {
+        discountRow.style.display = 'flex';
+        discountDisplay.textContent = `-${promoDiscount.toFixed(2)}$`;
+    } else {
+        discountRow.style.display = 'none';
+    }
 }
+
 
 
 function calculatePromoDiscount(total) {
