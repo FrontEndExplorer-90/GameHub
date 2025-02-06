@@ -28,6 +28,7 @@
             </nav>
             <div class="header-actions">
                 <form action="#" class="search-form">
+                    <label for="search-bar" class="visually-hidden"></label>
                     <input type="text" id="search-bar" name="search" placeholder="Search for Games" class="search-bar">
                 </form>
                 <div class="header-icons">
@@ -39,7 +40,9 @@
         </header>
 
         <!-- Sidebar -->
-        <label class="sidebar-toggle-label">
+        <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-checkbox">
+
+        <label for="sidebar-toggle" class="sidebar-toggle-label">
             <span></span>
             <span></span>
             <span></span>
