@@ -4,21 +4,21 @@ const emptyCartMessage = document.querySelector('.empty-cart');
 const totalPriceContainer = document.querySelector('.cart-total');
 const totalAmountElement = document.getElementById('total-amount');
 const checkoutButtonWrapper = document.querySelector('.checkout-btn-wrapper');
+const checkoutButton = document.querySelector('.checkout-btn'); 
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // ======= Functions =======
 
-// Ensure all elements exist before using them
 function validateDOMElements() {
-    if (!cartItemsContainer || !emptyCartMessage || !totalPriceContainer || !checkoutButtonWrapper || !totalAmountElement) {
+    if (!cartItemsContainer || !emptyCartMessage || !totalPriceContainer || !checkoutButtonWrapper || !totalAmountElement || !checkoutButton) {
         console.error("Error: One or more cart elements are missing from the DOM.");
         return false;
     }
     return true;
 }
 
-// Render cart items and update totals
+
 function renderCartItems() {
     if (!validateDOMElements()) return;
 
@@ -66,7 +66,15 @@ function renderCartItems() {
     }
 }
 
-// Function to add items to cart
+
+if (checkoutButton) {
+    checkoutButton.addEventListener('click', () => {
+        console.log("Proceeding to checkout...");
+        window.location.href = 'checkout.html';
+    });
+}
+
+
 function addToCart(product) {
     const existingProduct = cart.find((item) => item.title === product.title);
     if (existingProduct) {
@@ -87,7 +95,7 @@ function addToCart(product) {
     renderCartItems();
 }
 
-// Function to adjust item quantity
+
 function adjustQuantity(title, adjustment) {
     const product = cart.find((item) => item.title === title);
     if (product) {
@@ -101,7 +109,7 @@ function adjustQuantity(title, adjustment) {
     }
 }
 
-// Function to remove an item from cart
+
 function removeItem(title) {
     console.log('Removing item:', title);
 
@@ -126,3 +134,4 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCartItems();
     }
 });
+
