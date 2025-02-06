@@ -7,6 +7,7 @@
 
 html, body {
     height: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -53,7 +54,7 @@ a:hover {
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
-    position: relative;
+    overflow: visible !important;
 }
 
 .main-content {
@@ -213,7 +214,7 @@ h1, h2, h3, .big-text {
 .sidebar-toggle-label {
     display: flex;
     flex-direction: column;
-    position: fixed; 
+    position: fixed !important; 
     left: 20px; 
     top: 20px; 
     cursor: pointer;
@@ -323,6 +324,11 @@ h1, h2, h3, .big-text {
     .search-bar {
         width: 90%;
         margin-top: 10px;
+    }
+    
+    .sidebar-toggle-label {
+        left: -120px;  
+        top: 25px;  
     }
 
     .sidebar {

@@ -71,3 +71,57 @@
     padding: 30px;
     text-align: center;
 }
+
+@media screen and (max-width: 600px) {
+
+    .profile-wrapper {
+        padding: 10px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .profile-card {
+        padding: 10px;
+        margin: 10px auto;
+        font-size: 0.85rem; 
+        max-width: 90%; 
+    }
+
+    .profile-card {
+        height: auto; 
+        min-height: 80px; 
+    }
+
+    .footer {
+        position: relative;
+        padding-bottom: 20px;
+    }
+
+    .footer-socials img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .profile-picture img {
+        width: 80px; 
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .footer-links, .footer-logo, .footer-socials {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .footer-links a {
+        font-size: 0.9rem;
+    }
+}

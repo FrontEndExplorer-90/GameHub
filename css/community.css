@@ -366,6 +366,35 @@ body {
         gap: 15px;
     }
 
+    .nav a {
+        font-size: 0.8rem; 
+        padding: 5px; 
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .logo img {
+        max-width: 120px; 
+    }
+
+    .header-icons {
+        display: flex;
+        gap: 8px;
+    }
+
+    .header-icons img {
+        width: 20px; 
+    }
+
+    .search-bar {
+        width: 90%;
+        margin-top: 10px;
+    }
     
     .welcome-banner h1 {
         font-size: 1.5rem;
