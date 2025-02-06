@@ -95,3 +95,16 @@ button.delete-account-btn:hover {
     margin-top: 40px;
     text-align: center;
 }
+
+@media screen and (max-width: 600px) {
+
+    .footer-links, .footer-logo, .footer-socials {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .footer-links a {
+        font-size: 0.9rem;
+    }
+
+}
