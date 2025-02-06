@@ -90,6 +90,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+const sidebarToggle = document.getElementById("sidebar-toggle");
+
+if (sidebarToggle) {
+    sidebarToggle.addEventListener("click", function () {
+        console.log("Hamburger clicked. Sidebar toggled:", sidebarToggle.checked);
+    });
+} else {
+    console.error("Sidebar toggle element not found in DOM!");
+}
+
+
 document.addEventListener('click', (e) => {
     
     if (!sidebar.contains(e.target) && !sidebarToggleLabel.contains(e.target)) {

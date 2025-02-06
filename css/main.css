@@ -249,6 +249,10 @@ h1, h2, h3, .big-text {
     display: none;
 }
 
+#sidebar-toggle:checked ~ .sidebar {
+    left: 0;
+}
+
 .footer-container {
     display: flex;
     align-items: center;
