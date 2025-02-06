@@ -8,9 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/cart.css">
-    <script defer src="js/cart.js"></script>
     <script defer src="js/main.js"></script>
-
+    <script defer src="js/cart.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -58,8 +57,7 @@
             </div>
         
             <!-- Cart Items Container -->
-            <div class="cart-items">
-            </div>
+            <div class="cart-items"></div>
         
             <!-- Total Price -->
             <div class="cart-total" style="display: none;">
@@ -67,11 +65,10 @@
             </div>
         
             <!-- Checkout Button -->
-            <button class="checkout-btn" style="display: none;" onclick="window.location.href='checkout.html'">
-                Proceed to Checkout!
-            </button>
-            
-            
+            <div class="checkout-btn-wrapper" style="display: none;">
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+
         </main>
 
         <!-- Footer Section -->
@@ -99,3 +96,4 @@
     </div>
 </body>
 </html>
+

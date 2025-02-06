@@ -9,7 +9,19 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // ======= Functions =======
 
+// Ensure all elements exist before using them
+function validateDOMElements() {
+    if (!cartItemsContainer || !emptyCartMessage || !totalPriceContainer || !checkoutButtonWrapper || !totalAmountElement) {
+        console.error("Error: One or more cart elements are missing from the DOM.");
+        return false;
+    }
+    return true;
+}
+
+// Render cart items and update totals
 function renderCartItems() {
+    if (!validateDOMElements()) return;
+
     cartItemsContainer.innerHTML = ''; 
     let total = 0;
 
@@ -24,9 +36,9 @@ function renderCartItems() {
         totalPriceContainer.style.display = 'block';
         checkoutButtonWrapper.style.display = 'block';
 
-        cart.forEach((item, index) => {
-            const productTitle = item.title || `Unnamed Product ${index + 1}`;
-            const productPrice = item.price || 0;
+        cart.forEach((item) => {
+            const productTitle = item.title || 'Unnamed Product';
+            const productPrice = Number(item.price) || 0;
             total += productPrice * item.quantity;
 
             const cartItem = document.createElement('div');
@@ -45,10 +57,7 @@ function renderCartItems() {
 
             cartItem.querySelector('.decrease-btn').addEventListener('click', () => adjustQuantity(productTitle, -1));
             cartItem.querySelector('.increase-btn').addEventListener('click', () => adjustQuantity(productTitle, 1));
-            cartItem.querySelector('.remove-btn').addEventListener('click', () => {
-                console.log('Remove button clicked for:', productTitle);
-                removeItem(productTitle);
-            });
+            cartItem.querySelector('.remove-btn').addEventListener('click', () => removeItem(productTitle));
 
             cartItemsContainer.appendChild(cartItem);
         });
@@ -57,8 +66,7 @@ function renderCartItems() {
     }
 }
 
-
-
+// Function to add items to cart
 function addToCart(product) {
     const existingProduct = cart.find((item) => item.title === product.title);
     if (existingProduct) {
@@ -79,25 +87,22 @@ function addToCart(product) {
     renderCartItems();
 }
 
-
-
-function adjustQuantity(name, adjustment) {
-    const product = cart.find((item) => item.name === name);
+// Function to adjust item quantity
+function adjustQuantity(title, adjustment) {
+    const product = cart.find((item) => item.title === title);
     if (product) {
         product.quantity += adjustment;
         if (product.quantity <= 0) {
-            
-            removeItem(name);
+            removeItem(title);
         } else {
             localStorage.setItem('cart', JSON.stringify(cart));
-            renderCartItems(); 
+            renderCartItems();
         }
     }
 }
 
-
+// Function to remove an item from cart
 function removeItem(title) {
-    console.log('Current cart:', cart);
     console.log('Removing item:', title);
 
     if (!title) {
@@ -106,15 +111,7 @@ function removeItem(title) {
     }
 
     const originalCartLength = cart.length;
-
-    
-    cart = cart.filter((item) => {
-        if (!item.title) {
-            console.error('Error: item.title is undefined or null:', item);
-            return true; 
-        }
-        return item.title.trim() !== title.trim();
-    });
+    cart = cart.filter((item) => item.title && item.title.trim() !== title.trim());
 
     console.log('Updated cart:', cart);
     console.log('Items removed:', originalCartLength - cart.length);
@@ -123,8 +120,9 @@ function removeItem(title) {
     renderCartItems();
 }
 
-
 // ======= Initialization =======
 document.addEventListener('DOMContentLoaded', () => {
-    renderCartItems(); 
+    if (validateDOMElements()) {
+        renderCartItems();
+    }
 });
