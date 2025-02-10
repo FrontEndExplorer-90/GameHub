@@ -17,40 +17,38 @@
     <!-- Header -->
     <header class="header">
         <div class="logo">
-            <img src="images/GameHub_Logo.webp" alt="Game Hub Logo">
+            <a href="#" aria-hidden="true">
+                <img src="images/GameHub_Logo.webp" alt="Game Hub Logo">
+            </a>
         </div>
         <nav class="nav">
             <a href="index.html">Home</a>
             <a href="products.html">Games</a>
             <a href="community.html">Community</a>
             <a href="about.html">About</a>
-            <a id="myGameHubLink" href="mygamehub.html" style="display: none;">MyGameHub</a>
         </nav>
         <div class="header-actions">
             <form action="#" class="search-form">
+                <label for="search-bar" class="visually-hidden">Search for Games</label>
                 <input type="text" id="search-bar" name="search" placeholder="Search for Games" class="search-bar">
             </form>
             <div class="header-icons">
-                <a href="settings.html">
-                    <img src="images/icons8-settings-50.webp" alt="Settings">
-                </a>
-                <a href="login.html">
-                    <img src="images/icons8-male-user-24.webp" alt="User" class="login-icon">
-                </a>
-                <a href="cart.html">
-                    <img src="images/icons8-cart-32.webp" alt="Cart">
-                </a>
+                <a href="settings.html"><img src="images/icons8-settings-50.webp" alt="Settings"></a>
+                <a href="login.html"><img src="images/icons8-male-user-24.webp" alt="User" class="login-icon"></a>
+                <a href="cart.html"><img src="images/icons8-cart-32.webp" alt="Cart"></a>
             </div>
         </div>
-    </header>   
-    
-     <!-- Sidebar -->
-     <label class="sidebar-toggle-label">
+    </header>
+
+    <!-- Sidebar -->
+    <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-checkbox">
+    <label for="sidebar-toggle" class="sidebar-toggle-label" aria-label="Toggle Sidebar">
         <span></span>
         <span></span>
         <span></span>
     </label>
 
+    <!-- Sidebar Section -->
     <aside class="sidebar">
         <div class="sidebar-section">
             <h3>Recommendations</h3>
@@ -62,12 +60,12 @@
         <div class="sidebar-section">
             <h3>Browse By Genre</h3>
             <ul id="genre-list">
-                <li><a href="products.html" data-genre="Sports">Sports</a></li>
-                <li><a href="products.html" data-genre="Action">Action</a></li>
-                <li><a href="products.html" data-genre="Adventure">Adventure</a></li>
-                <li><a href="products.html" data-genre="Horror">Horror</a></li>
+                <li><a href="products.html?genre=Sports">Sports Games</a></li>
+                <li><a href="products.html?genre=Action">Action Games</a></li>
+                <li><a href="products.html?genre=Adventure">Adventure Games</a></li>
+                <li><a href="products.html?genre=Horror">Horror Games</a></li>
             </ul>
-        </div>
+        </div>                        
         <div class="sidebar-section">
             <h3>Membership</h3>
             <ul>
@@ -76,6 +74,7 @@
                 <li><a href="#">Sell Your Used Games</a></li>
                 <li><a href="#">Buy Used Games</a></li>
                 <li><a href="community.html">Our Community</a></li>
+
             </ul>
         </div>
     </aside>
@@ -155,7 +154,8 @@
                 <p>HeroOfShadow: Can't wait!</p>
                 <!-- Chat Content -->
             </div>
-            <input type="text" class="chat-input" placeholder="Type your message...">
+            <label for="chat-input" class="visually-hidden">Chat Message</label>
+            <input type="text" id="chat-input" placeholder="Type your message...">
             <button class="send-btn">Send</button>
         </section>
 

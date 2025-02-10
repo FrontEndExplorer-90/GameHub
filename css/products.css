@@ -36,12 +36,11 @@
 }
 
 .reset-filters-btn {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 5px 10px;
+    background-color: #cc0000; 
+    color: #ffffff; 
+    font-weight: bold; 
+    padding: 10px;
     border-radius: 5px;
-    cursor: pointer;
 }
 
 .game-list {
@@ -100,17 +99,15 @@
 }
 
 .add-to-cart-btn {
-    background-color: black;
-    color: #2B88D9;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-family: 'Roboto', sans-serif;
-    text-decoration: none;
+    background-color: #003f88 !important;
+    color: #ffffff !important; 
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .add-to-cart-btn:hover {
-    background-color: #554AD2;
+    background-color: #002766 !important;
 }
 
 @media screen and (max-width: 600px) {

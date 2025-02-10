@@ -43,7 +43,7 @@ body {
 
 .membership .section-title {
     font-size: 1.4rem;
-    color: #554AD2;
+    color: #fff;
     margin-bottom: 10px;
 }
 
@@ -190,21 +190,26 @@ body {
 
 .day {
     padding: 15px;
-    border: 1px solid #444;
+    border: 1px solid #555; 
     border-radius: 5px;
     background-color: #222;
-    color: #fff;
+    color: #ffffff; 
     text-align: center;
     cursor: pointer;
     position: relative;
+    font-weight: bold; 
 }
-
 .day.event {
-    background-color: #ffaa00; 
+    background-color: #d97706;
+    color: #ffffff; 
+    font-weight: bold;
+    border: 2px solid #000; 
 }
 
 .day:hover {
-    background-color: #333;
+    background-color: #555555; 
+    color: #ffffff; 
+    border: 2px solid #777777; 
 }
 
 .event-details {
@@ -213,10 +218,10 @@ body {
     top: 100%;
     left: 0;
     right: 0;
-    background-color: #111;
-    color: #fff;
+    background-color: #222222; 
+    color: #ffffff; 
     padding: 10px;
-    border: 1px solid #444;
+    border: 2px solid #888888; 
     border-radius: 5px;
     z-index: 10;
     text-align: center;
@@ -262,7 +267,7 @@ body {
 
 .live-chat .section-title {
     font-size: 1.25rem;
-    color: #554AD2;
+    color: #fff;
     margin-bottom: 10px;
 }
 

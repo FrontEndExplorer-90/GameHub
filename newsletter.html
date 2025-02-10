@@ -12,102 +12,107 @@
     <script defer src="js/main.js"></script>
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="header">
-        <div class="logo">
-            <a href="index.html"><img src="images/GameHub_Logo.webp" alt="Game Hub Logo"></a>
-        </div>
-        <nav class="nav">
-            <a href="index.html">Home</a>
-            <a href="products.html">Games</a>
-            <a href="community.html">Community</a>
-            <a href="about.html">About</a>
-        </nav>
-        <div class="header-actions">
-            <form action="#" class="search-form">
-                <input type="text" id="search-bar" name="search" placeholder="Search for Games" class="search-bar">
-            </form>
-            <div class="header-icons">
-                <a href="settings.html"><img src="images/icons8-settings-50.webp" alt="Settings"></a>
-                <a href="login.html"><img src="images/icons8-male-user-24.webp" alt="User" class="login-icon"></a>
-                <a href="cart.html"><img src="images/icons8-cart-32.webp" alt="Cart"></a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content Wrapper -->
-    <div class="newsletter-wrapper">
-        <section class="newsletter-cta">
-            <h1>Stay Updated with Game Hub</h1>
-            <p>Join our community and get the latest updates on new games, exclusive discounts, and more.</p>
-        </section>
-
-        <!-- Subscription Form -->
-        <section class="subscription-form">
-            <h2>Subscribe to Our Newsletter</h2>
-            <form id="newsletter-form">
-                <label for="newsletter-full-email">Enter your email:</label>
-                <input type="email" id="newsletter-full-email" placeholder="Enter your email..." required>
-                <label class="consent">
-                    <input type="checkbox" required> I agree to receive marketing emails from Game Hub.
-                </label>
-                <button type="submit">Subscribe</button>
-            </form>
-            <p id="subscription-message" style="display: none; color: #0f0; font-weight: bold;">
-                ✔️ You have successfully subscribed!
-            </p>            
-        </section>
-
-        <!-- Newsletter Benefits -->
-        <section class="newsletter-previews">
-            <h2>What You’ll Get</h2>
-            <div class="preview-card">
-                <h3>Exclusive Game Previews</h3>
-                <p>Be the first to see upcoming games and new releases.</p>
-            </div>
-            <div class="preview-card">
-                <h3>Discounts & Offers</h3>
-                <p>Get access to subscriber-only discounts and special offers.</p>
-            </div>
-            <div class="preview-card">
-                <h3>Latest News & Events</h3>
-                <p>Stay updated with gaming news, events, and community highlights.</p>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="newsletter-faq">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <h4>How often will I receive emails?</h4>
-                <p>Our newsletter is sent once a month, with occasional updates for special events.</p>
-            </div>
-            <div class="faq-item">
-                <h4>Can I unsubscribe?</h4>
-                <p>Yes, you can unsubscribe anytime by clicking the unsubscribe link in any of our emails.</p>
-            </div>
-        </section>
+<!-- Header -->
+<header class="header">
+    <div class="logo">
+        <a href="#" aria-hidden="true">
+            <img src="images/GameHub_Logo.webp" alt="Game Hub Logo">
+        </a>
     </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-socials">
-                <a href="#"><img src="images/icons8-facebook-30.webp" alt="Facebook"></a>
-                <a href="#"><img src="images/icons8-instagram-24.webp" alt="Instagram"></a>
-                <a href="#"><img src="images/icons8-twitter-24.webp" alt="Twitter"></a>
-                <a href="#"><img src="images/icons8-tiktok-32.webp" alt="TikTok"></a>
-            </div>
-            <div class="footer-links">
-                <a href="#">Jobs</a>
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="support-center.html">Support</a>
-                <a href="newsletter.html">Newsletter</a>
-            </div>
-            <div class="footer-logo">
-                <img src="images/GameHub_Logo.webp" alt="Game Hub Logo">
-            </div>
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Games</a>
+        <a href="community.html">Community</a>
+        <a href="about.html">About</a>
+    </nav>
+    <div class="header-actions">
+        <form action="#" class="search-form">
+            <label for="search-bar" class="visually-hidden">Search for Games</label>
+            <input type="text" id="search-bar" name="search" placeholder="Search for Games" class="search-bar">
+        </form>
+        <div class="header-icons">
+            <a href="settings.html"><img src="images/icons8-settings-50.webp" alt="Settings"></a>
+            <a href="login.html"><img src="images/icons8-male-user-24.webp" alt="User" class="login-icon"></a>
+            <a href="cart.html"><img src="images/icons8-cart-32.webp" alt="Cart"></a>
         </div>
-    </footer>
+    </div>
+</header>
+
+<!-- Main Content Wrapper -->
+<div class="newsletter-wrapper">
+    <section class="newsletter-cta">
+        <h1>Stay Updated with Game Hub</h1>
+        <p>Join our community and get the latest updates on new games, exclusive discounts, and more.</p>
+    </section>
+
+    <!-- Subscription Form -->
+    <section class="subscription-form">
+        <h2>Subscribe to Our Newsletter</h2>
+        <form id="newsletter-form">
+            <label for="newsletter-full-email">Enter your email:</label>
+            <input type="email" id="newsletter-full-email" placeholder="Enter your email..." required>
+            <label class="consent">
+                <input type="checkbox" required> I agree to receive marketing emails from Game Hub.
+            </label>
+            <button type="submit">Subscribe</button>
+        </form>
+        <p id="subscription-message" style="display: none; color: #0f0; font-weight: bold;">
+            ✔️ You have successfully subscribed!
+        </p>            
+    </section>
+
+    <!-- Newsletter Benefits -->
+    <section class="newsletter-previews">
+        <h2>What You’ll Get</h2>
+        <div class="preview-card">
+            <h3>Exclusive Game Previews</h3>
+            <p>Be the first to see upcoming games and new releases.</p>
+        </div>
+        <div class="preview-card">
+            <h3>Discounts & Offers</h3>
+            <p>Get access to subscriber-only discounts and special offers.</p>
+        </div>
+        <div class="preview-card">
+            <h3>Latest News & Events</h3>
+            <p>Stay updated with gaming news, events, and community highlights.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="newsletter-faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h4>How often will I receive emails?</h4>
+            <p>Our newsletter is sent once a month, with occasional updates for special events.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Can I unsubscribe?</h4>
+            <p>Yes, you can unsubscribe anytime by clicking the unsubscribe link in any of our emails.</p>
+        </div>
+    </section>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-socials">
+            <a href="#"><img src="images/icons8-facebook-30.webp" alt="Facebook"></a>
+            <a href="#"><img src="images/icons8-instagram-24.webp" alt="Instagram"></a>
+            <a href="#"><img src="images/icons8-twitter-24.webp" alt="Twitter"></a>
+            <a href="#"><img src="images/icons8-tiktok-32.webp" alt="TikTok"></a>
+        </div>
+        <div class="footer-links">
+            <a href="#">Jobs</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="support-center.html">Support</a>
+            <a href="newsletter.html">Newsletter</a>
+        </div>
+        <div class="footer-logo">
+            <img src="images/GameHub_Logo.webp" alt="Game Hub Logo">
+        </div>
+    </div>
+</footer>
 </body>
 </html>
+
+    
