@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/community.css">
     <script defer src="js/community.js"></script>
     <script defer src="js/main.js"></script>
-
 </head>
 
 <body>
@@ -74,7 +73,6 @@
                 <li><a href="#">Sell Your Used Games</a></li>
                 <li><a href="#">Buy Used Games</a></li>
                 <li><a href="community.html">Our Community</a></li>
-
             </ul>
         </div>
     </aside>
@@ -106,34 +104,49 @@
 
         <!-- Latest Posts -->
         <section class="latest-posts">
-            <h2 class="section-title">Latest Bloggposts</h2>
+            <h2 class="section-title">Latest Blog Posts</h2>
             <ul>
-                <li>New updates in Forge Legend !&nbsp;&nbsp;&nbsp; (posted by: ElvenSword15, last updated: today, 9:00 pm)</li>
-                <li>Boss level 100 in Spacewar!&nbsp;&nbsp;&nbsp; (posted by: HelloFritty, last updated: yesterday, 1:15 am)</li>
-                <li>Collecting all the Diamonds...&nbsp;&nbsp;&nbsp; (posted by: NeverAlone1423, last updated: Friday, 11:35 pm)</li>
+                <li>New updates in Forge Legend! (posted by: ElvenSword15, last updated: today, 9:00 pm)</li>
+                <li>Boss level 100 in Spacewar! (posted by: HelloFritty, last updated: yesterday, 1:15 am)</li>
+                <li>Collecting all the Diamonds... (posted by: NeverAlone1423, last updated: Friday, 11:35 pm)</li>
             </ul>
         </section>
 
-        <!-- Upcoming Events -->
+        <!-- Event Calendar Section -->
         <section class="event-calendar">
             <h2 class="section-title">Event Calendar</h2>
-            <div id="calendar-header">
-                <button id="prev-month">&lt;</button>
-                <span id="month-year"></span>
-                <button id="next-month">&gt;</button>
+            <div class="calendar-container">
+                <!-- Kalender -->
+                <div class="calendar-content">
+                    <div id="calendar-header">
+                        <button id="prev-month">&lt;</button>
+                        <span id="month-year"></span>
+                        <button id="next-month">&gt;</button>
+                    </div>
+                    <div id="calendar-days">
+                        <div class="day-name">Mon</div>
+                        <div class="day-name">Tue</div>
+                        <div class="day-name">Wed</div>
+                        <div class="day-name">Thu</div>
+                        <div class="day-name">Fri</div>
+                        <div class="day-name">Sat</div>
+                        <div class="day-name">Sun</div>
+                    </div>
+                    <div id="calendar">
+                        <div class="day event" data-event="Game Launch: Space War!" data-date="25">25</div>
+                        <div class="day event" data-event="Community Meetup" data-date="27">27</div>
+                        <!-- Flere dager kan genereres dynamisk -->
+                    </div>
+                </div>
+
+                <!-- Event Details Box -->
+                <div class="event-details-box" id="event-details-box">
+                    <h3>Event of the Day</h3>
+                    <p id="event-text">Hover over a day with an event to see details!</p>
+                </div>
             </div>
-            <div id="calendar-days">
-                <div class="day-name">Mon</div>
-                <div class="day-name">Tue</div>
-                <div class="day-name">Wed</div>
-                <div class="day-name">Thu</div>
-                <div class="day-name">Fri</div>
-                <div class="day-name">Sat</div>
-                <div class="day-name">Sun</div>
-            </div>
-            <div id="calendar"></div>
         </section>
-        
+
         <!-- Featured Discussions -->
         <section class="featured-discussions">
             <div class="discussion-card">
@@ -152,7 +165,6 @@
             <div id="chat-box" class="chat-box">
                 <p>SuperJam: Excited for the new game launch!</p>
                 <p>HeroOfShadow: Can't wait!</p>
-                <!-- Chat Content -->
             </div>
             <label for="chat-input" class="visually-hidden">Chat Message</label>
             <input type="text" id="chat-input" placeholder="Type your message...">
@@ -173,7 +185,6 @@
         <div class="guidelines-btn">
             <a href="#">Community Guidelines</a>
         </div>
-        
     </div> 
 
     <!-- Footer -->

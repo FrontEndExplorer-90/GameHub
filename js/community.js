@@ -6,36 +6,32 @@ const pollItems = document.querySelectorAll('.poll-item');
 const voteButton = document.querySelector('.vote-btn');
 const joinButton = document.querySelector('.view-all-btn'); 
 const membershipSection = document.querySelector('.membership');
+const eventDetailsBox = document.getElementById('event-details-box');
+const eventText = document.getElementById('event-text');
 const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
 
 // ======= Functions =======
 
+// Oppdater medlemskapsseksjonen basert på login-status
 document.addEventListener("DOMContentLoaded", () => {
-   
     if (loggedInUser) {
         membershipSection.innerHTML = `
             <h2 class="section-title">Hi, ${loggedInUser.username}!</h2>
             <p>Welcome back, enjoy your stay.</p>
             <button class="logout-btn">Logout</button>
         `;
-    
-
-        
         document.querySelector(".logout-btn").addEventListener("click", () => {
             localStorage.removeItem("loggedInUser");
             location.reload();
         });
-
     } else {
-        
         joinButton.addEventListener("click", () => {
             window.location.href = "membership.html";
         });
     }
 });
 
-
-// Calendar with Events
+// Kalender med eventer
 document.addEventListener('DOMContentLoaded', () => {
     const events = {
         '2025-02-20': ['Community Game Night at 7 PM'],
@@ -58,12 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function generateCalendar(year, month) {
         calendarContainer.innerHTML = ''; 
-
         const firstDay = new Date(year, month, 1);
         const lastDay = new Date(year, month + 1, 0);
-
         const daysInMonth = lastDay.getDate();
-        const startDay = (firstDay.getDay() + 6) % 7; 
+        const startDay = (firstDay.getDay() + 6) % 7;
 
         monthYearDisplay.textContent = `${monthNames[month]} ${year}`;
 
@@ -81,41 +75,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (events[dateKey]) {
                 dayElement.classList.add('event');
-                const eventDetails = document.createElement('div');
-                eventDetails.classList.add('event-details');
-                eventDetails.textContent = events[dateKey].join(', ');
-                dayElement.appendChild(eventDetails);
+                dayElement.dataset.event = events[dateKey].join(', ');
+                dayElement.addEventListener('mouseenter', () => {
+                    eventText.textContent = events[dateKey].join(', ');
+                    eventDetailsBox.classList.add('visible');
+                });
+                dayElement.addEventListener('mouseleave', () => {
+                    eventDetailsBox.classList.remove('visible');
+                    eventText.textContent = 'Hover over a day with an event to see details!';
+                });
             }
 
             calendarContainer.appendChild(dayElement);
         }
     }
 
-    function prevMonth() {
-        currentMonth -= 1;
-        if (currentMonth < 0) {
-            currentMonth = 11;
-            currentYear -= 1;
-        }
+    prevMonthButton.addEventListener('click', () => {
+        currentMonth = currentMonth === 0 ? 11 : currentMonth - 1;
+        currentYear = currentMonth === 11 ? currentYear - 1 : currentYear;
         generateCalendar(currentYear, currentMonth);
-    }
+    });
 
-    function nextMonth() {
-        currentMonth += 1;
-        if (currentMonth > 11) {
-            currentMonth = 0;
-            currentYear += 1;
-        }
+    nextMonthButton.addEventListener('click', () => {
+        currentMonth = currentMonth === 11 ? 0 : currentMonth + 1;
+        currentYear = currentMonth === 0 ? currentYear + 1 : currentYear;
         generateCalendar(currentYear, currentMonth);
-    }
-
-    prevMonthButton.addEventListener('click', prevMonth);
-    nextMonthButton.addEventListener('click', nextMonth);
+    });
 
     generateCalendar(currentYear, currentMonth);
 });
 
-// Add new message to chat box
+// Chat-funksjonalitet
 function sendMessage() {
     const message = chatInput.value.trim();
     if (message) {
@@ -124,17 +114,14 @@ function sendMessage() {
         chatBox.appendChild(newMessage);
         chatInput.value = ''; 
         chatBox.scrollTop = chatBox.scrollHeight; 
-
-        //Debugging: Sjekk om meldingen faktisk legges til
-        console.log("Current chat content:", chatBox.innerHTML);
     }
 }
 
-// Simulate incoming messages in live chat
+sendButton.addEventListener('click', sendMessage);
+
+// Simuler innkommende meldinger
 function simulateIncomingMessages() {
-    console.log("Live chat simulation started...");
-    
-    const simulatedMessages = [
+    const messages = [
         'Player123: Anyone up for a match?',
         'GameMaster: New event starting in 10 minutes!',
         'GamerGirl89: Just reached level 50!',
@@ -144,129 +131,31 @@ function simulateIncomingMessages() {
 
     let index = 0;
     setInterval(() => {
-        if (index < simulatedMessages.length) {
-            console.log(`Adding message: ${simulatedMessages[index]}`);
-            
+        if (index < messages.length) {
             const newMessage = document.createElement("p");
-            newMessage.textContent = simulatedMessages[index];
+            newMessage.textContent = messages[index];
             chatBox.appendChild(newMessage);
             chatBox.scrollTop = chatBox.scrollHeight;
-            
             index++;
-        } else {
-            console.log("No more messages left to display.");
         }
     }, 5000);
 }
 
+simulateIncomingMessages();
 
-document.addEventListener("DOMContentLoaded", simulateIncomingMessages);
-
-
-// Highlight leaderboard
-function highlightLeaderboard() {
-    const leaderboardItems = document.querySelectorAll('.leaderboard li');
-    leaderboardItems.forEach((item, index) => {
-        if (index === 0) item.style.color = '#ffaa00';
-        if (index === 1) item.style.color = '#c0c0c0';
-        if (index === 2) item.style.color = '#cd7f32';
+// Håndtere poll-voting
+pollItems.forEach(item => {
+    item.addEventListener('click', () => {
+        pollItems.forEach(i => i.classList.remove('selected'));
+        item.classList.add('selected');
     });
-}
-
-// Handle poll voting
-function votePoll() {
-    let selectedOption = null;
-    pollItems.forEach((item) => {
-        if (item.classList.contains('selected')) {
-            selectedOption = item.textContent;
-        }
-    });
-
-    if (selectedOption) {
-        localStorage.setItem('pollVote', selectedOption);
-        alert(`Thank you for voting! You selected: ${selectedOption}`);
-    } else {
-        alert('Please select an option before voting.');
-    }
-}
-
-// Select poll option
-function selectPollOption(event) {
-    pollItems.forEach((item) => item.classList.remove('selected'));
-    event.target.classList.add('selected');
-}
-
-// Join the community
-function joinCommunity() {
-    localStorage.setItem('isMember', true);
-    alert('Welcome to the GameHub Community! Your membership has been activated.');
-}
-
-// Load saved poll vote
-function loadSavedPollVote() {
-    const savedVote = localStorage.getItem('pollVote');
-    if (savedVote) {
-        pollItems.forEach((item) => {
-            if (item.textContent === savedVote) {
-                item.classList.add('selected');
-            }
-        });
-    }
-}
-
-// Load membership status
-function loadMembershipStatus() {
-    const isMember = localStorage.getItem('isMember');
-    if (isMember && joinButton) {
-        joinButton.textContent = 'You’re a Member!';
-        joinButton.disabled = true;
-    }
-}
-
-// ======= Event Listeners =======
-document.addEventListener('DOMContentLoaded', () => {
-    highlightLeaderboard();
-    fetchLatestPosts();
-    loadSavedPollVote();
-    loadMembershipStatus();
-
-    sendButton.addEventListener('click', sendMessage);
-    simulateIncomingMessages();
-    voteButton.addEventListener('click', votePoll);
-
-    pollItems.forEach((item) => {
-        item.addEventListener('click', selectPollOption);
-    });
-
-    if (joinButton) {
-        joinButton.addEventListener('click', () => {
-            window.location.href = "membership.html";
-        });
-    }
 });
 
-// Handle user login & membership display
-document.addEventListener("DOMContentLoaded", () => {
-    const membershipSection = document.querySelector(".membership");
-    const membershipTitle = document.getElementById("membership-title");
-    const membershipText = document.getElementById("membership-text");
-    const membershipBtn = document.getElementById("membership-btn");
-
-    const user = JSON.parse(localStorage.getItem("gamehubUser"));
-
-    if (user) {
-        membershipTitle.textContent = `Welcome, ${user.username}!`;
-        membershipText.textContent = "Check your inbox and enjoy member benefits.";
-        membershipBtn.textContent = "Logout";
-        membershipBtn.classList.add("logout-btn");
-
-        membershipBtn.addEventListener("click", () => {
-            localStorage.removeItem("gamehubUser");
-            location.reload();
-        });
+voteButton.addEventListener('click', () => {
+    const selected = document.querySelector('.poll-item.selected');
+    if (selected) {
+        alert(`Thank you for voting for: ${selected.textContent}`);
     } else {
-        membershipBtn.addEventListener("click", () => {
-            window.location.href = "membership.html";
-        });
+        alert('Please select an option before voting.');
     }
 });
