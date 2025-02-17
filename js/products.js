@@ -11,7 +11,7 @@ async function fetchAllProducts() {
         const response = await fetch(baseAPIUrl);
         if (!response.ok) throw new Error("Failed to fetch products");
         const jsonData = await response.json();
-        return jsonData.data || [];
+        return jsonData || [];
     } catch (error) {
         gameListContainer.innerHTML = `<p class="error-message">Failed to load products. Please try again later.</p>`;
         return [];
