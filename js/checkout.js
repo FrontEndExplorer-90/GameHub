@@ -8,21 +8,15 @@ const applyPromoButton = document.querySelector('.apply-promo-btn');
 const checkoutButton = document.querySelector('.checkout-btn');
 const discountRow = document.querySelector('.discount-row'); 
 const discountDisplay = document.querySelector('.discount'); 
-
 const SHIPPING_COST = 8;
 const PROMO_CODE = 'SAVE10';
 const PROMO_DISCOUNT = 10; 
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-console.log("Script loaded, checking elements:");
-console.log("applyPromoButton:", applyPromoButton);
-console.log("checkoutButton:", checkoutButton);
-
 // ======= Functions =======
 
 function renderCartItems() {
-    console.log("Rendering cart items...");
     cartItemsContainer.innerHTML = ''; 
     let total = 0;
 
@@ -35,16 +29,16 @@ function renderCartItems() {
         return;
     }
 
-    cart.forEach((item) => {
+    cart.forEach(item => {
         total += item.price * item.quantity;
 
         const cartItem = document.createElement('div');
         cartItem.classList.add('cart-item');
         cartItem.innerHTML = `
-            <img src="${item.image || 'default-image.webp'}" alt="${item.name}">
+            <img src="${item.image || 'default-image.webp'}" alt="${item.name || 'Game'}">
             <span>${item.title || 'Unknown'}</span>
             <span>${item.quantity}</span>
-            <span class="price">${(item.price * item.quantity).toFixed(2)} $</span>
+            <span class="price">${(item.price * item.quantity).toFixed(2)}$</span>
         `;
         cartItemsContainer.appendChild(cartItem);
     });
@@ -54,7 +48,6 @@ function renderCartItems() {
 }
 
 function updateFinalTotal(total) {
-    console.log("Updating final total with:", total);
     const promoDiscount = calculatePromoDiscount(total);
     const finalTotal = total - promoDiscount + SHIPPING_COST;
 
@@ -72,13 +65,13 @@ function updateFinalTotal(total) {
 }
 
 function calculatePromoDiscount(total) {
-    console.log("Checking promo code:", promoInput.value);
-    return promoInput.value.trim().toUpperCase() === PROMO_CODE ? (PROMO_DISCOUNT / 100) * total : 0;
+    return promoInput.value.trim().toUpperCase() === PROMO_CODE
+        ? (PROMO_DISCOUNT / 100) * total
+        : 0;
 }
 
 function applyPromo() {
-    console.log("Apply promo button clicked!");
-    let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     updateFinalTotal(total);
 }
 
@@ -87,27 +80,21 @@ function processPayment() {
         alert('Your cart is empty! Add some items before proceeding.');
         return;
     }
-
-    localStorage.removeItem('cart'); 
-    location.href = 'purchase.html'; 
+   
+    localStorage.removeItem('cart');
+    location.href = 'purchase.html';  
 }
 
 // ======= Initialization =======
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("DOMContentLoaded event fired!");
-    renderCartItems(); 
+    renderCartItems();
 
     if (applyPromoButton) {
-        console.log("Adding event listener to applyPromoButton");
         applyPromoButton.addEventListener('click', applyPromo);
-    } else {
-        console.error("applyPromoButton not found!");
     }
 
     if (checkoutButton) {
-        console.log("Adding event listener to checkoutButton");
         checkoutButton.addEventListener('click', processPayment);
-    } else {
-        console.error("checkoutButton not found!");
     }
 });
+            

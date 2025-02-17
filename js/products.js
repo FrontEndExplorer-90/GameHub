@@ -4,27 +4,22 @@ const categoryFilter = document.getElementById("category-filter");
 const priceFilter = document.getElementById("price-filter");
 const releaseFilter = document.getElementById("release-filter");
 const resetFiltersBtn = document.getElementById("reset-filters");
-const genreLinks = document.querySelectorAll("#genre-list a"); 
-
-let allProducts = []; 
+let allProducts = [];
 
 async function fetchAllProducts() {
     try {
         const response = await fetch(baseAPIUrl);
         if (!response.ok) throw new Error("Failed to fetch products");
-
         const jsonData = await response.json();
-        return jsonData.data || []; 
+        return jsonData.data || [];
     } catch (error) {
-        console.error("Error fetching products:", error);
         gameListContainer.innerHTML = `<p class="error-message">Failed to load products. Please try again later.</p>`;
         return [];
     }
 }
 
-
 function renderProducts(products) {
-    gameListContainer.innerHTML = ""; 
+    gameListContainer.innerHTML = "";
 
     if (products.length === 0) {
         gameListContainer.innerHTML = `<p class="error-message">No products available based on the selected filters.</p>`;
@@ -49,20 +44,6 @@ function renderProducts(products) {
     attachAddToCartEvents(products);
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
-    allProducts = await fetchAllProducts();
-    renderProducts(allProducts);
-
-    const storedSearchTerm = localStorage.getItem("searchTerm");
-
-    if (storedSearchTerm) {
-        console.log(`📥 Loaded search term: ${storedSearchTerm}`); 
-        filterProductsBySearch(storedSearchTerm);
-        localStorage.removeItem("searchTerm"); 
-    }
-});
-
-
 function filterProductsBySearch(searchTerm) {
     const lowerCaseSearch = searchTerm.toLowerCase();
 
@@ -71,23 +52,19 @@ function filterProductsBySearch(searchTerm) {
     );
 
     if (filteredGames.length === 1) {
-       
+        
         window.location.href = `productpage.html?id=${filteredGames[0].id}`;
     } else if (filteredGames.length > 1) {
-        
         renderProducts(filteredGames);
     } else {
-        
         gameListContainer.innerHTML = `<p class="error-message">No products found for "${searchTerm}".</p>`;
     }
 }
 
 
-
 function filterProducts() {
     let filteredProducts = [...allProducts];
 
-   
     const selectedCategory = categoryFilter.value.toLowerCase();
     if (selectedCategory !== "all") {
         filteredProducts = filteredProducts.filter(game =>
@@ -95,7 +72,6 @@ function filterProducts() {
         );
     }
 
-   
     const selectedPrice = priceFilter.value;
     if (selectedPrice === "low-to-high") {
         filteredProducts.sort((a, b) => a.price - b.price);
@@ -105,65 +81,22 @@ function filterProducts() {
 
     const selectedRelease = releaseFilter.value;
     if (selectedRelease === "newest") {
-        filteredProducts.sort((a, b) => b.released - a.released); 
+        filteredProducts.sort((a, b) => b.released - a.released);
     } else if (selectedRelease === "oldest") {
-        filteredProducts.sort((a, b) => a.released - b.released); 
+        filteredProducts.sort((a, b) => a.released - b.released);
     }
 
     renderProducts(filteredProducts);
 }
 
-
-genreLinks.forEach(link => {
-    link.addEventListener("click", (event) => {
-        event.preventDefault();
-        const selectedGenre = event.target.dataset.genre;
-        filterByGenre(selectedGenre);
-    });
-});
-
-
+)
 function filterByGenre(selectedGenre) {
     const filteredProducts = allProducts.filter(game => 
         game.genre.toLowerCase() === selectedGenre.toLowerCase()
     );
-
     categoryFilter.value = selectedGenre; 
     renderProducts(filteredProducts);
 }
-
-
-resetFiltersBtn.addEventListener("click", () => {
-    categoryFilter.value = "all";
-    priceFilter.value = "all";
-    releaseFilter.value = "all";
-    renderProducts(allProducts);
-});
-
-
-categoryFilter.addEventListener("change", filterProducts);
-priceFilter.addEventListener("change", filterProducts);
-releaseFilter.addEventListener("change", filterProducts);
-
-
-document.addEventListener("DOMContentLoaded", async () => {
-    allProducts = await fetchAllProducts();
-    renderProducts(allProducts);
-
-    
-    const storedSearchTerm = localStorage.getItem("searchTerm");
-    if (storedSearchTerm) {
-        filterProductsBySearch(storedSearchTerm);
-        localStorage.removeItem("searchTerm"); 
-    }
-
-    
-    const selectedGenre = localStorage.getItem("selectedGenre");
-    if (selectedGenre) {
-        filterByGenre(selectedGenre);
-        localStorage.removeItem("selectedGenre"); 
-    }
-});
 
 function attachAddToCartEvents(products) {
     const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
@@ -181,7 +114,6 @@ function attachAddToCartEvents(products) {
     });
 }
 
-
 function addToCart(product) {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const existingProduct = cart.find((item) => item.id === product.id);
@@ -198,6 +130,45 @@ function addToCart(product) {
         });
     }
 
-    localStorage.setItem("cart", JSON.stringify(cart)); 
+    localStorage.setItem("cart", JSON.stringify(cart));
 }
+
+categoryFilter.addEventListener("change", filterProducts);
+priceFilter.addEventListener("change", filterProducts);
+releaseFilter.addEventListener("change", filterProducts);
+
+resetFiltersBtn.addEventListener("click", () => {
+    categoryFilter.value = "all";
+    priceFilter.value = "all";
+    releaseFilter.value = "all";
+    renderProducts(allProducts);
+});
+
+const genreLinks = document.querySelectorAll("#genre-list a");
+genreLinks.forEach(link => {
+    link.addEventListener("click", (event) => {
+        event.preventDefault();
+        const selectedGenre = event.target.dataset.genre;
+        if (selectedGenre) {
+            filterByGenre(selectedGenre);
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", async () => {
+    allProducts = await fetchAllProducts();
+    renderProducts(allProducts);
+
+    const storedSearchTerm = localStorage.getItem("searchTerm");
+    if (storedSearchTerm) {
+        filterProductsBySearch(storedSearchTerm);
+        localStorage.removeItem("searchTerm");
+    }
+
+    const selectedGenre = localStorage.getItem("selectedGenre");
+    if (selectedGenre) {
+        filterByGenre(selectedGenre);
+        localStorage.removeItem("selectedGenre");
+    }
+});
 

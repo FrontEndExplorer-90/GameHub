@@ -56,7 +56,6 @@ a:hover {
     color: #0088cc;
 }
 
-/* Responsive Design */
 @media screen and (max-width: 600px) {
     .privacy-policy {
         padding: 15px;

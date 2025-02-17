@@ -437,48 +437,46 @@
         width: fit-content; 
     }
 
-    @media screen and (max-width: 600px) {
-        .newsletter-popup {
-            width: 90%; 
-            max-width: 400px; 
-            right: 5%; 
-            bottom: 10%;
-            padding: 15px;
-            transform: translateY(0); 
-            visibility: visible; 
-            z-index: 1001; 
-        }
-    
-        .popup-content h2 {
-            font-size: 1.4rem;
-            text-align: center;
-        }
-    
-        .popup-content p {
-            font-size: 1rem;
-            text-align: center;
-        }
-    
-        .popup-content .sign-up-btn {
-            display: block;
-            margin: 10px auto 0 auto;
-            padding: 10px 20px;
-            width: 100%; 
-            font-size: 1rem;
-            text-align: center;
-        }
-    
-        .close-button {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            font-size: 1.0rem;
-            cursor: pointer;
-            padding: 5px;
-            background-color: #ddd;
-            border-radius: 50%;
-        }
-    }    
+    .newsletter-popup {
+        width: 90%; 
+        max-width: 400px; 
+        right: 5%; 
+        bottom: 10%;
+        padding: 15px;
+        transform: translateY(0); 
+        visibility: visible; 
+        z-index: 1001; 
+    }
+
+    .popup-content h2 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .popup-content p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .popup-content .sign-up-btn {
+        display: block;
+        margin: 10px auto 0 auto;
+        padding: 10px 20px;
+        width: 100%; 
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .close-button {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        font-size: 1.0rem;
+        cursor: pointer;
+        padding: 5px;
+        background-color: #ddd;
+        border-radius: 50%;
+    }  
 
     .footer-links, .footer-logo, .footer-socials {
         margin: 10px 0;

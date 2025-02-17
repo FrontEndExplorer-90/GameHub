@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const myGameHubLink = document.getElementById("myGameHubLink");
     const loggedInUser = localStorage.getItem("loggedInUser");
 
-    if (loggedInUser) {
+    if (loggedInUser && myGameHubLink) {
         myGameHubLink.style.display = "inline-block"; 
     }
 });
@@ -30,9 +30,8 @@ navLinks.forEach(link => {
         e.preventDefault();  
         showLoadingIndicator(); 
 
-        
         setTimeout(() => {
-            window.location.href = link.href; 
+            window.location.href = link.href;
         }, 400);
     });
 });
@@ -40,13 +39,9 @@ navLinks.forEach(link => {
 
 // ======= Search Bar Functionality =======
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("main.js is loaded!");
-
     const searchBar = document.getElementById("search-bar");
 
     if (searchBar) {
-        console.log("🔍 Search bar found!");
-
         searchBar.addEventListener("keypress", (event) => {
             if (event.key === "Enter") {
                 event.preventDefault();
@@ -54,22 +49,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 if (searchTerm.length > 0) { 
                     localStorage.setItem("searchTerm", searchTerm);
-                    console.log(`🔍 Search term saved: ${searchTerm}`);
-                    console.log("➡ Redirecting to products.html...");
-
-                    // Vis indikator før vi forlater siden
                     showLoadingIndicator();
                     setTimeout(() => {
                         window.location.href = "products.html";
                     }, 400);
-
-                } else {
-                    console.log("❌ Empty search input, no action taken.");
                 }
             }
         });
-    } else {
-        console.log("❌ Search bar NOT found!");
     }
 });
 
@@ -90,11 +76,14 @@ footerIcons.forEach(icon => {
 const sidebar = document.querySelector('.sidebar');
 const sidebarToggleLabel = document.querySelector('.sidebar-toggle-label');
 
-sidebarToggleLabel.addEventListener('click', (e) => {
-    e.stopPropagation(); 
-    sidebar.classList.toggle('active'); 
-    console.log(`Hamburger clicked. Sidebar toggled: ${sidebar.classList.contains('active')}`);
-});
+if (sidebarToggleLabel) {
+    sidebarToggleLabel.addEventListener('click', (e) => {
+        e.stopPropagation(); 
+        if (sidebar) {
+            sidebar.classList.toggle('active'); 
+        }
+    });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     const genreLinks = document.querySelectorAll("#genre-list a");
@@ -103,11 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
         link.addEventListener("click", (event) => {
             event.preventDefault();
 
-            // Lagrer genre i localStorage
             const selectedGenre = link.dataset.genre;
             localStorage.setItem("selectedGenre", selectedGenre);
 
-            // Vis spinner før vi laster products.html
             showLoadingIndicator();
             setTimeout(() => {
                 window.location.href = "products.html";
@@ -117,24 +104,21 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const sidebarToggle = document.getElementById("sidebar-toggle");
-
 if (sidebarToggle) {
     sidebarToggle.addEventListener("click", function () {
-        console.log("Hamburger clicked. Sidebar toggled:", sidebarToggle.checked);
+    
     });
-} else {
-    console.error("Sidebar toggle element not found in DOM!");
 }
 
 document.addEventListener('click', (e) => {
-    if (!sidebar.contains(e.target) && !sidebarToggleLabel.contains(e.target)) {
-        if (sidebar.classList.contains('active')) {
-            sidebar.classList.remove('active'); 
-            console.log('Clicked outside, sidebar closed.');
+    if (sidebar && sidebarToggleLabel) {
+        if (!sidebar.contains(e.target) && !sidebarToggleLabel.contains(e.target)) {
+            if (sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active'); 
+            }
         }
     }
 });
-
 
 // ======= Handle Cart Icon Click =======
 const cartIcon = document.querySelector('.header-icons a[href="cart.html"]');
@@ -146,6 +130,4 @@ if (cartIcon) {
             window.location.href = 'cart.html';
         }, 400);
     });
-} else {
-    console.log("No cart icon or different href found!");
 }

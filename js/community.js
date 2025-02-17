@@ -12,7 +12,6 @@ const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
 
 // ======= Functions =======
 
-// Oppdater medlemskapsseksjonen basert på login-status
 document.addEventListener("DOMContentLoaded", () => {
     if (loggedInUser) {
         membershipSection.innerHTML = `
@@ -31,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// Kalender med eventer
+
 document.addEventListener('DOMContentLoaded', () => {
     const events = {
         '2025-02-20': ['Community Game Night at 7 PM'],
@@ -105,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
     generateCalendar(currentYear, currentMonth);
 });
 
-// Chat-funksjonalitet
 function sendMessage() {
     const message = chatInput.value.trim();
     if (message) {
@@ -119,7 +117,6 @@ function sendMessage() {
 
 sendButton.addEventListener('click', sendMessage);
 
-// Simuler innkommende meldinger
 function simulateIncomingMessages() {
     const messages = [
         'Player123: Anyone up for a match?',
@@ -143,7 +140,6 @@ function simulateIncomingMessages() {
 
 simulateIncomingMessages();
 
-// Håndtere poll-voting
 pollItems.forEach(item => {
     item.addEventListener('click', () => {
         pollItems.forEach(i => i.classList.remove('selected'));

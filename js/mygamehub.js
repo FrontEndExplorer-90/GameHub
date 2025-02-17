@@ -1,45 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("📌 MyGameHub JS loaded");
-
-
     const usernameElem = document.getElementById("username");
-    const profileImgElem = document.getElementById("profile-img");
+    const profileImgElem = document.getElementById("profile-pic");
     const pointsElem = document.getElementById("points");
     const orderListElem = document.getElementById("order-history");
     const blogListElem = document.getElementById("blog-posts");
     const friendsListElem = document.getElementById("friends-list");
 
-  
-    let loggedInUser = { username: "Guest" }; 
+    let loggedInUser = { username: "Guest" };
 
     try {
         const storedUser = localStorage.getItem("loggedInUser");
         if (storedUser) {
             loggedInUser = JSON.parse(storedUser);
-            if (!loggedInUser.username) throw new Error("Username missing in storage");
+            if (!loggedInUser.username) {
+                localStorage.removeItem("loggedInUser");
+                loggedInUser = { username: "Guest" };
+            }
         }
     } catch (error) {
-        console.error("🚨 Feil ved henting av loggedInUser fra localStorage", error);
-        localStorage.removeItem("loggedInUser"); 
+        localStorage.removeItem("loggedInUser");
+        loggedInUser = { username: "Guest" };
     }
 
-   
-    usernameElem.textContent = loggedInUser.username || "Guest";
-    profileImgElem.src = localStorage.getItem("profileImage") || "images/foxprofilpicture.webp";
-    pointsElem.textContent = localStorage.getItem("gameHubPoints") || 0;
+    if (usernameElem) {
+        usernameElem.textContent = loggedInUser.username || "Guest";
+    }
+    if (profileImgElem) {
+        profileImgElem.src = localStorage.getItem("profileImage") || "images/foxprofilpicture.webp";
+    }
+    if (pointsElem) {
+        pointsElem.textContent = localStorage.getItem("gameHubPoints") || 0;
+    }
 
-    console.log(`👤 Logged in as: ${loggedInUser.username}`);
-
-   
     const orderHistory = [
         { title: "Cyberpunk", date: "Jan 15, 2025" },
         { title: "Space War", date: "Dec 20, 2024" },
         { title: "Boxer", date: "Nov 10, 2024" }
     ];
     orderHistory.forEach(order => {
-        const li = document.createElement("li");
-        li.textContent = `${order.title} - Purchased on ${order.date}`;
-        orderListElem.appendChild(li);
+        if (orderListElem) {
+            const li = document.createElement("li");
+            li.textContent = `${order.title} - Purchased on ${order.date}`;
+            orderListElem.appendChild(li);
+        }
     });
 
     const blogPosts = [
@@ -47,9 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
         { title: "Best Racing Games of 2024", date: "Jan 10, 2025" }
     ];
     blogPosts.forEach(post => {
-        const li = document.createElement("li");
-        li.textContent = `${post.title} - Posted on ${post.date}`;
-        blogListElem.appendChild(li);
+        if (blogListElem) {
+            const li = document.createElement("li");
+            li.textContent = `${post.title} - Posted on ${post.date}`;
+            blogListElem.appendChild(li);
+        }
     });
 
     const friends = [
@@ -57,8 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "GamerX", avatar: "images/womenglowingimg.webp" }
     ];
     friends.forEach(friend => {
-        const li = document.createElement("li");
-        li.innerHTML = `<img src="${friend.avatar}" alt="${friend.name}" class="friend-avatar"> ${friend.name}`;
-        friendsListElem.appendChild(li);
+        if (friendsListElem) {
+            const li = document.createElement("li");
+            li.innerHTML = `<img src="${friend.avatar}" alt="${friend.name}" class="friend-avatar"> ${friend.name}`;
+            friendsListElem.appendChild(li);
+        }
     });
 });
