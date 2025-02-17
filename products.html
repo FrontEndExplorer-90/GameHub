@@ -7,10 +7,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/products.css">
-    <script defer src="js/products.js"></script> 
+    <script defer src="js/products.js"></script>
     <script defer src="js/main.js"></script>
 </head>
 <body>
+
+    <div id="loading-indicator" class="loading-spinner hidden">
+        Laster ...
+    </div>
+
     <div class="wrapper">
         <header class="header">
             <div class="logo">
@@ -27,18 +32,42 @@
             <div class="header-actions">
                 <form action="#" class="search-form">
                     <label for="search-bar" class="visually-hidden">Search for Games</label>
-                    <input type="text" id="search-bar" name="search" placeholder="Search for Games" class="search-bar">
+                    <input
+                        type="text"
+                        id="search-bar"
+                        name="search"
+                        placeholder="Search for Games"
+                        class="search-bar"
+                    >
                 </form>
                 <div class="header-icons">
-                    <a href="settings.html"><img src="images/icons8-settings-50.webp" alt="Settings"></a>
-                    <a href="login.html"><img src="images/icons8-male-user-24.webp" alt="User" class="login-icon"></a>
-                    <a href="cart.html"><img src="images/icons8-cart-32.webp" alt="Cart"></a>
+                    <a href="settings.html">
+                        <img src="images/icons8-settings-50.webp" alt="Settings">
+                    </a>
+                    <a href="login.html">
+                        <img
+                            src="images/icons8-male-user-24.webp"
+                            alt="User"
+                            class="login-icon"
+                        >
+                    </a>
+                    <a href="cart.html">
+                        <img src="images/icons8-cart-32.webp" alt="Cart">
+                    </a>
                 </div>
             </div>
         </header>
 
-        <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-checkbox">
-        <label for="sidebar-toggle" class="sidebar-toggle-label" aria-label="Toggle Sidebar">
+        <input
+            type="checkbox"
+            id="sidebar-toggle"
+            class="sidebar-toggle-checkbox"
+        >
+        <label
+            for="sidebar-toggle"
+            class="sidebar-toggle-label"
+            aria-label="Toggle Sidebar"
+        >
             <span></span>
             <span></span>
             <span></span>
@@ -55,12 +84,20 @@
             <div class="sidebar-section">
                 <h3>Browse By Genre</h3>
                 <ul id="genre-list">
-                    <li><a href="products.html?genre=Sports">Sports Games</a></li>
-                    <li><a href="products.html?genre=Action">Action Games</a></li>
-                    <li><a href="products.html?genre=Adventure">Adventure Games</a></li>
-                    <li><a href="products.html?genre=Horror">Horror Games</a></li>
+                    <li>
+                        <a href="products.html?genre=Sports">Sports Games</a>
+                    </li>
+                    <li>
+                        <a href="products.html?genre=Action">Action Games</a>
+                    </li>
+                    <li>
+                        <a href="products.html?genre=Adventure">Adventure Games</a>
+                    </li>
+                    <li>
+                        <a href="products.html?genre=Horror">Horror Games</a>
+                    </li>
                 </ul>
-            </div>                        
+            </div>
             <div class="sidebar-section">
                 <h3>Membership</h3>
                 <ul>
@@ -69,7 +106,6 @@
                     <li><a href="#">Sell Your Used Games</a></li>
                     <li><a href="#">Buy Used Games</a></li>
                     <li><a href="community.html">Our Community</a></li>
-
                 </ul>
             </div>
         </aside>
@@ -78,8 +114,13 @@
             <h1>Explore Our Universe of Games</h1>
 
             <div class="filters">
-                <button id="reset-filters" class="reset-filters-btn">Reset Filters</button>
-            
+                <button
+                    id="reset-filters"
+                    class="reset-filters-btn"
+                >
+                    Reset Filters
+                </button>
+
                 <label for="category-filter">Category / Genre:</label>
                 <select id="category-filter">
                     <option value="all">All</option>
@@ -95,7 +136,7 @@
                     <option value="newest">Newest First</option>
                     <option value="oldest">Oldest First</option>
                 </select>
-            
+
                 <label for="price-filter">Price:</label>
                 <select id="price-filter">
                     <option value="all">All</option>
@@ -107,17 +148,37 @@
             <section class="game-overview">
                 <h2>Game Overview</h2>
                 <p>Here is an overview of our latest games...</p>
-                <div class="game-list"></div> 
+                <div class="game-list"></div>
             </section>
         </main>
 
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-socials">
-                    <a href="#"><img src="images/icons8-facebook-30.webp" alt="Facebook"></a>
-                    <a href="#"><img src="images/icons8-instagram-24.webp" alt="Instagram"></a>
-                    <a href="#"><img src="images/icons8-twitter-24.webp" alt="Twitter"></a>
-                    <a href="#"><img src="images/icons8-tiktok-32.webp" alt="TikTok"></a>
+                    <a href="#">
+                        <img
+                            src="images/icons8-facebook-30.webp"
+                            alt="Facebook"
+                        >
+                    </a>
+                    <a href="#">
+                        <img
+                            src="images/icons8-instagram-24.webp"
+                            alt="Instagram"
+                        >
+                    </a>
+                    <a href="#">
+                        <img
+                            src="images/icons8-twitter-24.webp"
+                            alt="Twitter"
+                        >
+                    </a>
+                    <a href="#">
+                        <img
+                            src="images/icons8-tiktok-32.webp"
+                            alt="TikTok"
+                        >
+                    </a>
                 </div>
                 <div class="footer-links">
                     <a href="#">Jobs</a>
@@ -126,7 +187,10 @@
                     <a href="newsletter.html">Newsletter</a>
                 </div>
                 <div class="footer-logo">
-                    <img src="images/GameHub_Logo.webp" alt="Game Hub Logo">
+                    <img
+                        src="images/GameHub_Logo.webp"
+                        alt="Game Hub Logo"
+                    >
                 </div>
             </div>
         </footer>
