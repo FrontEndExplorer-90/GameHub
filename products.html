@@ -18,6 +18,12 @@
 
     <div class="wrapper">
         <header class="header">
+            <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-checkbox">
+            <label for="sidebar-toggle" class="sidebar-toggle-label" aria-label="Toggle Sidebar">
+               <span></span>
+               <span></span>
+               <span></span>
+            </label>
             <div class="logo">
                 <a href="#" aria-hidden="true">
                     <img src="images/GameHub_Logo.webp" alt="Game Hub Logo">
@@ -32,25 +38,11 @@
             <div class="header-actions">
                 <form action="#" class="search-form">
                     <label for="search-bar" class="visually-hidden">Search for Games</label>
-                    <input
-                        type="text"
-                        id="search-bar"
-                        name="search"
-                        placeholder="Search for Games"
-                        class="search-bar"
-                    >
+                    <input type="text" id="search-bar" name="search" placeholder="Search for Games" class="search-bar">
                 </form>
                 <div class="header-icons">
-                    <a href="settings.html">
-                        <img src="images/icons8-settings-50.webp" alt="Settings">
-                    </a>
-                    <a href="login.html">
-                        <img
-                            src="images/icons8-male-user-24.webp"
-                            alt="User"
-                            class="login-icon"
-                        >
-                    </a>
+                    <a href="settings.html"><img src="images/icons8-settings-50.webp" alt="Settings"></a>
+                    <a href="login.html"><img src="images/icons8-male-user-24.webp" alt="User" class="login-icon"></a>
                     <a href="cart.html" class="cart-icon">
                         <img src="images/icons8-cart-32.webp" alt="Cart">
                         <span class="cart-count"></span> 
@@ -58,21 +50,6 @@
                 </div>
             </div>
         </header>
-
-        <input
-            type="checkbox"
-            id="sidebar-toggle"
-            class="sidebar-toggle-checkbox"
-        >
-        <label
-            for="sidebar-toggle"
-            class="sidebar-toggle-label"
-            aria-label="Toggle Sidebar"
-        >
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
 
         <aside class="sidebar">
             <div class="sidebar-section">

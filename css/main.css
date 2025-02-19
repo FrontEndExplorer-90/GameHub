@@ -222,11 +222,12 @@ h1, h2, h3, .big-text {
 .sidebar-toggle-label {
     display: flex;
     flex-direction: column;
-    position: fixed !important;
+    position: absolute;
     left: 20px;
-    top: 20px;
+    top: 40px;
     cursor: pointer;
     z-index: 1001;
+    transform: translateY(-50%);
 }
 
 .sidebar-toggle-label span {
