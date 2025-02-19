@@ -19,14 +19,24 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        const user = {
-            username,
-            email,
-            password
+        let users = JSON.parse(localStorage.getItem("gamehubUsers")) || [];
+
+        const existingUser = users.find(
+            (user) => user.username.toLowerCase() === username.toLowerCase()
+        );
+        if (existingUser) {
+            alert("Username already exists. Please choose a different username.");
+            return;
+        }
+
+        const newUser = {
+            username: username,
+            email: email,
+            password: password
         };
 
-     
-        localStorage.setItem("gamehubUser", JSON.stringify(user));
+        users.push(newUser);
+        localStorage.setItem("gamehubUsers", JSON.stringify(users));
 
         alert("Registration successful! You can now log in.");
         window.location.href = "login.html";

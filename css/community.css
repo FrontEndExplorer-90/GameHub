@@ -314,12 +314,15 @@ body {
     border: 1px solid #555;
 }
 
-.chat-input {
-    width: calc(100% - 80px);
-    padding: 10px;
+#chat-input {
+    width: 100%;        
+    padding: 12px;     
+    font-size: 1rem;   
+    line-height: 1.5;   
+    border: 1px solid #444;
     border-radius: 5px;
-    border: none;
-    line-height: 2.0;
+    box-sizing: border-box; 
+    margin-bottom: 10px;    
 }
 
 .send-btn {

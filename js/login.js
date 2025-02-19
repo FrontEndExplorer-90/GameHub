@@ -4,14 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const passwordInput = document.getElementById("password");
 
     if (!loginForm || !usernameInput || !passwordInput) {
-
         return;
     }
 
-    const users = [
-        { username: "gamer123", password: "password123" },
-        { username: "test",     password: "1234" }
-    ];
+    let users = JSON.parse(localStorage.getItem("gamehubUsers")) || [];
 
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -24,19 +20,16 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        const user = users.find(user => 
-            user.username.toLowerCase() === username.toLowerCase() && 
-            user.password === password
+        const user = users.find(u => 
+            u.username.toLowerCase() === username.toLowerCase() &&
+            u.password === password
         );
 
         if (user) {
-
             localStorage.setItem("loggedInUser", JSON.stringify({ username: user.username }));
-            
             window.location.href = "community.html";
         } else {
             alert("Invalid username or password. Please try again.");
         }
     });
 });
-

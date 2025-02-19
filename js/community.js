@@ -1,6 +1,6 @@
-// ======= Variables =======
+// ======= Variabler hentet fra DOM =======
 const sendButton = document.querySelector('.send-btn');
-const chatInput = document.querySelector('.chat-input');
+const chatInput = document.getElementById('chat-input');  
 const chatBox = document.getElementById("chat-box");
 const pollItems = document.querySelectorAll('.poll-item');
 const voteButton = document.querySelector('.vote-btn');
@@ -10,8 +10,15 @@ const eventDetailsBox = document.getElementById('event-details-box');
 const eventText = document.getElementById('event-text');
 const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
 
-// ======= Functions =======
+const messages = [
+    'Player123: Anyone up for a match?',
+    'GameMaster: New event starting in 10 minutes!',
+    'GamerGirl89: Just reached level 50!',
+    'SpeedRacer: Does anyone have tips for the new map?',
+    'NightWolf: This community is awesome!'
+];
 
+// ======= HOVED-kode i én DOMContentLoaded =======
 document.addEventListener("DOMContentLoaded", () => {
     if (loggedInUser) {
         membershipSection.innerHTML = `
@@ -23,15 +30,35 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.removeItem("loggedInUser");
             location.reload();
         });
-    } else {
+    } else if (joinButton) {
         joinButton.addEventListener("click", () => {
             window.location.href = "membership.html";
         });
     }
+
+    setupCalendar();
+    setupChat();
+    pollItems.forEach(item => {
+        item.addEventListener('click', () => {
+            pollItems.forEach(i => i.classList.remove('selected'));
+            item.classList.add('selected');
+        });
+    });
+
+    if (voteButton) {
+        voteButton.addEventListener('click', () => {
+            const selected = document.querySelector('.poll-item.selected');
+            if (selected) {
+                alert(`Thank you for voting for: ${selected.textContent}`);
+            } else {
+                alert('Please select an option before voting.');
+            }
+        });
+    }
 });
 
-
-document.addEventListener('DOMContentLoaded', () => {
+// ======= Funksjon: Oppsett av kalender =======
+function setupCalendar() {
     const events = {
         '2025-02-20': ['Community Game Night at 7 PM'],
         '2025-02-25': ['Space Race Championship Finals'],
@@ -39,6 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const calendarContainer = document.getElementById('calendar');
+    if (!calendarContainer) return; 
+
     const monthYearDisplay = document.getElementById('month-year');
     const prevMonthButton = document.getElementById('prev-month');
     const nextMonthButton = document.getElementById('next-month');
@@ -102,20 +131,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     generateCalendar(currentYear, currentMonth);
-});
-
-function sendMessage() {
-    const message = chatInput.value.trim();
-    if (message) {
-        const newMessage = document.createElement('p');
-        newMessage.textContent = `You: ${message}`;
-        chatBox.appendChild(newMessage);
-        chatInput.value = ''; 
-        chatBox.scrollTop = chatBox.scrollHeight; 
-    }
 }
 
-sendButton.addEventListener('click', sendMessage);
+// ======= Funksjon: Oppsett av chat =======
+function setupChat() {
+    simulateIncomingMessages();
+    if (sendButton) {
+        sendButton.addEventListener('click', sendMessage);
+    }
+    if (chatInput) {
+        chatInput.addEventListener('keypress', (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                sendMessage();
+            }
+        });
+    }
+}
 
 function simulateIncomingMessages() {
     const messages = [
@@ -125,33 +157,28 @@ function simulateIncomingMessages() {
         'SpeedRacer: Does anyone have tips for the new map?',
         'NightWolf: This community is awesome!'
     ];
-
     let index = 0;
-    setInterval(() => {
+
+    const interval = setInterval(() => {
         if (index < messages.length) {
             const newMessage = document.createElement("p");
             newMessage.textContent = messages[index];
             chatBox.appendChild(newMessage);
             chatBox.scrollTop = chatBox.scrollHeight;
             index++;
+        } else {
+            clearInterval(interval);
         }
     }, 5000);
 }
 
-simulateIncomingMessages();
-
-pollItems.forEach(item => {
-    item.addEventListener('click', () => {
-        pollItems.forEach(i => i.classList.remove('selected'));
-        item.classList.add('selected');
-    });
-});
-
-voteButton.addEventListener('click', () => {
-    const selected = document.querySelector('.poll-item.selected');
-    if (selected) {
-        alert(`Thank you for voting for: ${selected.textContent}`);
-    } else {
-        alert('Please select an option before voting.');
-    }
-});
+function sendMessage() {
+    if (!chatInput) return;
+    const message = chatInput.value.trim();
+    if (!message) return; 
+    const newMessage = document.createElement('p');
+    newMessage.textContent = `You: ${message}`;
+    chatBox.appendChild(newMessage);
+    chatBox.scrollTop = chatBox.scrollHeight;
+    chatInput.value = '';
+}
