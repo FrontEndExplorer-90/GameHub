@@ -73,18 +73,30 @@ footerIcons.forEach(icon => {
 
 
 // ======= Sidebar Toggle Functionality =======
-const sidebar = document.querySelector('.sidebar');
-const sidebarToggleLabel = document.querySelector('.sidebar-toggle-label');
+document.addEventListener("DOMContentLoaded", () => {
+    const sidebar = document.querySelector('.sidebar');
+    const sidebarToggle = document.getElementById("sidebar-toggle");
+    const sidebarLabel = document.querySelector('.sidebar-toggle-label');
 
-if (sidebarToggleLabel) {
-    sidebarToggleLabel.addEventListener('click', (e) => {
-        e.stopPropagation(); 
-        if (sidebar) {
-            sidebar.classList.toggle('active'); 
+    if (!sidebar || !sidebarToggle || !sidebarLabel) return; 
+
+    sidebarLabel.addEventListener('click', (e) => {
+        e.stopPropagation();
+        sidebar.classList.toggle('active');
+    });
+
+    sidebar.addEventListener("click", (e) => {
+        e.stopPropagation();
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!sidebar.contains(e.target) && !sidebarLabel.contains(e.target)) {
+            sidebar.classList.remove("active");
         }
     });
-}
+});
 
+// ======= Handle Genre Links in Sidebar =======
 document.addEventListener("DOMContentLoaded", () => {
     const genreLinks = document.querySelectorAll("#genre-list a");
 
@@ -101,23 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 400);
         });
     });
-});
-
-const sidebarToggle = document.getElementById("sidebar-toggle");
-if (sidebarToggle) {
-    sidebarToggle.addEventListener("click", function () {
-    
-    });
-}
-
-document.addEventListener('click', (e) => {
-    if (sidebar && sidebarToggleLabel) {
-        if (!sidebar.contains(e.target) && !sidebarToggleLabel.contains(e.target)) {
-            if (sidebar.classList.contains('active')) {
-                sidebar.classList.remove('active'); 
-            }
-        }
-    }
 });
 
 // ======= Handle Cart Icon Click =======
