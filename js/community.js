@@ -18,7 +18,6 @@ const messages = [
     'NightWolf: This community is awesome!'
 ];
 
-// ======= HOVED-kode i én DOMContentLoaded =======
 document.addEventListener("DOMContentLoaded", () => {
     if (loggedInUser) {
         membershipSection.innerHTML = `
@@ -60,9 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
 // ======= Funksjon: Oppsett av kalender =======
 function setupCalendar() {
     const events = {
-        '2025-02-20': ['Community Game Night at 7 PM'],
-        '2025-02-25': ['Space Race Championship Finals'],
+        '2025-02-20': ['Our monthly "Community Game Night" starts at 7 PM'],
+        '2025-02-25': ['Dont miss the "Space Race Championship Finals"'],
         '2025-02-27': ['Developer AMA at 5 PM'],
+        '2025-03-08': ['We celebrate International Womens day with new releases'],
+        '2025-03-17': ['Our 1st monthly "Monday Funday" with lots of challenges and free minigames for the next 24h'],
+        '2025-03-30': ['Summertime madness event starts at 4PM (lasting the whole week)'],
     };
 
     const calendarContainer = document.getElementById('calendar');

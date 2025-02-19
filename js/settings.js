@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.delete-account-btn').addEventListener('click', () => {
         const confirmation = confirm('Are you sure you want to delete your account? This action cannot be undone.');
         if (confirmation) {
-            localStorage.clear();
+            localStorage.removeItem("loggedInUser");
             alert('Account deleted successfully.');
         }
     });
