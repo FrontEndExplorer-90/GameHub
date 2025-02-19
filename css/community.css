@@ -28,7 +28,7 @@ body {
 }
 
 .welcome-banner h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     color: #fff;
 }
 
@@ -42,18 +42,19 @@ body {
 }
 
 .membership .section-title {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: #fff;
     margin-bottom: 10px;
 }
 
 .membership p {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     margin-bottom: 15px;
 }
 
 .membership .view-all-btn {
     padding: 10px 20px;
+    font-size: 1rem;
     border: none;
     background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2);
     color: #fff;
@@ -109,28 +110,32 @@ body {
 }
 
 .leaderboard .section-title {
-    font-size: 1.25rem;
+    font-size: 1.8rem;
     color: #ffaa00;
     margin-bottom: 10px;
 }
 
 .leaderboard li:nth-child(1) {
     font-weight: bold;
-    color: #ffaa00; /* Gold */
+    color: #ffd900; 
+    font-size: 1.2rem;
 }
 .leaderboard li:nth-child(2) {
     font-weight: bold;
-    color: #c0c0c0; /* Silver */
+    color: #c0c0c0; 
+    font-size: 1.2rem;
 }
 .leaderboard li:nth-child(3) {
     font-weight: bold;
-    color: #cd7f32; /* Bronze */
+    color: #cd7f32; 
+    font-size: 1.2rem;
 }
 
 
 .latest-posts {
     background-color: #00aaffb2;
     padding: 15px;
+    font-size: 1.5rem;
     border-radius: 10px;
     margin-bottom: 20px;
     width: 100%;
@@ -141,21 +146,14 @@ body {
     position: relative;
     display: inline-block;
     width: 60%;
-}
-
-.day.event {
-    background-color: #FF9800; 
-    color: #000; 
-    font-weight: bold;
-    border: 2px solid #000;
-    position: relative;
+    font-size: 1.5rem;
 }
 
 .event-details-box {
     position: absolute;
     top: 0;
     left: 105%; 
-    width: 220px;
+    width: 350px;
     height: auto;
     background-color: #222;
     color: #fff;
@@ -194,7 +192,7 @@ body {
 }
 
 #calendar-header span {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #fff;
     font-weight: bold;
 }
@@ -204,6 +202,7 @@ body {
     grid-template-columns: repeat(7, 1fr);
     margin-top: 10px;
     font-weight: bold;
+    font-size: 1.2rem;
     color: #00aaff;
 }
 
@@ -229,10 +228,12 @@ body {
     text-align: center;
     cursor: pointer;
     position: relative;
-    font-weight: bold; 
+    font-weight: bold;
+    font-size: 1.2rem; 
 }
 .day.event {
     background-color: #d97706;
+    font-size: 1.2rem;
     color: #ffffff; 
     font-weight: bold;
     border: 2px solid #000; 
@@ -273,6 +274,7 @@ body {
 .discussion-card {
     flex: 1;
     padding: 15px;
+    font-size: 1.2rem;
     border-radius: 10px;
     text-align: center;
     background-color: none;
@@ -280,7 +282,7 @@ body {
 }
 
 .discussion-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     color: #ffaa00;
     margin-bottom: 10px;
 }
@@ -296,7 +298,7 @@ body {
 }
 
 .live-chat .section-title {
-    font-size: 1.25rem;
+    font-size: 1.8rem;
     color: #fff;
     margin-bottom: 10px;
 }
@@ -306,6 +308,7 @@ body {
     flex-direction: column;
     gap: 10px;
     padding: 10px;
+    font-size: 1.2rem;
     background-color: #222;
     color: white;
     height: 300px;
@@ -317,7 +320,7 @@ body {
 #chat-input {
     width: 100%;        
     padding: 12px;     
-    font-size: 1rem;   
+    font-size: 1.2rem;   
     line-height: 1.5;   
     border: 1px solid #444;
     border-radius: 5px;
@@ -329,6 +332,7 @@ body {
     padding: 10px 20px;
     background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2);
     color: #fff;
+    font-size: 1.2rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -347,10 +351,11 @@ body {
     margin-bottom: 20px;
     text-align: center;
     line-height: 2.0;
+    font-size: 1.2rem;
 }
 
 .poll .section-title {
-    font-size: 1.25rem;
+    font-size: 1.8rem;
     color: #ffaa00;
     margin-bottom: 10px;
 }
@@ -363,6 +368,7 @@ body {
 
 .poll-item {
     padding: 8px 12px;
+    font-size: 1.2rem;
     background-color: #444;
     border-radius: 5px;
     margin-bottom: 5px;
@@ -377,6 +383,7 @@ body {
     margin-top: 10px;
     padding: 10px 20px;
     background-color: #ffaa00;
+    font-size: 1.2rem;
     color: #111;
     border: none;
     border-radius: 5px;

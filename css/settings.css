@@ -28,7 +28,7 @@
 
 .settings-card p {
     font-size: 0.9rem;
-    color: #888;
+    color: #fff;
     margin-bottom: 15px;
 }
 
@@ -77,9 +77,11 @@ button:hover {
 }
 
 button.delete-account-btn {
-    background-color: #d9534f !important;
+    background-color: #b8140f !important;
     color: #fff;
     padding: 10px 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
     border: none;
     border-radius: 5px;
     cursor: pointer;
