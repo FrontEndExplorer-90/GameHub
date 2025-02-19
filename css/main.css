@@ -347,11 +347,11 @@ h1, h2, h3, .big-text {
     position: fixed;
     top: 20%;
     left: 50%;
-    background-color: rgba(0, 170, 255, 0.9);
+    background-color: rgba(4, 0, 255, 0.9);
     color: #fff;
     padding: 10px 15px;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
     z-index: 1000;
     transition: opacity 0.5s ease-in-out;
