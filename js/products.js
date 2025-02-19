@@ -6,7 +6,35 @@ const releaseFilter = document.getElementById("release-filter");
 const resetFiltersBtn = document.getElementById("reset-filters");
 const genreLinks = document.querySelectorAll("#genre-list a");
 
+const cartIcon = document.querySelector(".cart-icon");
+const cartCount = document.createElement("span");
+cartCount.classList.add("cart-count");
+cartIcon.appendChild(cartCount);
+
 let allProducts = [];
+
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+    cartCount.textContent = totalItems > 0 ? totalItems : '';
+}
+
+function showPopupMessage(message) {
+    const existingPopup = document.querySelector(".cart-popup");
+    if (existingPopup) {
+        existingPopup.remove();
+    }
+
+    const popup = document.createElement("div");
+    popup.classList.add("cart-popup");
+    popup.textContent = message;
+    document.body.appendChild(popup);
+    setTimeout(() => {
+        popup.classList.add("fade-out");
+        setTimeout(() => popup.remove(), 500);
+    }, 2000);
+}
+
 
 async function fetchAllProducts() {
     try {
@@ -15,12 +43,9 @@ async function fetchAllProducts() {
             throw new Error("Failed to fetch products");
         }
         const jsonData = await response.json();
-
         return jsonData.data || [];
     } catch (error) {
-        gameListContainer.innerHTML = `
-            <p class="error-message">Failed to load products. Please try again later.</p>
-        `;
+        gameListContainer.innerHTML = `<p class="error-message">Failed to load products. Please try again later.</p>`;
         return [];
     }
 }
@@ -29,9 +54,7 @@ function renderProducts(products) {
     gameListContainer.innerHTML = "";
 
     if (products.length === 0) {
-        gameListContainer.innerHTML = `
-            <p class="error-message">No products available based on the selected filters.</p>
-        `;
+        gameListContainer.innerHTML = `<p class="error-message">No products available based on the selected filters.</p>`;
         return;
     }
 
@@ -39,18 +62,13 @@ function renderProducts(products) {
         const productHTML = `
             <div class="game-item">
                 <a href="productpage.html?id=${product.id}">
-                    <img
-                        src="${product.image.url}"
-                        alt="${product.image.alt || product.title}"
-                    >
+                    <img src="${product.image.url}" alt="${product.image.alt || product.title}">
                 </a>
                 <h2>${product.title}</h2>
                 <p>
-                    ${
-                        product.onSale
-                            ? `<s>${product.price} $</s> ${product.discountedPrice} $`
-                            : `${product.price} $`
-                    }
+                    ${product.onSale
+                        ? `<s>${product.price} $</s> ${product.discountedPrice} $`
+                        : `${product.price} $`}
                 </p>
                 <p>Release: ${product.released}</p>
                 <button class="add-to-cart-btn" data-id="${product.id}">
@@ -71,14 +89,11 @@ function filterProductsBySearch(searchTerm) {
     );
 
     if (filteredGames.length === 1) {
-     
         window.location.href = `productpage.html?id=${filteredGames[0].id}`;
     } else if (filteredGames.length > 1) {
         renderProducts(filteredGames);
     } else {
-        gameListContainer.innerHTML = `
-            <p class="error-message">No products found for "${searchTerm}".</p>
-        `;
+        gameListContainer.innerHTML = `<p class="error-message">No products found for "${searchTerm}".</p>`;
     }
 }
 
@@ -113,7 +128,7 @@ function filterByGenre(selectedGenre) {
     const filteredProducts = allProducts.filter((game) =>
         game.genre.toLowerCase() === selectedGenre.toLowerCase()
     );
-    categoryFilter.value = selectedGenre; 
+    categoryFilter.value = selectedGenre;
     renderProducts(filteredProducts);
 }
 
@@ -126,13 +141,15 @@ function attachAddToCartEvents(products) {
 
             if (product) {
                 addToCart(product);
-                alert(`${product.title} has been added to your cart!`);
+                showPopupMessage(`${product.title} has been added to your cart!`); 
             }
         });
     });
 }
 
 function addToCart(product) {
+    if (!product) return; 
+
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const existingProduct = cart.find((item) => item.id === product.id);
 
@@ -149,47 +166,13 @@ function addToCart(product) {
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
+    showPopupMessage(`${product.title} has been added to your cart!`);
+    updateCartCount(); 
 }
 
 
-resetFiltersBtn.addEventListener("click", () => {
-    categoryFilter.value = "all";
-    priceFilter.value = "all";
-    releaseFilter.value = "all";
-    renderProducts(allProducts);
-});
-
-
-categoryFilter.addEventListener("change", filterProducts);
-priceFilter.addEventListener("change", filterProducts);
-releaseFilter.addEventListener("change", filterProducts);
-
-
-genreLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-        event.preventDefault();
-        const selectedGenre = event.target.dataset.genre;
-        if (selectedGenre) {
-            filterByGenre(selectedGenre);
-        }
-    });
-});
-
 document.addEventListener("DOMContentLoaded", async () => {
-
     allProducts = await fetchAllProducts();
     renderProducts(allProducts);
-
-    const storedSearchTerm = localStorage.getItem("searchTerm");
-    if (storedSearchTerm) {
-        filterProductsBySearch(storedSearchTerm);
-        localStorage.removeItem("searchTerm");
-    }
-
-    const selectedGenre = localStorage.getItem("selectedGenre");
-    if (selectedGenre) {
-        filterByGenre(selectedGenre);
-        localStorage.removeItem("selectedGenre");
-    }
+    updateCartCount();
 });
-

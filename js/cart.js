@@ -19,7 +19,6 @@ function validateDOMElements() {
         !totalAmountElement ||
         !checkoutButton
     ) {
-    
         return false;
     }
     return true;
@@ -32,13 +31,11 @@ function renderCartItems() {
     let total = 0;
 
     if (cart.length === 0) {
-        
         emptyCartMessage.style.display = 'flex';
         cartItemsContainer.style.display = 'none';
         totalPriceContainer.style.display = 'none';
         checkoutButtonWrapper.style.display = 'none';
     } else {
-       
         emptyCartMessage.style.display = 'none';
         cartItemsContainer.style.display = 'block';
         totalPriceContainer.style.display = 'block';
@@ -49,7 +46,6 @@ function renderCartItems() {
             const productPrice = Number(item.price) || 0;
             total += productPrice * item.quantity;
 
-            
             const cartItem = document.createElement('div');
             cartItem.classList.add('cart-item');
             cartItem.innerHTML = `
@@ -64,7 +60,6 @@ function renderCartItems() {
                 <button class="remove-btn" data-title="${productTitle}">Remove</button>
             `;
 
-           
             cartItem.querySelector('.decrease-btn').addEventListener('click', () => adjustQuantity(productTitle, -1));
             cartItem.querySelector('.increase-btn').addEventListener('click', () => adjustQuantity(productTitle, 1));
             cartItem.querySelector('.remove-btn').addEventListener('click', () => removeItem(productTitle));
@@ -72,7 +67,6 @@ function renderCartItems() {
             cartItemsContainer.appendChild(cartItem);
         });
 
-        
         totalAmountElement.textContent = `${total.toFixed(2)} $`;
     }
 }
@@ -96,7 +90,6 @@ function addToCart(product) {
         });
     }
 
-    
     localStorage.setItem('cart', JSON.stringify(cart));
     renderCartItems();
 }

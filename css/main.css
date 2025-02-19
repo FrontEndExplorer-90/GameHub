@@ -1,4 +1,4 @@
-/* General Reset */
+/* ======= Generell Styling ======= */
 * {
     margin: 0;
     padding: 0;
@@ -65,11 +65,11 @@ a:hover {
     position: relative;
 }
 
-
 h1, h2, h3, .big-text {
     font-family: 'Audiowide', cursive;
 }
 
+/* ======= Header Styling ======= */
 .header {
     display: flex;
     justify-content: space-between;
@@ -96,7 +96,6 @@ h1, h2, h3, .big-text {
     cursor: pointer;
 }
 
-
 .nav {
     flex: 2;
     display: flex;
@@ -118,7 +117,6 @@ h1, h2, h3, .big-text {
     background-color: #2b88d9;
     color: #fff;
 }
-
 
 .header-actions {
     display: flex;
@@ -153,6 +151,7 @@ h1, h2, h3, .big-text {
     border: 0;
 }
 
+/* ======= Search bar Styling ======= */
 .search-form {
     display: flex;
     align-items: center;
@@ -172,23 +171,23 @@ h1, h2, h3, .big-text {
     color: #888;
 }
 
-
+/* ======= Sidebar Styling ======= */
 .sidebar {
     position: fixed;
     top: 0;
-    left: -250px; 
+    left: -250px;
     width: 250px;
     height: 100vh;
     background-color: #111;
     color: white;
-    transition: left 0.3s ease; 
+    transition: left 0.3s ease;
     z-index: 1000;
     padding: 80px 15px 20px;
     box-sizing: border-box;
 }
 
 .sidebar.active {
-    left: 0; 
+    left: 0;
 }
 
 .sidebar-section {
@@ -220,13 +219,12 @@ h1, h2, h3, .big-text {
     color: #00aaff;
 }
 
-
 .sidebar-toggle-label {
     display: flex;
     flex-direction: column;
-    position: fixed !important; 
-    left: 20px; 
-    top: 20px; 
+    position: fixed !important;
+    left: 20px;
+    top: 20px;
     cursor: pointer;
     z-index: 1001;
 }
@@ -237,13 +235,12 @@ h1, h2, h3, .big-text {
     background-color: white;
     margin: 5px 0;
     margin-left: 200px;
-    transition: background-color 0.3s ease; 
+    transition: background-color 0.3s ease;
 }
 
 .sidebar-toggle-label:hover span {
-    background-color: #00aaff; 
+    background-color: #00aaff;
 }
-
 
 .sidebar-toggle-checkbox {
     display: none;
@@ -265,6 +262,7 @@ h1, h2, h3, .big-text {
     border: 0;
 }
 
+/* ======= Loading Spinner Styling ======= */
 .loading-spinner {
     position: fixed;
     top: 50%;
@@ -273,7 +271,7 @@ h1, h2, h3, .big-text {
     transform: translate(-50%, -50%);
     font-size: 1.5rem;
     background: rgba(255, 255, 255, 0.8);
-    color: #940cee; 
+    color: #940cee;
     padding: 1rem;
     border-radius: 5px;
     text-align: center;
@@ -284,6 +282,7 @@ h1, h2, h3, .big-text {
     display: none;
 }
 
+/* ======= Footer Styling ======= */
 .footer-container {
     display: flex;
     align-items: center;
@@ -343,50 +342,44 @@ h1, h2, h3, .big-text {
     width: 100px;
 }
 
+/* ======= Cart Popup Styling ======= */
+.cart-popup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    background-color: rgba(0, 170, 255, 0.9);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    z-index: 1000;
+    transition: opacity 0.5s ease-in-out;
+}
 
-@media screen and (max-width: 600px) {
-    body, .wrapper, .content-container {
-        overflow-x: hidden;
-        width: 100%;
-    }
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
 
-    .main-content {
-        margin-left: 0;
-        padding: 0 15px;
-        display: flex;
-        flex-direction: column;
-        align-items: left;
-        width: 100%;
-    }
+/* ======= Cart Icon Counter ======= */
+.cart-icon {
+    position: relative;
+    display: inline-block;
+}
 
-    .header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 15px 0;
-    }
-
-    .search-bar {
-        width: 90%;
-        margin-top: 10px;
-    }
-    
-    .sidebar-toggle-label {
-        left: -120px;  
-        top: 25px;  
-    }
-
-    .sidebar {
-        left: -250px;
-        top: 0;
-    }
-
-    .sidebar.active {
-        left: 0;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-    }
+.cart-icon span {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
