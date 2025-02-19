@@ -72,32 +72,27 @@ footerIcons.forEach(icon => {
 });
 
 
-// ======= Sidebar Toggle Functionality =======
 document.addEventListener("DOMContentLoaded", () => {
-    const sidebar = document.querySelector('.sidebar');
+    const sidebar = document.querySelector(".sidebar");
     const sidebarToggle = document.getElementById("sidebar-toggle");
-    const sidebarLabel = document.querySelector('.sidebar-toggle-label');
+    const sidebarLabel = document.querySelector(".sidebar-toggle-label");
 
-    if (!sidebar || !sidebarToggle || !sidebarLabel) return; 
+    if (!sidebar || !sidebarToggle || !sidebarLabel) return;
 
-    sidebarLabel.addEventListener('click', (e) => {
-        e.stopPropagation();
-        sidebar.classList.toggle('active');
+    // Klikk på hamburger-ikonet åpner/lukker sidebar
+    sidebarLabel.addEventListener("click", (e) => {
+        e.preventDefault();
+        sidebar.classList.toggle("active");
     });
 
-    sidebar.addEventListener("click", (e) => {
-        e.stopPropagation();
-    });
-
+    // Klikk utenfor sidebaren lukker den
     document.addEventListener("click", (e) => {
         if (!sidebar.contains(e.target) && !sidebarLabel.contains(e.target)) {
             sidebar.classList.remove("active");
         }
     });
-});
 
-// ======= Handle Genre Links in Sidebar =======
-document.addEventListener("DOMContentLoaded", () => {
+    // ===== Handle Genre Links in Sidebar =====
     const genreLinks = document.querySelectorAll("#genre-list a");
 
     genreLinks.forEach(link => {
@@ -114,6 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
 
 // ======= Handle Cart Icon Click =======
 const cartIcon = document.querySelector('.header-icons a[href="cart.html"]');
