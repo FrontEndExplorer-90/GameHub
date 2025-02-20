@@ -1,4 +1,4 @@
-// ======= Variabler hentet fra DOM =======
+// ======= Variables =======
 const sendButton = document.querySelector('.send-btn');
 const chatInput = document.getElementById('chat-input');  
 const chatBox = document.getElementById("chat-box");
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// ======= Funksjon: Oppsett av kalender =======
+// ======= Function Calender =======
 function setupCalendar() {
     const events = {
         '2025-02-20': ['Our monthly "Community Game Night" starts at 7 PM'],
@@ -135,7 +135,7 @@ function setupCalendar() {
     generateCalendar(currentYear, currentMonth);
 }
 
-// ======= Funksjon: Oppsett av chat =======
+// ======= Function chat =======
 function setupChat() {
     simulateIncomingMessages();
     if (sendButton) {

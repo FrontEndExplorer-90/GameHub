@@ -79,13 +79,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!sidebar || !sidebarToggle || !sidebarLabel) return;
 
-    // Klikk på hamburger-ikonet åpner/lukker sidebar
+  
     sidebarLabel.addEventListener("click", (e) => {
         e.preventDefault();
         sidebar.classList.toggle("active");
     });
 
-    // Klikk utenfor sidebaren lukker den
     document.addEventListener("click", (e) => {
         if (!sidebar.contains(e.target) && !sidebarLabel.contains(e.target)) {
             sidebar.classList.remove("active");
