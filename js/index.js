@@ -72,3 +72,21 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    function setupCloseButton() {
+        const popup = document.querySelector(".newsletter-popup");
+        const closeButton = document.querySelector(".close-button");
+
+        if (!popup || !closeButton) {
+            setTimeout(setupCloseButton, 500); 
+            return;
+        }
+
+        closeButton.addEventListener("click", () => {
+            popup.classList.add("hidden");
+        });
+    }
+
+    setupCloseButton(); 
+});
