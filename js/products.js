@@ -175,4 +175,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     allProducts = await fetchAllProducts();
     renderProducts(allProducts);
     updateCartCount();
+
+    categoryFilter.addEventListener("change", filterProducts);
+    priceFilter.addEventListener("change", filterProducts);
+    releaseFilter.addEventListener("change", filterProducts);
+    
+    resetFiltersBtn.addEventListener("click", () => {
+        categoryFilter.value = "all";
+        priceFilter.value = "all";
+        releaseFilter.value = "all";
+        renderProducts(allProducts);
+    });
 });
