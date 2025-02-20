@@ -438,6 +438,10 @@
         width: fit-content; 
     }
 
+    .header nav a {
+        font-size: 1rem; 
+    }
+
     .newsletter-popup {
         width: 90%; 
         max-width: 400px; 
