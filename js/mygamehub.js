@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         usernameElem.textContent = loggedInUser.username || "Guest";
     }
     if (profileImgElem) {
-        profileImgElem.src = localStorage.getItem("profileImage") || "images/foxprofilpicture.webp";
+        profileImgElem.src = localStorage.getItem("profileImage") || "../images/foxprofilpicture.webp";
     }
     if (pointsElem) {
         pointsElem.textContent = localStorage.getItem("gameHubPoints") || 0;
@@ -58,8 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const friends = [
-        { name: "ShadowNinja", avatar: "images/foxprofilpicture.webp" },
-        { name: "GamerX", avatar: "images/womenglowingimg.webp" }
+        { name: "ShadowNinja", avatar: "../images/foxprofilpicture.webp" },
+        { name: "GamerX", avatar: "../images/womenglowingimg.webp" }
     ];
     friends.forEach(friend => {
         if (friendsListElem) {

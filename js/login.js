@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (user) {
             localStorage.setItem("loggedInUser", JSON.stringify({ username: user.username }));
-            window.location.href = "community.html";
+            window.location.href = "../pages/community.html";
         } else {
             alert("Invalid username or password. Please try again.");
         }

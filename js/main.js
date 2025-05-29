@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     localStorage.setItem("searchTerm", searchTerm);
                     showLoadingIndicator();
                     setTimeout(() => {
-                        window.location.href = "products.html";
+                        window.location.href = "../pages/products.html";
                     }, 400);
                 }
             }
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             showLoadingIndicator();
             setTimeout(() => {
-                window.location.href = "products.html";
+                window.location.href = "../pages/products.html";
             }, 400);
         });
     });
@@ -111,13 +111,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ======= Handle Cart Icon Click =======
-const cartIcon = document.querySelector('.header-icons a[href="cart.html"]');
+const cartIcon = document.querySelector('.header-icons a[href="../pages/cart.html"]');
 if (cartIcon) {
     cartIcon.addEventListener('click', (e) => {
         e.preventDefault();
         showLoadingIndicator(); 
         setTimeout(() => {
-            window.location.href = 'cart.html';
+            window.location.href = '../pages/cart.html';
         }, 400);
     });
 }

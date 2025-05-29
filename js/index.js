@@ -63,12 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const email = emailInput.value.trim();
             if (email === "") {
-                alert("❌ Please enter a valid email address.");
+                alert("Please enter a valid email address.");
                 return;
             }
 
             localStorage.setItem("subscribedEmail", email);
-            window.location.href = "newsletter.html";
+            window.location.href = "../pages/newsletter.html";
         });
     }
 });

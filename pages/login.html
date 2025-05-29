@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Game Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/login.css">
-    <script defer src="js/login.js"></script>
-    <script defer src="js/main.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script defer src="../js/login.js"></script>
+    <script defer src="../js/main.js"></script>
 </head>
 <body>
 
@@ -19,8 +19,8 @@
     <div class="login-wrapper">
 
         <div class="logo">
-            <a href="index.html">
-                <img src="images/GameHub_Logo.webp" alt="Game Hub Logo">
+            <a href="../index.html">
+                <img src="../images/GameHub_Logo.webp" alt="Game Hub Logo">
             </a>
         </div>
 
@@ -39,8 +39,8 @@
             </form>
 
             <div class="login-footer">
-                <a href="under-construction.html" id="forgot-password-link">Forgot Password?</a>
-                <a href="membership.html">Create an Account</a>
+                <a href="../pages/under-construction.html" id="forgot-password-link">Forgot Password?</a>
+                <a href="../pages/membership.html">Create an Account</a>
             </div>
         </div>
     </div>
@@ -48,7 +48,7 @@
     <script>
         
         if (localStorage.getItem('loggedInUser')) {
-            window.location.href = "community.html";
+            window.location.href = "../pages/community.html";
         }
     </script>
 

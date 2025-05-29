@@ -94,7 +94,7 @@ async function displayProduct() {
 
     const productImage = document.getElementById("product-image");
     if (productImage) {
-        productImage.src = image?.url || "images/default-image.webp";
+        productImage.src = image?.url || "../images/default-image.webp";
         productImage.alt = image?.alt || title || "Game image";
     }
 

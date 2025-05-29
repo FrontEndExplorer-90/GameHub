@@ -39,6 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("gamehubUsers", JSON.stringify(users));
 
         alert("Registration successful! You can now log in.");
-        window.location.href = "login.html";
+        window.location.href = "../pages/login.html";
     });
 });

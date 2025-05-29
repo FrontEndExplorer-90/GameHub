@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     } else if (joinButton) {
         joinButton.addEventListener("click", () => {
-            window.location.href = "membership.html";
+            window.location.href = "../pages/membership.html";
         });
     }
 

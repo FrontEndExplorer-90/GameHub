@@ -6,10 +6,10 @@
     <meta name="description" content="Game Hub - The universe of games">
     <title>Game Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/index.css">
-    <script defer src="js/index.js"></script>
-    <script defer src="js/main.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/mygamehub.css">
+    <script defer src="../js/mygamehub.js"></script>
+    <script defer src="../js/main.js"></script>
 </head>
 <body>
 
@@ -30,7 +30,7 @@
             </a>
         </div>
         <nav class="nav">
-            <a href="index.html">Home</a>
+            <a href="../index.html">Home</a>
             <a href="../pages/products.html">Games</a>
             <a href="../pages/community.html">Community</a>
             <a href="../pages/about.html">About</a>
@@ -73,7 +73,7 @@
                 </li>
                 <li>
                     <a href="../pages/products.html" data-genre="Horror">Horror Games</a>
-                </li>                    
+                </li> 
             </ul>
         </div>                        
         <div class="sidebar-section">
@@ -88,52 +88,43 @@
             </ul>
         </div>
     </aside>
-        
-    <main class="main-content">
-        <div class="top-section">
-       
-            <div class="carousel-container">
-                <div class="carousel-slides">
-                    <div class="carousel-slide"><img src="../images/GameHub_covers10.webp" alt="Game 1"></div>
-                    <div class="carousel-slide"><img src="../images/GameHub_covers3.webp" alt="Game 2"></div>
-                    <div class="carousel-slide"><img src="../images/GameHub_covers6.webp" alt="Game 3"></div>
-                </div>
-                <button class="carousel-prev">←</button>
-                <button class="carousel-next">→</button>
-            </div>
-     
-            <div class="explore-section">
-                <h1>Explore the universe of games</h1>
-                <p>Your one-stop shop for digital games at competitive prices</p>
-                <a href="../pages/products.html" class="shop-btn">EXPLORE HERE</a>
-            </div>
-        </div>
 
-        <section class="featured">
-            <div class="most-wanted">
-                <div class="game-cover">
-                    <img src="../images/GameHub_covers9.webp" alt="Cyberpunk: Rise of the Rebel">
-                </div>
-                <div class="most-wanted-text">
-                    <h2>Today's Most Wanted</h2>
-                    <h3>Try it now!</h3>
-                    <a id="shop-link" href="../pages/products.html" role="button">Shop Here</a>
-                </div>
+    <main class="profile-wrapper">
+
+        <section class="profile-header">
+            <div class="profile-picture">
+                <img src="../images/DragonFourthWing.webp" alt="Profile Picture" id="profile-pic">
+            </div>
+            <div class="profile-info">
+                <h2 id="username">Username</h2>
+                <p> GameHub Points: <span id="points">0</span></p>
+            </div>
+        </section>
+
+        <section class="profile-content">
+
+            <div class="profile-card">
+                <h3><img src="../images/icons8-order-history-50.webp" alt="Order"> Order History</h3>
+                <ul id="order-history"></ul>
+            </div>
+
+            <div class="profile-card">
+                <h3><img src="../images/icons8-blog-32.webp" alt="Blog"> Your Blog Posts</h3>
+                <ul id="blog-posts"></ul>
+            </div>
+
+            <div class="profile-card">
+                <h3><img src="../images/icons8-friends-50.webp" alt="Friends"> Friends</h3>
+                <ul id="friends-list"></ul>
+            </div>
+
+            <div class="profile-card">
+                <h3><img src="../images/icons8-activities-48.webp" alt="Activity"> Recent Activity</h3>
+                <ul id="recent-activity"></ul>
             </div>
         </section>
     </main>
 
-    <div class="popup-trigger"></div>
-    <div class="newsletter-popup">
-        <div class="popup-content">
-            <h2>Game Hub Newsletter</h2>
-            <p>Sign up to our newsletter to receive the latest gaming trends</p>
-            <label for="newsletter-email">Enter your email:</label>
-            <input type="email" id="newsletter-email" placeholder="Your email address..." required>
-            <button id="newsletter-signup-btn" type="button">Sign Up</button>
-            <span class="close-button">&times;</span>
-        </div>
-    </div>
 
     <footer class="footer">
         <div class="footer-container">
@@ -154,5 +145,6 @@
             </div>
         </div>
     </footer>
+
 </body>
 </html>
