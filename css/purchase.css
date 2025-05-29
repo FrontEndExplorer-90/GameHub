@@ -25,6 +25,33 @@
     line-height: 1.8; 
 }
 
+.order-summary {
+    margin-top: 40px;
+    text-align: center;
+    color: #ddd;
+    font-family: 'Roboto', sans-serif;
+}
+
+.order-summary h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.order-summary ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.order-summary li {
+    margin-bottom: 0.5rem;
+}
+
+.order-summary p {
+    font-size: 1.1rem;
+}
+
+
 .shop-btn {
     padding: 10px 20px;
     background-image: linear-gradient(45deg, #2B88D9, #554AD2, #3A0BC2);
