@@ -13,32 +13,31 @@ GameHub is a dynamic and responsive game store concept built as part of the Noro
 
 The project follows a clear and organized folder structure:
 GameHub/
-│
-├── css/ # Stylesheets
-│ ├── main.css
-│ ├── index.css
-│ ├── products.css
-│ └── purchase.css
-│
-├── images/ # Optimized assets (WebP)
-│
-├── js/ # Modular JavaScript files
-│ ├── main.js # Global functionality (loading, cart)
-│ ├── index.js # Homepage logic
-│ ├── purchase.js # Confirmation page logic
-│ └── other-pages.js # Additional page logic (optional)
-│
-├── pages/ # Subpages
-│ ├── about.html
-│ ├── cart.html
-│ ├── community.html
-│ ├── login.html
-│ ├── products.html
-│ ├── purchase.html
-│ └── under-construction.html
-│
-├── index.html # Landing page
-└── README.md
+ - css/ # Stylesheets
+   - main.css
+   - index.css
+   - products.css
+   - purchase.css
+
+ - images/ # Optimized assets (WebP)
+
+ - js/ # Modular JavaScript files
+   - main.js # Global functionality (loading, cart)
+   - index.js # Homepage logic
+   - purchase.js # Confirmation page logic
+   - other-pages.js # Additional page logic (optional)
+
+ - pages/ # Subpages
+   - about.html
+   - cart.html
+   - community.html
+   - login.html
+   - products.html
+   - purchase.html
+   - under-construction.html
+
+ - index.html # Landing page
+ - README.md
 
 ## Features
 
